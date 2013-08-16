@@ -1,0 +1,23 @@
+﻿body
+{
+    background-color:#fffacd;
+}
+    
+div.Banner
+{
+    float:left;
+    font-size:larger;
+    margin:5px 10px;
+}
+    
+img.Banner
+{
+    border:0;
+    float:left;
+}
+
+div.bannerLine
+{
+    border-top:1px solid #4682b4;
+    width:100%;
+}
