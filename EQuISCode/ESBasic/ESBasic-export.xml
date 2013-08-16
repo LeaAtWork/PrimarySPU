@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--$Header: /EarthSoft/EDP/Formats/ESBasic/ESBasic-export.xml   2   2010-04-26 10:42:50-06:00   bryce.mathews $-->
+<reports xmlns:edd="http://www.earthsoft.com/support/edp/ff" >
+
+  <report name="ESBasic EDD">
+    <parameters>
+      <param param_name="@facility_id"
+             param_type="int"
+             visibility="N"
+             remark="" />
+      <param param_name="@sys_loc_codes"
+             param_type="varchar"
+             caption="Location\Individual(s):"
+             display_type="MultiSelect"
+             visibility="Y"
+             remark="Please select one or more locations.">
+        <sqlconnection data_source="select sys_loc_code from dt_location where facility_id in (select facility_id from dbo.fn_facility_group_members(@facility_id))" />
+        <oracleconnection data_source="select sys_loc_code from dt_location where facility_id in (select facility_id from table(equis.facility_group_members(cast(@facility_id as integer))))" />
+      </param>
+      <param param_name="@location_groups"
+             param_type="varchar"
+             caption="Location\Group(s):"
+             display_type="MultiSelect"
+             visibility="Y"
+             remark="Please select one or more location groups.">
+        <sqlconnection data_source="select group_code from rt_group where group_type = 'sys_loc_code' and (facility_id is null or facility_id in (select facility_id from dbo.fn_facility_group_members(@facility_id)))" />
+        <oracleconnection data_source="select group_code from rt_group where group_type = 'sys_loc_code' and (facility_id is null or facility_id in (select facility_id from table(equis.facility_group_members(cast(@facility_id as integer)))))" />
+      </param>
+      <param param_name="@cas_rns"
+             param_type="varchar"
+             caption="Result\Analyte\Individual(s):"
+             display_type="MultiSelect"
+             visibility="Y"
+             remark="Please select one or more analytes.">
+        <sqlconnection data_source="select distinct r.cas_rn, coalesce(a.chemical_name,r.cas_rn) as chemical_name from dt_result r inner join rt_analyte a on r.cas_rn = a.cas_rn where facility_id in (select facility_id from dbo.fn_facility_group_members(@facility_id)) order by chemical_name" />
+        <oracleconnection data_source="select distinct r.cas_rn, coalesce(a.chemical_name,r.cas_rn) as chemical_name from dt_result r inner join rt_analyte a on r.cas_rn = a.cas_rn where facility_id in (select facility_id from table(equis.facility_group_members(cast(@facility_id as integer)))) order by chemical_name" />
+      </param>
+      <param param_name="@analyte_groups"
+             param_type="varchar"
+             caption="Result\Analyte\Group(s):"
+             display_type="MultiSelect"
+             visibility="Y"
+             remark="Please select one or more analyte groups.">
+        <sqlconnection data_source="select mag.method_analyte_group_code from rt_mth_anl_group mag where mag.facility_id is null or mag.facility_id = @facility_id or @facility_id in (select facility_id from dbo.fn_facility_group_members(mag.facility_id)) order by mag.method_analyte_group_code" />
+        <oracleconnection data_source="select mag.method_analyte_group_code from rt_mth_anl_group mag where mag.facility_id is null or mag.facility_id = @facility_id or @facility_id in (select facility_id from table(equis.facility_group_members(mag.facility_id))) order by mag.method_analyte_group_code" />
+      </param>
+      <param param_name="@start_date"
+             caption="Date Range\Start:"
+             display_type="Date"
+             visibility="Y"
+             remark="" >
+        <sqlconnection param_type="datetime"
+                       default_value="$select coalesce(min(sample_date),getdate()) from dt_sample where facility_id = @facility_id" />
+        <oracleconnection param_type="date"
+                          default_value="$select coalesce(min(sample_date),sysdate) from dt_sample where facility_id = @facility_id" />
+      </param>
+      <param param_name="@end_date"
+             caption="Date Range\End:"
+             display_type="Date"
+             visibility="Y" >
+        <sqlconnection param_type="datetime"
+                       default_value="$select coalesce(max(sample_date),getdate()) from dt_sample where facility_id = @facility_id" />
+        <oracleconnection param_type="date"
+                          default_value="$select coalesce(max(sample_date),sysdate) from dt_sample where facility_id = @facility_id" />
+      </param>
+    </parameters>
+    <commands>
+      
+      <command table_name="ESBasic" connection_type="SqlConnection">
+        <![CDATA[
+            -- facilities
+              declare @facs table (facility_id int, facility_code varchar(20))
+              insert into @facs select facility_id, facility_code from dbo.fn_facility_group_members(@facility_id)
+
+             -- locations
+              declare @locs table (facility_id int, sys_loc_code varchar(20))
+              insert into @locs select facility_id, member_code from fn_group_members(@location_groups)
+              insert into @locs select null, cast(l.value as varchar(20)) from fn_split(@sys_loc_codes) as l 
+                                 where not exists (select sys_loc_code from @locs where facility_id is null and sys_loc_code = l.value)
+              if (select count(*) from @locs) = 0 insert into @locs values ( null, null )
+
+              -- inclusive date range
+              set @start_date = convert(varchar(10),@start_date,120) + ' 00:00:00'
+              set @end_date = convert(varchar(10),@end_date,120) + ' 23:59:59'
+
+              -- analytes
+              declare @cas table ( cas_rn varchar(15), analytic_method varchar(20), fraction varchar(10), matrix varchar(20), mth_anl_group varchar(20), report_order integer, reporting_detect_limit varchar(14), reporting_units varchar(15), chemical_name varchar(255))
+              insert into @cas select cas_rn, analytic_method, total_or_dissolved, matrix, method_analyte_group_code, report_order, reporting_detect_limit, reporting_units, chemical_name from rt_mth_anl_group_member
+                                 where method_analyte_group_code in (select cast(value as varchar(20)) from fn_split(@analyte_groups))
+              insert into @cas select cast(c.value as varchar(15)), null, null, null, null, null, null, null, null from fn_split(@cas_rns) c  
+                                 where not exists (select cas_rn from @cas where cas_rn = c.value)
+              if (select count(*) from @cas) = 0 insert into @cas values ( null, null, null, null, null, null, null, null, null )
+              
+              
+            -----------------------------------------------------------------------------------------------------------------------------------------
+
+
+                select distinct
+		            s.sys_sample_code as sys_sample_code,
+		            s.sample_type_code as sample_type_code,
+		            s.matrix_code as sample_matrix_code,
+		            convert(varchar(10),s.sample_date,101) as sample_date,
+		            convert(varchar(8),s.sample_date,108) as sample_time,
+		            s.sys_loc_code as sys_loc_code,
+		            t.lab_name_code as lab_name_code,
+		            t.analytic_method as lab_anl_method_name,
+		            convert(varchar(10),t.analysis_date,101) as analysis_date,
+		            convert(varchar(8),t.analysis_date,108) as analysis_time,
+		            t.test_type as test_type,
+		            batch.test_batch_id as test_batch_id,
+		            t.lab_sample_id as lab_sample_id,
+		            t.basis as basis,
+		            t.prep_method as lab_prep_method_name,
+		            convert(varchar(10),t.prep_date,101) as prep_date,
+		            convert(varchar(8),t.prep_date,108) as prep_time,
+		            r.cas_rn as cas_rn,
+		            a.chemical_name as chemical_name,
+		            r.result_text as result_value,
+		            r.result_unit as result_unit,
+		            r.detect_flag as detect_flag,
+		            r.reporting_detection_limit as detection_limit_used,
+		            r.lab_qualifiers as lab_qualifiers,
+		            r.remark as comment,
+		            s.parent_sample_code as parent_sample_code,
+		            t.fraction as fraction,
+		            s.sample_source as sample_source
+            from dt_sample s
+              inner join @facs f on s.facility_id = f.facility_id  
+	          inner join dt_test t on (s.sample_id = t.sample_id and s.facility_id = t.facility_id)
+	          inner join dt_result r on (t.test_id = r.test_id and t.facility_id = r.facility_id)
+	          inner join rt_analyte a on (r.cas_rn = a.cas_rn)
+              inner join @locs lo on (s.facility_id = coalesce(lo.facility_id,s.facility_id) and coalesce(s.sys_loc_code,' ') = coalesce(lo.sys_loc_code,s.sys_loc_code,' '))
+              inner join @cas c on (r.cas_rn = coalesce(c.cas_rn,r.cas_rn)and t.analytic_method = coalesce(c.analytic_method,t.analytic_method) 
+                and coalesce(t.fraction,' ') = coalesce(c.fraction,t.fraction,' ') and coalesce(s.matrix_code,' ') = coalesce(c.matrix,s.matrix_code,' '))
+	          left outer join at_test_batch_assign batch on t.facility_id = batch.facility_id and t.test_id=batch.test_id and batch.test_batch_type = 'Analysis'
+            where ((s.sample_date between @start_date and @end_date) or s.sample_date is null)
+  
+        ]]>
+      </command>
+      <!--Oracle Connection-->
+      <command table_name="ESBasic" connection_type="OracleConnection">
+        <![CDATA[
+
+  WITH 
+            facs
+             AS (SELECT   facility_id, facility_code
+                   FROM   table(equis.facility_group_members (
+                                   CAST (@facility_id AS integer)))),
+
+            locs
+             AS (SELECT   VALUE AS sys_loc_code,
+                          NULL AS facility_id,
+                          NULL AS group_code,
+                          NULL AS report_order
+                   FROM   table(equis.split (
+                                   CAST (@sys_loc_codes AS VARCHAR2 (4000))))
+                 UNION
+                 SELECT   gm.member_code AS sys_loc_code,
+                          gm.facility_id,
+                          gm.group_code,
+                          gm.report_order
+                   FROM              table(equis.group_members(CAST (@location_groups AS VARCHAR2 (4000)))) gm
+                          INNER JOIN facs f
+                                  ON gm.facility_id = f.facility_id
+                 UNION
+                 SELECT   NULL AS sys_loc_code,
+                          NULL AS facility_id,
+                          NULL AS group_code,
+                          NULL AS report_order
+                   FROM   DUAL
+                  WHERE   LENGTH (TRIM (' ' FROM @sys_loc_codes)) IS NULL
+                          AND LENGTH (TRIM (' ' FROM @location_groups)) IS NULL),
+      
+
+           cas
+             AS (SELECT   cas_rn,
+                          analytic_method,
+                          total_or_dissolved AS fraction,
+                          matrix,
+                          method_analyte_group_code,
+                          report_order,
+                          reporting_detect_limit,
+                          reporting_units,
+                          chemical_name
+                   FROM   rt_mth_anl_group_member
+                  WHERE   method_analyte_group_code IN
+                                (SELECT   VALUE
+                                   FROM   table(equis.split(CAST (@analyte_groups AS VARCHAR2 (4000)))))
+                 UNION
+                 SELECT   VALUE,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL
+                   FROM   table(equis.split (CAST (@cas_rns AS VARCHAR2 (4000))))
+                 UNION
+                 SELECT   NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL,
+                          NULL
+                   FROM   DUAL
+                  WHERE   LENGTH (TRIM (' ' FROM @cas_rns)) IS NULL
+                          AND LENGTH (TRIM (' ' FROM @analyte_groups)) IS NULL)
+
+
+
+--------------------------------------------------------------------------------
+
+
+      SELECT DISTINCT
+                s.sys_sample_code as sys_sample_code,
+		            s.sample_type_code as sample_type_code,
+		            s.matrix_code as sample_matrix_code,
+		            TO_CHAR(s.sample_date,'YYYY/MM/DD') as sample_date,
+		            TO_CHAR(s.sample_date,'HH24:MI:SS') as sample_time,
+		            s.sys_loc_code as sys_loc_code,
+		            t.lab_name_code as lab_name_code,
+		            t.analytic_method as lab_anl_method_name,
+		            TO_CHAR(t.analysis_date,'YYYY/MM/DD') as analysis_date,
+		            TO_CHAR(t.analysis_date,'HH24:MI:SS') as analysis_time,
+		            t.test_type as test_type,
+		            batch.test_batch_id as test_batch_id,
+		            t.lab_sample_id as lab_sample_id,
+		            t.basis as basis,
+		            t.prep_method as lab_prep_method_name,
+		            TO_CHAR(t.prep_date,'YYYY/MM/DD') as prep_date,
+		            TO_CHAR(t.prep_date,'HH24:MI:SS') as prep_time,
+		            r.cas_rn as cas_rn,
+		            a.chemical_name as chemical_name,
+		            r.result_text as result_value,
+		            r.result_unit as result_unit,
+		            r.detect_flag as detect_flag,
+		            r.reporting_detection_limit as detection_limit_used,
+		            r.lab_qualifiers as lab_qualifiers,
+		            r.remark as "comment",
+		            s.parent_sample_code as parent_sample_code,
+		            t.fraction as fraction,
+		            s.sample_source as sample_source
+        FROM dt_sample s
+          INNER JOIN facs f ON s.facility_id = f.facility_id
+          inner join dt_test t ON s.sample_id = t.sample_id AND s.facility_id = t.facility_id
+          inner join dt_result r ON t.test_id = r.test_id AND t.facility_id = r.facility_id
+          inner join rt_analyte a ON r.cas_rn = a.cas_rn
+          inner join locs lo ON s.facility_id = coalesce(lo.facility_id, s.facility_id) AND coalesce(s.sys_loc_code, ' ') = coalesce(lo.sys_loc_code, s.sys_loc_code, ' ')
+          inner join cas c ON r.cas_rn = coalesce(c.cas_rn, r.cas_rn) AND t.analytic_method = coalesce(c.analytic_method,t.analytic_method) 
+            AND coalesce(t.fraction,' ') = coalesce(c.fraction, t.fraction,' ') AND coalesce(s.matrix_code,' ') = coalesce(c.matrix,s.matrix_code,' ')
+          left outer join at_test_batch_assign batch on t.facility_id = batch.facility_id and t.test_id=batch.test_id and batch.test_batch_type = 'Analysis'
+        WHERE (s.sample_date BETWEEN @start_date AND @end_date) OR s.sample_date IS null
+
+        ]]>
+      </command>
+    </commands>
+  </report>
+</reports>

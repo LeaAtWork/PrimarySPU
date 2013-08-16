@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SPUEDD" version="1.0.$Revision: 1 $"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://tempuri.org/SPUEDD.xsd"
+    xmlns:edd="http://www.earthsoft.com/support/edp/ff"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+ targetNamespace="http://tempuri.org/SPUEDD.xsd"
+  xmlns:mstns="http://tempuri.org/SPUEDD.xsd"
+           elementFormDefault="qualified">
+  
+  
+ <!--xmlns="http://www.w3.org/2001/XMLSchema"-->
+
+  <xs:element name="SPUEDD" msdata:IsDataSet="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <edd:name>SPUEDD</edd:name>
+
+        <!--<edd:publisher xmlns:edd="Seattle Public Utilities"></edd:publisher>-->
+        <edd:handler language="vb" source="SPUEDD" class="SPUEDDHandler"></edd:handler>
+        <edd:export source="SPUEDD-export" />
+      </xs:appinfo>
+      <xs:documentation>SPUEDD</xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SPUEDD">
+          <xs:annotation>
+            <xs:documentation>Primary Import for Laboratory EDDs into EQuIS</xs:documentation>
+            <xs:appinfo>
+
+              <!--Map EDD to reference tables-->
+
+              <edd:table mode="lookup" target="rt_sample_type">
+                <edd:lookup source="sample_type_code" target="sample_type_code" />
+                <edd:field source="sample_type_code" target="sample_type_desc" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_company">
+                <!--<edd:lookup source="lab_name_code" target="company_code" />
+                <edd:field method="IsLab" target="company_type" />-->
+                <edd:lookup source="lab_name_code" target="company_code" />
+                <edd:field source="lab_name_code" target="company_code" />
+                <edd:field source="lab_name_code" target="company_name" />
+                <edd:field default="Lab" target="company_type" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_analytic_method">
+                <edd:lookup source="lab_anl_method_name" target="analytic_method" />
+                <edd:field source="lab_anl_method_name" target="analytic_method" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_analyte">
+                <edd:lookup source="cas_rn" target="cas_rn" />
+                <edd:field source="chemical_name" target="chemical_name" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_matrix">
+                <edd:lookup source="matrix_code" target="matrix_code" include_columns="matrix_desc" />
+                <edd:field source="matrix_code" target="matrix_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_unit" version="eqcom">
+                <edd:lookup source="result_unit" target="unit_code" />
+                <edd:field source="result_unit" target="unit_code" />
+                <edd:lookup source="subsample_qty_unit" target="unit_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_analytic_method">
+                <edd:lookup source="lab_anl_method" target="analytic_method" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_prep_method" >
+                <edd:lookup source="lab_prep_method" target="prep_method" />
+                <edd:field source="lab_prep_method" target="prep_method" />
+              </edd:table>
+
+
+              <edd:table mode="lookup" target="rt_qualifier" >
+                <edd:lookup source="validator_qualifiers" target="qualifier" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_qualifier" >
+                <edd:lookup source="interpreted_qualifiers" target="qualifier" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_test_type" >
+                <edd:field default="Intitial" target="test_type" />
+                <edd:lookup source="test_type" target="test_type" />
+              </edd:table>
+              
+              <!--Create in tables-->
+
+              <edd:table mode="parent" target="dt_sdg" method="HasLabDelGroup">
+                <edd:field source="lab_del_group" target="sdg_name" />
+                <edd:field source="lab_del_group" target="sdg_desc" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_sample">
+                <edd:field new_id="sample_id" target="sample_id" />
+                <edd:field source="sys_sample_code" target="sample_name" />
+                <edd:field source="sys_sample_code" target="sys_sample_code" />
+                <edd:field source="sample_type_code" target="sample_type_code" />
+                <edd:field source="matrix_code" target="matrix_code" />
+                <edd:field source="sample_date" target="sample_date" />
+                <edd:field source="parent_sample_code" target="parent_sample_code" />
+                <edd:field source="sample_source" target="sample_source" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_field_sample" method="IsFieldSample">
+                <edd:field method="GetSampleId" target="sample_id" />
+                <edd:field source="lab_del_group" target="field_sdg" />
+                <edd:field source="lab_reciept_datetime" target="sample_receipt_date" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_test">
+                <edd:field new_id="test_id" target="test_id" />
+                <edd:field method="GetSampleId" target="sample_id" />
+                <edd:field source="lab_anl_method_name" target="analytic_method" />
+                <edd:field source="analysis_date" target="analysis_date" />
+                <edd:field source="total_or_dissolved" target="fraction" />
+                <edd:field source="test_type" target="test_type" />
+                <edd:field default="NA" target="column_number" />
+                <!--<edd:field source="lab_matrix_code" target="lab_matrix_code" />-->
+                <edd:field source="analysis_location" target="analysis_location" />
+                <edd:field source="basis" target="basis" />
+                <edd:field source="dilution_factor" target="dilution_factor" />
+                <edd:field source="lab_prep_method" target="prep_method" />
+                <edd:field source="prep_date" target="prep_date" />
+                <edd:field source="lab_name_code" target="lab_name_code" />
+                <!--<edd:field source="validation_level" target="qc_level" />-->
+                <edd:field source="lab_del_group" target="lab_sdg" />
+                <edd:field source="lab_sample_id" target="lab_sample_id" />
+                <edd:field source="analysis_comment" target="remark" />
+                <edd:field source="subsample_qty" target="subsample_amount" />
+                <edd:field source="subsample_qty_unit" target="subsample_amount_unit" />
+                <!--<edd:field source="lab_receipt_temp" target="custom_field_1" />
+                <edd:field source="lab_receipt_temp_units" target="custom_field_2" />-->
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_test_batch" version="eqcom">
+                <edd:field source="analysis_batch_id" target="test_batch_id" />
+                <edd:field default="Analysis" target="test_batch_type" />
+              </edd:table>
+
+              <edd:table mode="parent" target="at_test_batch_assign" method="AssignTestBatch">
+                <edd:field method="GetTestID" target="test_id" />
+                <edd:field source="analysis_batch_id" target="test_batch_id" />
+                <edd:field default="Analysis" target="test_batch_type" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_test_batch" version="eqcom">
+                <edd:field source="prep_batch_id" target="test_batch_id" />
+                <edd:field default="Prep" target="test_batch_type" />
+              </edd:table>
+
+              <edd:table mode="parent" target="at_test_batch_assign" method="AssignPrepBatch">
+                <edd:field method="GetTestID" target="test_id" />
+                <edd:field source="prep_batch_id" target="test_batch_id" />
+                <edd:field default="Prep" target="test_batch_type" />
+              </edd:table>
+
+              <edd:table mode="create" target="dt_result">
+                <edd:field method="GetTestID" target="test_id" />
+                <edd:field source="cas_rn" target="cas_rn" />
+                <edd:field source="result_value" target="result_text" />
+                <edd:field source="result_value" target="result_numeric" />
+                <edd:field source="lab_qualifiers" target="lab_qualifiers" />
+                <edd:field source="validator_qualifiers" target="validator_qualifiers" />
+                <edd:field source="interpreted_qualifiers" target="interpreted_qualifiers" />
+                <edd:field source="result_unit" target="result_unit" />
+                <edd:field source="result_unit" target="detection_limit_unit" />
+                <edd:field source="result_type_code" target="result_type_code" />
+                <edd:field source="reportable_result" target="reportable_result" />
+                <edd:field source="detect_flag" target="detect_flag" />
+                <edd:field source="reporting_detection_limit" target="reporting_detection_limit" />
+                <edd:field source="method_detection_limit" target="method_detection_limit" />
+                <!--<edd:field source="practical_quantitation_limit" target="quantitation_limit" />-->
+                <edd:field source="result_comment" target="remark" />
+              </edd:table>
+
+              <edd:table mode="create" target="dt_result_qc" method="HasQc" >
+                <edd:field method="GetTestID" target="test_id" />
+                <edd:field source="cas_rn" target="cas_rn" />
+                <edd:field source="qc_parent_result" target="qc_original_conc" />
+                <edd:field source="qc_spike_added" target="qc_spike_added" />
+                <edd:field source="qc_spike_recovery" target="qc_spike_recovery" />
+                <edd:field source="qc_rpd" target="qc_rpd" />
+                <edd:field source="qc_spike_lcl" target="qc_spike_lcl" />
+                <edd:field source="qc_spike_ucl" target="qc_spike_ucl" />
+                <edd:field source="qc_rpd_cl" target="qc_rpd_cl" />
+                <edd:field source="qc_spike_flag" target="qc_spike_status" />
+                <edd:field source="qc_rpd_flag" target="qc_rpd_status" />
+              </edd:table>
+
+            </xs:appinfo>
+          </xs:annotation>
+
+          <!--Defining Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sys_sample_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Uniquely identifies a field or lab sample.
+                    Field samples, use the Field Sample ID.
+                    Laboratory blanks or samples, the laboratory may use Lab Sample ID only if the Lab Sample ID is unique.  
+                    Otherwise, the lab must come up with a way to generate a unique lab sample ID to be entered in this field.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_type_code" nillable="false" default="PES">
+                <xs:annotation>
+                  <xs:documentation>Specifies sample type.  Primary Environmental samples must be 
+                  distinguished from laboratory method blank samples, etc.  
+                  Use valid reference values.
+                  Field sample types (e.g., field duplicates, field blanks, etc.) might be submitted 
+                  blind to the laboratory; in such cases the laboratory may report all field samples 
+                  as if they were all normal field samples.
+                    
+                  'PES' field samples/ regular environmental samples.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="matrix_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Code which distinguishes between the different type of sample matrix.  
+                  For example, soil samples must be distinguished from groundwater samples, etc.  
+                  The matrix of the sample as analyzed may be different from the matrix of the sample as 
+                  retrieved (e.g., TCLP) but this EDD asks only for the matrix as sampled. 
+                  Use the code on the submitted COC.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_source" nillable="false" default="FIELD">
+                <xs:annotation>
+                  <xs:documentation>Designates the origin on the sample.
+                    Valid Values:
+                    'FIELD' for field sample
+                    'LAB' for laboratory generated sample</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                    <xs:enumeration value="FIELD" />
+                    <xs:enumeration value="LAB" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="parent_sample_code" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Required for QC and duplicate samples with a parent sample 
+                  (field duplicates, matrix spike duplicates, etc.). 
+                  For matrix spike duplicates the parent sample is the matrix spike, 
+                  follow similar logic for laboratory control samples.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_date" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>mm/dd/yyyy hh:mm. 
+                  Date sample was collected in the field.  
+                  Date information must be identical with the date from the Field/COC form. 
+                  Leave blank for lab samples. 
+                  Year may be entered as yy.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="lab_anl_method_name" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Test method used in analysis.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name ="lab_reciept_datetime" type="xs:dateTime" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>mm/dd/yyyy hh:mm.  
+                  Date and time sample was received by lab.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="analysis_date" nillable="false" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>mm/dd/yyyy hh:mm.  
+                  Date and time sample was analyzed.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name ="total_or_dissolved" nillable="false" default="N">
+                <xs:annotation>
+                  <xs:documentation>Fraction.  
+                  Valid Values:
+                    'T' for unfiltered ('total') samples
+                    'D' for filtered or dissolved samples
+                    'N' for NA.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                    <xs:enumeration value="T" />
+                    <xs:enumeration value="D" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="test_type" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Valid Values:
+                    'Initial' for initial analyses
+                    'reanalysis1'
+                    'reanalysis2', etc. for subsequent analyses as appropriate.
+                    'dilution1'
+                    'dilution2', etc. for subsequent analyses as appropriate.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="analysis_location" nillable="true" default="LB">
+                <xs:annotation>
+                  <xs:documentation>Valid Values:
+                    'FI' for field instrument or probe
+                    'FL' for mobile field laboratory analysis
+                    'LB' for fixed-based laboratory analysis.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="FI" />
+                    <xs:enumeration value="FL" />
+                    <xs:enumeration value="LB" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="basis" nillable="true" default="NA">
+                <xs:annotation>
+                  <xs:documentation>Valid Values:
+                    'WET' for wet-weight basis reporting
+                    'DRY' for dry-weight basis reporting
+                    'NA' for tests for which this distinction is not applicable.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                    <xs:enumeration value="WET" />
+                    <xs:enumeration value="DRY" />
+                    <xs:enumeration value="NA" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="dilution_factor" nillable="false" default="1">
+                <xs:annotation>
+                  <xs:documentation>Must be a numeric entry.  
+                  The factor by which the sample was diluted as part of the preparation process.  
+                  If no dilution was done, enter the value 1.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="6" />
+                    <xs:fractionDigits value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="subsample_qty" nillable="true" type="xs:double">
+                <xs:annotation>
+                  <xs:documentation>An amount of ample by weight used to perform analysis.  This field applies only to non-aqueous samples, and should be null for all aqueous samples.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="subsample_qty_unit" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Units for the value in the subsample_qty field.  Required when subsample_qty is not null.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="lab_prep_method" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Code of sample preparation or extraction method.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="prep_date" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>mm/dd/yyyy hh:mm.  
+                  Date and time sample was extracted, digested or preserved. 
+                  This field is used to determine whether holding times for 
+                  field samples have been exceeded.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="lab_name_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Name of the laboratory that performed the analysis.  
+                  If analysis_location is 'FI' this field should contain the name of the 
+                  sampling group that took the reading.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="lab_del_group"  nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Tracking code used by the laboratory.  
+                  Most commonly called Sample Delivery Group ID (SDG).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="lab_sample_id" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Unique sample ID internally assigned by the laboratory.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="analysis_batch_id" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Laboratory batch identifier for test or analysis batch.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="prep_batch_id"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Laborotory batch identifier for prep batch.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="analysis_comment"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Analysis Comment.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="cas_rn" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Unique analyte identifier.  
+                  Use assigned CAS number when one is identified for an analyte.  
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="chemical_name" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Name of analyte or parameter analyzed.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="result_value" type="xs:decimal"  nillable="true" >
+                <xs:annotation>
+                  <xs:documentation>Must only be a numeric value.  
+                  It is stored as a string of characters so that significant digits can be retained.  
+                  Must be identical with values presented in the hard copy.  
+                  It may be blank for non-detects.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="result_unit" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Unit of measure in which the result value is given.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="result_type_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Type of result. 
+                  Valid Values:
+                    'TRG' for target analyte
+                    'SUR' for surrogate
+                    'SC' for a spiked compound.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="reportable_result"  nillable="false" default="Y">
+                <xs:annotation>
+                  <xs:documentation>Indicates whether the result is accepted and reportable.  
+                  If lab reported more than one result per sample per analyte, only one result should be marked "Y".  
+                  
+                  Valid Values:
+                    'Y' for accepted results
+                    'N' for cases where there are reanalyses and dilutions 
+                    that produce more than one result.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="detect_flag" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Valid Values:
+                    'Y' for detected analytes
+                    'N' for non-detected analytes.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="lab_qualifiers"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Qualifier flags assigned by the laboratory.  
+                  This is a required field for the laboratory EDD unless otherwise 
+                  specified by the EQuIS project manager.  
+                  
+                  There are no enforced vocabulary on the values of this field.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="validator_qualifiers"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Qualifier flags assigned by during data review/validation.  
+                  Qualifiers are assigned from a list assigned by the data steward.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="interpreted_qualifiers"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Updated with any validator qualifier, 
+                  otherwise if no validator qualifier then it will be updated 
+                  with the laboratory qualifier if valid or any 'U' or 'J' assigned by the laboratory. 
+                  The data steward may ask for labs to populate this field with valid values.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="interpreted_qualifiers_reason_code"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Validators reason for qualifing a result.  
+                  Validators are encouraged to use a standard reason list for consistency.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="method_detection_limit"  type="xs:decimal" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Must be a numeric value.  
+                  Use the Method Detection Limit (MDL) for organic compounds, 
+                  or the Instrument Detection Limit (IDL) for inorganic compounds.  
+                  The value is stored as a string of characters in order to retain significant digits.  
+                  Unit of measure must be identical with the 'Result Unit' field.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="reporting_detection_limit"  type="xs:decimal" nillable="true"  >
+                <xs:annotation>
+                  <xs:documentation>Must only be a numeric value.  
+                  Use the value of the Reported Detection Limit (RDL), 
+                  Practical Quantitation Limit (PQL), or Contract Required Quantitation Limit. 
+                  Value is stored as a string to retain significant figures.  
+                  Unit of measure must be identical with the 'Result Unit' field.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="result_comment"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Comment about the result.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_parent_result" nillable="true" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>Analyte result of the parent for a QC sample.
+                  Required for MS/MSD, and lab duplicates.
+                  Enter 0 or null for blank spikes.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="qc_spike_added"  nillable="true" >
+                <xs:annotation>
+                  <xs:documentation>The concentration of the analyte added to the original sample. 
+                  Might be required for spikes, spike duplicates, surrogate compounds, 
+                  LCs and any spiked sample (depending on user needs).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_spike_recovery" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>The percent recovery calculated as specified by the laboratory qc program. 
+                  Always required for spikes, spike duplicates, surrogate compounds, LCs and any spiked sample. 
+                  Report as percentage multiplied by 100 (e.g., report "120%" as "120").</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_rpd"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>The relative percent difference calculated as specified by the laboratory qc program.
+                  Required for duplicate samples as appropriate. 
+                  Report as percentage multiplied by 100 (e.g., report "30%" as "30").</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_spike_lcl"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Lower control limit for spike recovery.  
+                  Required for spikes, spike duplicates, surrogate compounds, 
+                  LCs and any spiked sample. 
+                  Report as percentage multiplied by 100 (e.g., report "60%" as "60").</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_spike_ucl"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Upper control limit for spike recovery.  
+                  Required for spikes, spike duplicates, surrogate compounds, 
+                  LCs and any spiked sample. 
+                  Report as percentage multiplied by 100 (e.g., report "60%" as "60").</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_rpd_cl"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Relative percent difference control limit.  
+                  Required for any duplicated sample. 
+                  Report as percentage multiplied by 100 (e.g., report "25%" as "25").</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_spike_flag"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Used to indicate whether the spike recovery was within control limits. 
+                  Required for spikes, spike duplicates, surrogate compounds, LCS and any spiked sample.
+                    'Y' - Yes within control limits
+                    'N' - No outside of control limits</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="qc_rpd_flag"  nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Used to indicate whether the relative percent difference was within control limits. 
+                  Required for any duplicated sample.
+                    'Y' - Yes within control limits
+                    'N' - No outside of control limits</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:key name="PK_SPUEDD">
+      <xs:selector xpath=".//SPUEDD" />
+      <xs:field xpath="sys_sample_code" />
+      <xs:field xpath="lab_anl_method_name" />
+      <!-- alternate key fields -->
+      <xs:field xpath="sample_type_code" />
+      <xs:field xpath="sample_date" />
+      <xs:field xpath="analysis_date" />
+      <xs:field xpath="analysis_batch_id" />
+      <xs:field xpath="total_or_dissolved" />
+      <!--<xs:field xpath="column_number" /> -->
+      <xs:field xpath="test_type" />
+      <xs:field xpath="result_type_code" />
+      <xs:field xpath ="reportable_result" />
+      <xs:field xpath="cas_rn" />
+      <!-- Targets dt_result, so cas_rn is included in key -->
+    </xs:key>
+
+
+  </xs:element>
+</xs:schema>

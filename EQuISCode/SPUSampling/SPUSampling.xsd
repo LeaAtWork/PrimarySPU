@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SPUSampling" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:edd="http://www.earthsoft.com/support/edp/ff"
+           xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+
+  <xs:element name="SPUSampling" msdata:IsDataSet="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <edd:name>SPUSampling</edd:name>
+        <edd:publisher name="Seattle Public Utilities"></edd:publisher>
+        <edd:handler language="vb" source="SPUSampling" class="SPUSamplingHandler"></edd:handler>
+      </xs:appinfo>
+      <xs:documentation>SPUSampling</xs:documentation>
+    </xs:annotation>
+    
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="LocationInfo">
+          <xs:annotation>
+            <xs:documentation>EDD for assigning locations to outfalls via groups.</xs:documentation>
+            <xs:appinfo>
+              <!--Map EDD to reference tables-->
+
+              <edd:table mode="lookup" target="rt_location_type">
+                <edd:lookup source="location_type1" target="location_type_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_location_type_2">
+                <edd:lookup source="location_type2" target="location_type_2_code" />
+              </edd:table>
+
+              <!--Map EDD to tables in Creation stage-->
+              <edd:table mode="parent" target="dt_location">
+                <edd:field source="sys_loc_code" target="sys_loc_code" />
+                <edd:field source="sys_loc_code" target="loc_name" />
+                <edd:field source="location_type1" target="loc_type" />
+                <edd:field source="location_type2" target="loc_type_2" />
+                <edd:field source="location_desc" target="loc_desc" />
+                <edd:field source="business_at_location" target="custom_field_2" />
+                <edd:field source="mh_id" target="custom_field_3" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_coordinate" method="HasCoordinates">
+                <edd:field source="sys_loc_code" target="sys_loc_code" />
+                <edd:field source="coordinate_type" target="coord_type_code" />
+                <edd:field source="coordinate_priority" target="identifier" />
+                <edd:field source="x_coord" target="x_coord" />
+                <edd:field source="y_coord" target="y_coord" />
+              </edd:table>
+
+            </xs:appinfo>
+          </xs:annotation>
+          <!--Define Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="sys_loc_code" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Location code.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="location_type1" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Code indicating primary type of the location in sys_loc_code.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="location_type2" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Code indicating secondary type of the location in sys_loc_code.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="location_desc" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>A brief description of the location.  Often contains address of location.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="business_at_location" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Name of business at this location (if applicable).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="mh_id" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>The maintenance hole id code of this location (if applicable).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="x_coord" nillable="true" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>If using coordinate type LAT LONG, x_coord is the latitude. If using STATE PLANE, x_coord is ...</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="y_coord" nillable="true" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>If using coordinate type LAT LONG, y_coord is the longitude. If using STATE PLANE, y_coord is ...</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="coordinate_priority" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>"Primary" or "Secondary" depending on how your specific project is structured.  Consult DM for details.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                    <xs:enumeration value="PRIMARY" />
+                    <xs:enumeration value="SECONDARY" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="coordinate_type" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Select the coordinate system used for the xy coordinates given.  Required if coordinates are entered.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                    <xs:enumeration value="LAT LONG" />
+                    <xs:enumeration value="STATE PLANE" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Tasks">
+          <xs:annotation>
+            <xs:documentation>EDD for defining task codes.</xs:documentation>
+            <xs:appinfo>
+              <!--Map EDD to reference tables-->
+
+              <edd:table mode="lookup" target="rt_task_type" >
+                <edd:lookup source="task_type" target="task_type" />
+                <edd:field source="task_type" target="task_type" />
+              </edd:table>
+
+              <!--Map EDD to tables in Creation stage-->
+              <edd:table mode="parent" target="dt_task">
+                <edd:field source="task_code" target="task_code" />
+                <edd:field source="description" target="task_desc" />
+                <edd:field source="start_date" target="start_date" />
+                <edd:field source="end_date" target="end_date" />
+                <edd:field source="client" target="client" />
+                <edd:field source="task_type" target="task_type" />
+                <edd:field source="water_year" target="custom_field_1" />
+                <edd:field source="short_task_name" target="custom_field_2" />
+              </edd:table>
+
+
+            </xs:appinfo>
+          </xs:annotation>
+          <!--Define Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="task_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Name code of the task.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="task_type" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Task Type Code.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="description" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Task description.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="start_date" nillable="true" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Start date of the task.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="end_date" nillable="true" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Ending date of the task.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="client" nillable="true">
+                <xs:annotation>
+                  <xs:documentation></xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="water_year" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>The "water year" this task occurred. Should be prefixed with "WY" followed by the water year.  Example: WY2012.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="short_task_name" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>The short name or code by which the event might be referenced.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Reasons">
+          <xs:annotation>
+            <xs:documentation>EDD for defining sampling reason codes.</xs:documentation>
+            <xs:appinfo>
+              <!--Map EDD to reference tables-->
+
+              <edd:table mode="lookup" target="rt_sampling_reason_type" >
+                <edd:lookup source="reason_type" target="reason_type" />
+                <edd:field source="reason_type" target="reason_type" />
+              </edd:table>
+
+              <!--Map EDD to tables in Creation stage-->
+              <edd:table mode="parent" target="dt_sampling_reason">
+                <edd:field source="sampling_reason" target="sampling_reason" />
+                <edd:field source="description" target="reason_description" />
+                <edd:field source="start_date" target="start_date" />
+                <edd:field source="end_date" target="end_date" />
+                <edd:field source="client" target="client" />
+                <edd:field source="reason_type" target="reason_type" />
+              </edd:table>
+
+
+            </xs:appinfo>
+          </xs:annotation>
+          <!--Define Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="sampling_reason" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Name code of the reason.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="reason_type" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Reason Type Code.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="description" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Reason description.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="start_date" nillable="true" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Start date of the reason.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="end_date" nillable="true" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Ending date of the reason.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="client" nillable="true">
+                <xs:annotation>
+                  <xs:documentation></xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="FieldSamples">
+          <xs:annotation>
+            <xs:documentation>Primary Schema for loading field sample information to EQuIS</xs:documentation>
+            <xs:appinfo>
+              <!--Map EDD to reference tables-->
+
+              <edd:table mode="lookup" target="rt_sample_type">
+                <edd:lookup source="sample_type_code" target="sample_type_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_company">
+                <edd:lookup source="sampling_org" target="company_code" />
+                <edd:field method="CompanyType_LAB" target="company_type" />
+                <edd:lookup source="lab_name_code" target="company_name" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_sample_method">
+                <edd:lookup source="sample_method" target="method_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="rt_matrix">
+                <edd:lookup source="sample_matrix" target="matrix_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="dt_task">
+                <edd:lookup source="task_code" target="task_code" />
+                <edd:field source="task_code" target="task_code" />
+              </edd:table>
+
+              <edd:table mode="lookup" target="dt_sampling_reason">
+                <edd:lookup source="sampling_reason" target="sampling_reason" />
+                <edd:field source="sampling_reason" target="sampling_reason" /> 
+              </edd:table>
+
+              <!--Map EDD to tables in Creation stage-->
+
+              <edd:table mode="parent" target="dt_sample">
+                <edd:field new_id="sample_id" target="sample_id" />
+                <edd:field source="sys_sample_code" target="sys_sample_code" />
+                <edd:field source="sys_sample_code" target="sample_name" />
+                <edd:field source="sample_source" target="sample_source" />
+                <edd:field method="GetSampleDate" target="sample_date" />
+                <edd:field source="sample_method" target="sample_method" />
+                <edd:field source="sys_loc_code" target="sys_loc_code" />
+                <edd:field source="sample_type_code" target="sample_type_code" />
+                <edd:field source="task_code" target="task_code" />
+                <edd:field source="sample_matrix" target="matrix_code" />
+                <edd:field source="parent_sample" target="parent_sample_code" />
+              </edd:table>
+
+              <edd:table mode="parent" target="dt_field_sample">
+                <edd:field method="GetSampleId" target="sample_id" />
+                <edd:field source="sampling_org" target="sampling_company_code" />
+                <edd:field source="sampling_reason" target="sampling_reason" />
+                
+                <edd:field source="composite_yn" target="composite_yn" />
+                <edd:field source="composite_desc" target="composite_desc" />
+              </edd:table>
+
+
+            </xs:appinfo>
+          </xs:annotation>
+
+          <!--Define Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="sys_loc_code" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Location code indicating where sample was collected.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sys_sample_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Uniquely identifies a sample.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_date" type="xs:date" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>dd/mm/yyyy. Date sample was collected.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="sample_time" type="xs:time" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>hh:mm. Time sample was collected.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="sample_type_code" nillable="false" default="PES">
+                <xs:annotation>
+                  <xs:documentation>
+                    Specifies sample type.  Primary Environmental samples must be distinguished from laboratory method blank samples, etc.  Use valid reference values.
+                    Field sample types (e.g., field duplicates, field blanks, etc.) might be submitted blind to the laboratory; in such cases the laboratory may report all field samples as if they were all normal field samples.
+                    'PES' field samples/ regular environmental samples.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name ="sample_method" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Decribes the method used to collect the sample.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sampling_org" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Organization or company that collected the sample.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name ="sampling_reason" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Reason code, Grant, phase, etc. related to field sample.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="task_code" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Event, phase or task code pertaining to sample</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_source" default="Field" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Origin of the sample.  "Field" for samples originating in the field.  "Lab" for laboratory made samples.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                    <xs:enumeration value="Field" />
+                    <xs:enumeration value="Lab" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="sample_matrix" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Maxtrix code for the sample.  See rt_matrix for valid values.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="parent_sample" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>sys_sample_code of parent sample (if one exists).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="composite_yn" nillable="true" default="N" >
+                <xs:annotation>
+                  <xs:documentation>Select "Y" if sample is a composite and "N" if it is not.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="composite_desc" nillable="true">
+                <xs:annotation>
+                  <xs:documentation>Composite description.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+
+        </xs:element>
+
+        <xs:element name="LocationGroups">
+          <xs:annotation>
+            <xs:documentation>EDD for assigning locations to outfalls via groups.</xs:documentation>
+            <xs:appinfo>
+              <!--Map EDD to reference tables-->
+              <edd:table mode="lookup" target="rt_group" >
+                <edd:lookup source="group_code" target="group_code" />
+                <edd:field method="GroupDesc_Outfall" target="group_desc" />
+                <edd:field source="group_desc" target="group_desc" />
+                <edd:field default="sys_loc_code" target="group_type" />
+              </edd:table>
+
+              <!--Map EDD to tables in Creation stage-->
+              <edd:table mode="parent" target="rt_group">
+                <edd:field source="group_code" target="group_code" />
+                <edd:field default="sys_loc_code" target="group_type" />
+                <edd:field source="group_desc" target="group_desc" />
+              </edd:table>
+
+              <edd:table mode="create" target="rt_group_member">
+                <edd:field source="group_code" target="group_code" />
+                <edd:field source="sys_loc_code" target="member_code" />
+                <edd:field default="sys_loc_code" target="member_type" />
+              </edd:table>
+
+            </xs:appinfo>
+          </xs:annotation>
+          <!--Define Fields in EDD-->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="sys_loc_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>sys_loc_code of the location to be added to the group.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="group_code" nillable="false">
+                <xs:annotation>
+                  <xs:documentation>Name of the group.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element name="group_desc" nillable="false" default="Outfall">
+                <xs:annotation>
+                  <xs:documentation>Descriptive term for the type of group.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Outfall" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+    </xs:sequence>
+    </xs:complexType>
+        
+<!--Primary Keys Required-->   
+
+    <xs:key name="PK_LocationInfo">
+      <xs:selector xpath=".//LocationInfo" />
+      <xs:field xpath="sys_loc_code" />
+    </xs:key>
+
+    <xs:key name="PK_LocationGroups">
+      <xs:selector xpath=".//LocationGroups" />
+      <xs:field xpath="sys_loc_code" />
+      <xs:field xpath="group_code" />
+    </xs:key>
+
+    <xs:key name="PK_Tasks">
+      <xs:selector xpath=".//Tasks" />
+      <xs:field xpath="task_code" />
+      <xs:field xpath="task_type" />
+    </xs:key>
+
+    <xs:key name="PK_Reasons">
+      <xs:selector xpath=".//Reasons" />
+      <xs:field xpath="sampling_reason" />
+      <xs:field xpath="reason_type" />
+    </xs:key>
+
+    <xs:key name="PK_FieldSamples">
+      <xs:selector xpath=".//FieldSamples" />
+      <xs:field xpath="sys_sample_code" />
+      <xs:field xpath="sys_loc_code" />
+      <!--keys to make unique-->
+      <xs:field xpath="sample_date" />
+      <xs:field xpath="sample_type_code" />
+    </xs:key>
+    
+  </xs:element>
+</xs:schema>
+	
