@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Electric Checklist Alpha</title>
+    <script type="text/javascript">
+        function changeFilter(selectedValue) {
+            var viewToShow
+            switch (selectedValue) {
+                case "0":
+                    viewToShow = "DashHtml_0.htm";
+                    break;
+                case "1":
+                    viewToShow = "DashHtml_1.htm";
+                    break;
+                case "2":
+                    viewToShow = "DashHtml_2.htm";
+                    break;
+                case "3":
+                    viewToShow = "DashHtml_3.htm";
+                    break;
+                case "100":
+                    viewToShow = "DashHtml_all.htm";
+                    break;
+                default:
+                    viewToShow = "DashHtml_all.htm";
+                    break;
+            }
+
+
+            document.getElementById("notADashboard").src = viewToShow;
+        }
+    
+    </script>
+    <style type="text/css">
+        html
+        {
+            height:100%;
+        }
+        body
+        {
+            height:100%;
+        }
+        #selectSequenceGroup {
+            width: 228px;
+        }
+
+        #notADashboard
+        {
+            width: 100%;
+            height:100%;
+        }
+        .container
+        {
+            height:auto;
+        }
+    </style>
+</head>
+<body onload="changeFilter('100')">
+    <h1>ADS Transition Status</h1>
+    <div id="controlArea">
+        <select id="selectSequenceGroup" onchange="changeFilter(this.value)">
+            <option value="0">0 - Completed</option>
+            <option value="1">1 - Current Priority</option>
+            <option value="2">2 - Upcoming Priority</option>
+            <option value="3">3 - Future Priority</option>
+            <option value="100" selected="selected">100 - Show All</option>
+        </select></div>
+        <div class="container"><iframe id="notADashboard" src="" frameborder="0"></iframe></div>
+
+</body>
+</html>

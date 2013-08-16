@@ -1,0 +1,28 @@
+﻿<script type="text/javascript">
+    /*
+    Text to HTML Lite - version 2.1.1
+    Questions and comments: Christophe@PathToSharePoint.com
+    */
+
+    function TextToHTML(NodeSet, HTMLregexp) {
+        var CellContent = "";
+        var i = 0;
+        while (i < NodeSet.length) {
+            try {
+                CellContent = NodeSet[i].innerText || NodeSet[i].textContent;
+                if (HTMLregexp.test(CellContent)) { NodeSet[i].innerHTML = CellContent; }
+            }
+            catch (err) { }
+            i = i + 1;
+        }
+    }
+
+    // Calendar views
+    var regexpA = new RegExp("\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*");
+    TextToHTML(document.getElementsByTagName("a"), regexpA);
+
+    // List views
+    var regexpTD = new RegExp("^\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*$");
+    TextToHTML(document.getElementsByTagName("TD"), regexpTD);
+
+</script>

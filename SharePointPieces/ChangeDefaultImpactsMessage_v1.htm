@@ -1,0 +1,21 @@
+﻿<script type="text/javascript">
+
+function ChangeEmptyImpactsMessage()
+{
+
+    var a=document.getElementsByTagName("td");
+    for (var i=0; i<a.length; i++)
+    {
+        if (a[i].className=="ms-vb")
+        {
+            if (a[i].innerHTML.indexOf("There are no items to show in this view")>-1 &&
+            a[i].innerHTML.indexOf("list")>-1)
+            {
+                a[i].innerHTML="No Activity at this time.";
+
+            }
+        }
+    }
+}
+_spBodyOnLoadFunctionNames.push("ChangeEmptyImpactsMessage");
+</script>

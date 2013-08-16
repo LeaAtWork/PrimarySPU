@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<style>
+	  table.dashboardThing, table.dashboardThing th, table.dashboardThing td
+	  {
+	  border-collapse:collapse;
+	  border:1px solid black;
+	  text-align:center;
+	  font-size:9pt;
+	  padding:4px;
+	  }
+	  .cuteStatus
+	  {
+		height:60px;
+	  }
+	</style>
+
+    <script type="text/javascript">
+
+
+        function loadXMLDoc(docname) {
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            }
+            else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.open("GET", docname, false);
+            xhttp.send("");
+            return xhttp.responseXML;
+        }
+
+        function displayResult() {
+            xml = loadXMLDoc("http://spu-sharepoint/DWWQ/Teams/SOPA/Thing/_vti_bin/owssvr.dll?Cmd=Display&List={994FEB79-8B12-45CE%2DAD57-DC08C56F14D9}&XMLDATA=TRUE");
+            xsl = loadXMLDoc("http://spu-sharepoint/DWWQ/Teams/SOPA/Thing/SiteParts/FormatDashboardv2.xsl");
+            // code for IE
+            if (window.ActiveXObject) {
+                ex = xml.transformNode(xsl);
+                document.getElementById("example").innerHTML = ex;
+            }
+            // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                resultDocument = xsltProcessor.transformToFragment(xml, document);
+                document.getElementById("example").appendChild(resultDocument);
+            }
+			shinyThing();
+			potato();
+			AndTheDate();
+        }
+			
+			function shinyThing() {
+				
+				var imgPath="http://spu-sharepoint/DWWQ/Teams/SOPA/Graphics/"
+				var imgName
+				var h =document.getElementsByTagName("td");
+				var c=h.length
+				
+				for (var i=0; i<c; i++)
+				{
+				if (i==c) break;
+				
+				var status=h[i].innerHTML
+				var cl=h[i].getAttributeNode("class").value;
+            
+             if (cl=="cuteStatus")
+			{
+				if (status=="Done")
+				{
+				  imgName="check-icon.png";
+				}
+				else if (status=="Issue")
+				{
+					imgName="warning-icon1.png";
+				}
+				else
+				{
+				  imgName="Elipsis.png";
+				}
+				
+				h[i].innerHTML= '<img src="'+ imgPath + imgName +'"/>';
+           }
+			else{}
+            }
+			}
+			function potato() {
+				
+				var imgPath="http://spu-sharepoint/DWWQ/Teams/SOPA/Thing/SiteParts/"
+				var imgName
+				var h =document.getElementsByTagName("td");
+				var c=h.length
+				
+				for (var i=0; i<c; i++)
+				{
+				if (i==c) break;
+				
+				var status=h[i].innerHTML
+				var cl=h[i].getAttributeNode("class").value;
+            
+            if (cl=="cuteResponsible")
+			{
+				if (status=="ADS")
+				{
+				  imgName="ADS.gif";
+				}
+				else if (status=="SPU")
+				{
+					imgName="COS.png";
+				}
+				else
+				{
+				  imgName="SPUandADS.png";
+				}
+				
+				h[i].innerHTML= '<img src="'+ imgPath + imgName +'"/>';
+           }
+			else{}
+            }
+			}
+			function AndTheDate() {
+				
+				var displayDate
+				var h =document.getElementsByTagName("td");
+				var c=h.length
+				
+				for (var i=0; i<c; i++)
+				{
+				if (i==c) break;
+				
+				var eta=h[i].innerHTML
+				var cl=h[i].getAttributeNode("class").value;
+            
+            if (cl=="cuteDate")
+			{
+				displayDate=eta.slice(0,10)
+				
+				h[i].innerHTML= displayDate;
+           }
+			else{}
+            }
+			}
+</script>
+
+</head>
+
+<body onload="displayResult()">
+
+<div id="example" />
+
+</body>
+</html>

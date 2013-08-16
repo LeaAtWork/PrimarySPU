@@ -1,0 +1,48 @@
+﻿<script type="text/javascript">
+    /*
+    Text to HTML - version 2.1.1
+    Questions and comments: Christophe@PathToSharePoint.com
+    */
+
+    function TextToHTML(NodeSet, HTMLregexp) {
+        var CellContent = "";
+        var i = 0;
+        while (i < NodeSet.length) {
+            try {
+                CellContent = NodeSet[i].innerText || NodeSet[i].textContent;
+                if (HTMLregexp.test(CellContent)) { NodeSet[i].innerHTML = CellContent; }
+            }
+            catch (err) { }
+            i = i + 1;
+        }
+    }
+
+    // Calendar views
+    var regexpA = new RegExp("\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*");
+    TextToHTML(document.getElementsByTagName("a"), regexpA);
+
+    // List views
+    var regexpTD = new RegExp("^\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*$");
+    TextToHTML(document.getElementsByTagName("TD"), regexpTD);
+
+    // Grouped list views
+    ExpGroupRenderData = (function (old) {
+        return function (htmlToRender, groupName, isLoaded) {
+            var result = old(htmlToRender, groupName, isLoaded);
+            var regexpTD = new RegExp("^\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*$");
+            TextToHTML(document.getElementsByTagName("TD"), regexpTD);
+        };
+    })(ExpGroupRenderData);
+
+    // Preview pane views
+    if (typeof (showpreview1) == "function") {
+        showpreview1 = (function (old) {
+            return function (o) {
+                var result = old(o);
+                var regexpTD = new RegExp("^\\s*<([a-zA-Z]*)(.|\\s)*/\\1?>\\s*$");
+                TextToHTML(document.getElementsByTagName("TD"), regexpTD);
+            };
+        })(showpreview1);
+    }
+
+</script>
