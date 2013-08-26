@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="as_CSF_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="CSF" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CSFacility" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_CSFacility" ToRole="CSFacility" FromRole="as_CSF_MonitoringStation" />
+    <NavigationProperty Name="MonitoringStation1" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_MonitoringStation" ToRole="MonitoringStation" FromRole="as_CSF_MonitoringStation" />
+    <NavigationProperty Name="rt_Relationship" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_rt_Relationship" ToRole="rt_Relationship" FromRole="as_CSF_MonitoringStation" />
+  </EntityType>
+  <EntityType Name="as_Project_MonitoringStation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="BillingCode" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringStation" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectProgramID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStation1" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_MonitoringStation" ToRole="MonitoringStation" FromRole="as_Project_MonitoringStation" />
+    <NavigationProperty Name="ProjectAndProgram" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_ProjectAndProgram" ToRole="ProjectAndProgram" FromRole="as_Project_MonitoringStation" />
+    <NavigationProperty Name="rt_Relationship" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_rt_Relationship" ToRole="rt_Relationship" FromRole="as_Project_MonitoringStation" />
+  </EntityType>
+  <EntityType Name="as_PumpStation_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PumpStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStation1" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_MonitoringStation" ToRole="MonitoringStation" FromRole="as_PumpStation_MonitoringStation" />
+    <NavigationProperty Name="PumpStation1" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_PumpStation" ToRole="PumpStation" FromRole="as_PumpStation_MonitoringStation" />
+    <NavigationProperty Name="rt_Relationship" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_rt_Relationship" ToRole="rt_Relationship" FromRole="as_PumpStation_MonitoringStation" />
+  </EntityType>
+  <EntityType Name="as_RainGage_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="RainGage" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStation1" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_MonitoringStation" ToRole="MonitoringStation" FromRole="as_RainGage_MonitoringStation" />
+    <NavigationProperty Name="RainGage1" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_RainGage" ToRole="RainGage" FromRole="as_RainGage_MonitoringStation" />
+    <NavigationProperty Name="rt_Relationship" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_rt_Relationship" ToRole="rt_Relationship" FromRole="as_RainGage_MonitoringStation" />
+  </EntityType>
+  <EntityType Name="CSFacility">
+    <Key>
+      <PropertyRef Name="ID_CSF" />
+    </Key>
+    <Property Name="ID_CSF" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CSFacilityCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="AlternateName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Hydrobrake" Type="Edm.Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="CSFTypeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="System" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_CSF_MonitoringStations" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_CSFacility" ToRole="as_CSF_MonitoringStation" FromRole="CSFacility" />
+    <NavigationProperty Name="rt_CSFType" Relationship="LightSwitchApplication.FK_CSFacility_rt_CSFType" ToRole="rt_CSFType" FromRole="CSFacility" />
+    <NavigationProperty Name="rt_System" Relationship="LightSwitchApplication.FK_CSFacility_rt_System" ToRole="rt_System" FromRole="CSFacility" />
+  </EntityType>
+  <EntityType Name="MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MontoringStationCode" Type="Edm.String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="AccessPointID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Owner" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Maintenance" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringStartDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="LocationDescription" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="StationNotes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringEndDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="RemovalDate" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Region" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringNotes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="IMSSiteName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="OutfallID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="DataAccquisitionID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PermanenceID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PurposeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="StatusID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="SystemID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_CSF_MonitoringStations" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_MonitoringStation" ToRole="as_CSF_MonitoringStation" FromRole="MonitoringStation" />
+    <NavigationProperty Name="as_Project_MonitoringStations" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_MonitoringStation" ToRole="as_Project_MonitoringStation" FromRole="MonitoringStation" />
+    <NavigationProperty Name="as_PumpStation_MonitoringStations" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_MonitoringStation" ToRole="as_PumpStation_MonitoringStation" FromRole="MonitoringStation" />
+    <NavigationProperty Name="as_RainGage_MonitoringStations" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_MonitoringStation" ToRole="as_RainGage_MonitoringStation" FromRole="MonitoringStation" />
+    <NavigationProperty Name="Outfall" Relationship="LightSwitchApplication.FK_MonitoringStation_Outfall" ToRole="Outfall" FromRole="MonitoringStation" />
+    <NavigationProperty Name="rt_DataAccquisitionMethod" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_DataAccquisitionMethod" ToRole="rt_DataAccquisitionMethod" FromRole="MonitoringStation" />
+    <NavigationProperty Name="rt_Permanence" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Permanence" ToRole="rt_Permanence" FromRole="MonitoringStation" />
+    <NavigationProperty Name="rt_Purpose" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Purpose" ToRole="rt_Purpose" FromRole="MonitoringStation" />
+    <NavigationProperty Name="rt_Status" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Status" ToRole="rt_Status" FromRole="MonitoringStation" />
+    <NavigationProperty Name="rt_System" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_System" ToRole="rt_System" FromRole="MonitoringStation" />
+    <NavigationProperty Name="SensorPoints" Relationship="LightSwitchApplication.FK_SensorPoint_MonitoringStation" ToRole="SensorPoint" FromRole="MonitoringStation" />
+  </EntityType>
+  <EntityType Name="Outfall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="OutfallName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="ReceivingWaterBodyID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="OutfallSytemID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_Outfall" ToRole="MonitoringStation" FromRole="Outfall" />
+    <NavigationProperty Name="ReceivingWaterBody" Relationship="LightSwitchApplication.FK_Outfall_ReceivingWaterBodies" ToRole="ReceivingWaterBodies" FromRole="Outfall" />
+    <NavigationProperty Name="rt_System" Relationship="LightSwitchApplication.FK_Outfall_rt_System" ToRole="rt_System" FromRole="Outfall" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="FullName" Type="Edm.String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="LastName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="FirstName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Company" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="E_mailAddress" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="JobTitle" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="BusinessPhone" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="MobilePhone" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Pager" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="FaxNumber" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Address1" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="City" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="State" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ZIP" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="CubeNumber" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Department" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Role" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ProjectAndPrograms" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People" ToRole="ProjectAndProgram" FromRole="People" />
+    <NavigationProperty Name="ProjectAndPrograms1" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People1" ToRole="ProjectAndProgram" FromRole="People" />
+    <NavigationProperty Name="RainGages" Relationship="LightSwitchApplication.FK_RainGage_People" ToRole="RainGage" FromRole="People" />
+  </EntityType>
+  <EntityType Name="ProjectAndProgram">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectOrProgram_ID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="CommonName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ADSName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ProgTypeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PrimaryContactID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="SecondaryContactID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="WorkGroupID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_Project_MonitoringStations" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_ProjectAndProgram" ToRole="as_Project_MonitoringStation" FromRole="ProjectAndProgram" />
+    <NavigationProperty Name="Person" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People" ToRole="People" FromRole="ProjectAndProgram" />
+    <NavigationProperty Name="Person1" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People1" ToRole="People" FromRole="ProjectAndProgram" />
+    <NavigationProperty Name="WorkGroup" Relationship="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup" ToRole="WorkGroup" FromRole="ProjectAndProgram" />
+  </EntityType>
+  <EntityType Name="PumpStation">
+    <Key>
+      <PropertyRef Name="ID_PS" />
+    </Key>
+    <Property Name="ID_PS" Type="Edm.Int32" Nullable="false" />
+    <Property Name="PumpStationCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="PumpStationType" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="NumberOfPumps" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="SystemID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_PumpStation_MonitoringStations" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_PumpStation" ToRole="as_PumpStation_MonitoringStation" FromRole="PumpStation" />
+    <NavigationProperty Name="rt_System" Relationship="LightSwitchApplication.FK_PumpStation_rt_System" ToRole="rt_System" FromRole="PumpStation" />
+  </EntityType>
+  <EntityType Name="RainGage">
+    <Key>
+      <PropertyRef Name="ID_RG" />
+    </Key>
+    <Property Name="ID_RG" Type="Edm.Int32" Nullable="false" />
+    <Property Name="RainGageCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="LocationDetails" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="IMSSiteName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Owner" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ContactID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_RainGage_MonitoringStations" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_RainGage" ToRole="as_RainGage_MonitoringStation" FromRole="RainGage" />
+    <NavigationProperty Name="Person" Relationship="LightSwitchApplication.FK_RainGage_People" ToRole="People" FromRole="RainGage" />
+  </EntityType>
+  <EntityType Name="ReceivingWaterBody">
+    <Key>
+      <PropertyRef Name="ID_ReceivingWater" />
+    </Key>
+    <Property Name="ID_ReceivingWater" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ReceivingWaterBody1" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="AlternateName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Outfalls" Relationship="LightSwitchApplication.FK_Outfall_ReceivingWaterBodies" ToRole="Outfall" FromRole="ReceivingWaterBodies" />
+  </EntityType>
+  <EntityType Name="rt_CSFType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CSFType" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CSFacilities" Relationship="LightSwitchApplication.FK_CSFacility_rt_CSFType" ToRole="CSFacility" FromRole="rt_CSFType" />
+  </EntityType>
+  <EntityType Name="rt_DataAccquisitionMethod">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="DataAccquisitionMethod" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_DataAccquisitionMethod" ToRole="MonitoringStation" FromRole="rt_DataAccquisitionMethod" />
+  </EntityType>
+  <EntityType Name="rt_Permanence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="PermanenceType" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Permanence" ToRole="MonitoringStation" FromRole="rt_Permanence" />
+  </EntityType>
+  <EntityType Name="rt_Purpose">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Purpose" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Purpose" ToRole="MonitoringStation" FromRole="rt_Purpose" />
+  </EntityType>
+  <EntityType Name="rt_Relationship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Relationship" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="as_CSF_MonitoringStations" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_rt_Relationship" ToRole="as_CSF_MonitoringStation" FromRole="rt_Relationship" />
+    <NavigationProperty Name="as_Project_MonitoringStations" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_rt_Relationship" ToRole="as_Project_MonitoringStation" FromRole="rt_Relationship" />
+    <NavigationProperty Name="as_PumpStation_MonitoringStations" Relationship="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_rt_Relationship" ToRole="as_PumpStation_MonitoringStation" FromRole="rt_Relationship" />
+    <NavigationProperty Name="as_RainGage_MonitoringStations" Relationship="LightSwitchApplication.FK_as_RainGage_MonitoringStation_rt_Relationship" ToRole="as_RainGage_MonitoringStation" FromRole="rt_Relationship" />
+  </EntityType>
+  <EntityType Name="rt_Status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="StatusType" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Status" ToRole="MonitoringStation" FromRole="rt_Status" />
+  </EntityType>
+  <EntityType Name="rt_System">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="SystemCode" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CSFacilities" Relationship="LightSwitchApplication.FK_CSFacility_rt_System" ToRole="CSFacility" FromRole="rt_System" />
+    <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_System" ToRole="MonitoringStation" FromRole="rt_System" />
+    <NavigationProperty Name="Outfalls" Relationship="LightSwitchApplication.FK_Outfall_rt_System" ToRole="Outfall" FromRole="rt_System" />
+    <NavigationProperty Name="PumpStations" Relationship="LightSwitchApplication.FK_PumpStation_rt_System" ToRole="PumpStation" FromRole="rt_System" />
+  </EntityType>
+  <EntityType Name="SensorPoint">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="SensorPointID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="AssociatedEntityID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="FeatureKey" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="MonitoringID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MonitoringStation" Relationship="LightSwitchApplication.FK_SensorPoint_MonitoringStation" ToRole="MonitoringStation" FromRole="SensorPoint" />
+  </EntityType>
+  <EntityType Name="WorkGroup">
+    <Key>
+      <PropertyRef Name="id_workgroup" />
+    </Key>
+    <Property Name="id_workgroup" Type="Edm.Int32" Nullable="false" />
+    <Property Name="WorkGroupCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="WorkGroupName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Division" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="LowOrg" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ProjectAndPrograms" Relationship="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup" ToRole="ProjectAndProgram" FromRole="WorkGroup" />
+  </EntityType>
+  <Association Name="FK_as_CSF_MonitoringStation_CSFacility">
+    <End Role="CSFacility" Type="LightSwitchApplication.CSFacility" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="LightSwitchApplication.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CSFacility">
+        <PropertyRef Name="ID_CSF" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="CSF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_CSF_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="LightSwitchApplication.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_CSF_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="LightSwitchApplication.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="LightSwitchApplication.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="1" />
+    <End Role="as_Project_MonitoringStation" Type="LightSwitchApplication.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_ProjectAndProgram">
+    <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="1" />
+    <End Role="as_Project_MonitoringStation" Type="LightSwitchApplication.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectAndProgram">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="ProjectProgramID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="LightSwitchApplication.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_Project_MonitoringStation" Type="LightSwitchApplication.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="LightSwitchApplication.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_PumpStation">
+    <End Role="PumpStation" Type="LightSwitchApplication.PumpStation" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="LightSwitchApplication.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PumpStation">
+        <PropertyRef Name="ID_PS" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="PumpStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="LightSwitchApplication.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="LightSwitchApplication.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="LightSwitchApplication.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_RainGage">
+    <End Role="RainGage" Type="LightSwitchApplication.RainGage" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="LightSwitchApplication.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainGage">
+        <PropertyRef Name="ID_RG" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="RainGage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="LightSwitchApplication.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="LightSwitchApplication.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSFacility_rt_CSFType">
+    <End Role="rt_CSFType" Type="LightSwitchApplication.rt_CSFType" Multiplicity="0..1" />
+    <End Role="CSFacility" Type="LightSwitchApplication.CSFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_CSFType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CSFacility">
+        <PropertyRef Name="CSFTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSFacility_rt_System">
+    <End Role="rt_System" Type="LightSwitchApplication.rt_System" Multiplicity="0..1" />
+    <End Role="CSFacility" Type="LightSwitchApplication.CSFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CSFacility">
+        <PropertyRef Name="System" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_Outfall">
+    <End Role="Outfall" Type="LightSwitchApplication.Outfall" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outfall">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="OutfallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_DataAccquisitionMethod">
+    <End Role="rt_DataAccquisitionMethod" Type="LightSwitchApplication.rt_DataAccquisitionMethod" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_DataAccquisitionMethod">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="DataAccquisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Permanence">
+    <End Role="rt_Permanence" Type="LightSwitchApplication.rt_Permanence" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Permanence">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="PermanenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Purpose">
+    <End Role="rt_Purpose" Type="LightSwitchApplication.rt_Purpose" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Purpose">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="PurposeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Status">
+    <End Role="rt_Status" Type="LightSwitchApplication.rt_Status" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_System">
+    <End Role="rt_System" Type="LightSwitchApplication.rt_System" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="SystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outfall_ReceivingWaterBodies">
+    <End Role="ReceivingWaterBodies" Type="LightSwitchApplication.ReceivingWaterBody" Multiplicity="0..1" />
+    <End Role="Outfall" Type="LightSwitchApplication.Outfall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReceivingWaterBodies">
+        <PropertyRef Name="ID_ReceivingWater" />
+      </Principal>
+      <Dependent Role="Outfall">
+        <PropertyRef Name="ReceivingWaterBodyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outfall_rt_System">
+    <End Role="rt_System" Type="LightSwitchApplication.rt_System" Multiplicity="0..1" />
+    <End Role="Outfall" Type="LightSwitchApplication.Outfall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Outfall">
+        <PropertyRef Name="OutfallSytemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_People">
+    <End Role="People" Type="LightSwitchApplication.Person" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="PrimaryContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_People1">
+    <End Role="People" Type="LightSwitchApplication.Person" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="SecondaryContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_WorkGroup">
+    <End Role="WorkGroup" Type="LightSwitchApplication.WorkGroup" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkGroup">
+        <PropertyRef Name="id_workgroup" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="WorkGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PumpStation_rt_System">
+    <End Role="rt_System" Type="LightSwitchApplication.rt_System" Multiplicity="0..1" />
+    <End Role="PumpStation" Type="LightSwitchApplication.PumpStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PumpStation">
+        <PropertyRef Name="SystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RainGage_People">
+    <End Role="People" Type="LightSwitchApplication.Person" Multiplicity="0..1" />
+    <End Role="RainGage" Type="LightSwitchApplication.RainGage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RainGage">
+        <PropertyRef Name="ContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SensorPoint_MonitoringStation">
+    <End Role="MonitoringStation" Type="LightSwitchApplication.MonitoringStation" Multiplicity="0..1" />
+    <End Role="SensorPoint" Type="LightSwitchApplication.SensorPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SensorPoint">
+        <PropertyRef Name="MonitoringID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FlipperSQLDataObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="as_CSF_MonitoringStations" EntityType="LightSwitchApplication.as_CSF_MonitoringStation" />
+    <EntitySet Name="as_Project_MonitoringStations" EntityType="LightSwitchApplication.as_Project_MonitoringStation" />
+    <EntitySet Name="as_PumpStation_MonitoringStations" EntityType="LightSwitchApplication.as_PumpStation_MonitoringStation" />
+    <EntitySet Name="as_RainGage_MonitoringStations" EntityType="LightSwitchApplication.as_RainGage_MonitoringStation" />
+    <EntitySet Name="CSFacilities" EntityType="LightSwitchApplication.CSFacility" />
+    <EntitySet Name="MonitoringStations" EntityType="LightSwitchApplication.MonitoringStation" />
+    <EntitySet Name="Outfalls" EntityType="LightSwitchApplication.Outfall" />
+    <EntitySet Name="People" EntityType="LightSwitchApplication.Person" />
+    <EntitySet Name="ProjectAndPrograms" EntityType="LightSwitchApplication.ProjectAndProgram" />
+    <EntitySet Name="PumpStations" EntityType="LightSwitchApplication.PumpStation" />
+    <EntitySet Name="RainGages" EntityType="LightSwitchApplication.RainGage" />
+    <EntitySet Name="ReceivingWaterBodies" EntityType="LightSwitchApplication.ReceivingWaterBody" />
+    <EntitySet Name="rt_CSFTypes" EntityType="LightSwitchApplication.rt_CSFType" />
+    <EntitySet Name="rt_DataAccquisitionMethods" EntityType="LightSwitchApplication.rt_DataAccquisitionMethod" />
+    <EntitySet Name="rt_Permanences" EntityType="LightSwitchApplication.rt_Permanence" />
+    <EntitySet Name="rt_Purposes" EntityType="LightSwitchApplication.rt_Purpose" />
+    <EntitySet Name="rt_Relationships" EntityType="LightSwitchApplication.rt_Relationship" />
+    <EntitySet Name="rt_Status" EntityType="LightSwitchApplication.rt_Status" />
+    <EntitySet Name="rt_Systems" EntityType="LightSwitchApplication.rt_System" />
+    <EntitySet Name="SensorPoints" EntityType="LightSwitchApplication.SensorPoint" />
+    <EntitySet Name="WorkGroups" EntityType="LightSwitchApplication.WorkGroup" />
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_CSFacility" Association="LightSwitchApplication.FK_as_CSF_MonitoringStation_CSFacility">
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_MonitoringStation" Association="LightSwitchApplication.FK_as_CSF_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_rt_Relationship" Association="LightSwitchApplication.FK_as_CSF_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_MonitoringStation" Association="LightSwitchApplication.FK_as_Project_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_ProjectAndProgram" Association="LightSwitchApplication.FK_as_Project_MonitoringStation_ProjectAndProgram">
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_rt_Relationship" Association="LightSwitchApplication.FK_as_Project_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_MonitoringStation" Association="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_PumpStation" Association="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_PumpStation">
+      <End Role="PumpStation" EntitySet="PumpStations" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_rt_Relationship" Association="LightSwitchApplication.FK_as_PumpStation_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_MonitoringStation" Association="LightSwitchApplication.FK_as_RainGage_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_RainGage" Association="LightSwitchApplication.FK_as_RainGage_MonitoringStation_RainGage">
+      <End Role="RainGage" EntitySet="RainGages" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_rt_Relationship" Association="LightSwitchApplication.FK_as_RainGage_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSFacility_rt_CSFType" Association="LightSwitchApplication.FK_CSFacility_rt_CSFType">
+      <End Role="rt_CSFType" EntitySet="rt_CSFTypes" />
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSFacility_rt_System" Association="LightSwitchApplication.FK_CSFacility_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_Outfall" Association="LightSwitchApplication.FK_MonitoringStation_Outfall">
+      <End Role="Outfall" EntitySet="Outfalls" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_DataAccquisitionMethod" Association="LightSwitchApplication.FK_MonitoringStation_rt_DataAccquisitionMethod">
+      <End Role="rt_DataAccquisitionMethod" EntitySet="rt_DataAccquisitionMethods" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Permanence" Association="LightSwitchApplication.FK_MonitoringStation_rt_Permanence">
+      <End Role="rt_Permanence" EntitySet="rt_Permanences" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Purpose" Association="LightSwitchApplication.FK_MonitoringStation_rt_Purpose">
+      <End Role="rt_Purpose" EntitySet="rt_Purposes" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Status" Association="LightSwitchApplication.FK_MonitoringStation_rt_Status">
+      <End Role="rt_Status" EntitySet="rt_Status" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_System" Association="LightSwitchApplication.FK_MonitoringStation_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outfall_ReceivingWaterBodies" Association="LightSwitchApplication.FK_Outfall_ReceivingWaterBodies">
+      <End Role="ReceivingWaterBodies" EntitySet="ReceivingWaterBodies" />
+      <End Role="Outfall" EntitySet="Outfalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outfall_rt_System" Association="LightSwitchApplication.FK_Outfall_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="Outfall" EntitySet="Outfalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_People" Association="LightSwitchApplication.FK_ProjectAndProgram_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_People1" Association="LightSwitchApplication.FK_ProjectAndProgram_People1">
+      <End Role="People" EntitySet="People" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_WorkGroup" Association="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup">
+      <End Role="WorkGroup" EntitySet="WorkGroups" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PumpStation_rt_System" Association="LightSwitchApplication.FK_PumpStation_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="PumpStation" EntitySet="PumpStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RainGage_People" Association="LightSwitchApplication.FK_RainGage_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="RainGage" EntitySet="RainGages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SensorPoint_MonitoringStation" Association="LightSwitchApplication.FK_SensorPoint_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="SensorPoint" EntitySet="SensorPoints" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

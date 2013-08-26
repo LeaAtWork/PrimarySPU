@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="FlipperSQLDataObjectContext" StorageEntityContainer="FlipperSQLDataStore">
+    <EntitySetMapping Name="as_CSF_MonitoringStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.as_CSF_MonitoringStation)">
+        <MappingFragment StoreEntitySet="as_CSF_MonitoringStations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CSF" ColumnName="CSF" />
+          <ScalarProperty Name="MonitoringStation" ColumnName="MonitoringStation" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="as_Project_MonitoringStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.as_Project_MonitoringStation)">
+        <MappingFragment StoreEntitySet="as_Project_MonitoringStations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="BillingCode" ColumnName="BillingCode" />
+          <ScalarProperty Name="MonitoringStation" ColumnName="MonitoringStation" />
+          <ScalarProperty Name="ProjectProgramID" ColumnName="ProjectProgramID" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="as_PumpStation_MonitoringStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.as_PumpStation_MonitoringStation)">
+        <MappingFragment StoreEntitySet="as_PumpStation_MonitoringStations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MonitoringStation" ColumnName="MonitoringStation" />
+          <ScalarProperty Name="PumpStation" ColumnName="PumpStation" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="as_RainGage_MonitoringStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.as_RainGage_MonitoringStation)">
+        <MappingFragment StoreEntitySet="as_RainGage_MonitoringStations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MonitoringStation" ColumnName="MonitoringStation" />
+          <ScalarProperty Name="RainGage" ColumnName="RainGage" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CSFacilities">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.CSFacility)">
+        <MappingFragment StoreEntitySet="CSFacilities">
+          <ScalarProperty Name="ID_CSF" ColumnName="ID_CSF" />
+          <ScalarProperty Name="CSFacilityCode" ColumnName="CSFacilityCode" />
+          <ScalarProperty Name="NumberCode" ColumnName="NumberCode" />
+          <ScalarProperty Name="AlternateName" ColumnName="AlternateName" />
+          <ScalarProperty Name="Hydrobrake" ColumnName="Hydrobrake" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CSFTypeID" ColumnName="CSFTypeID" />
+          <ScalarProperty Name="System" ColumnName="System" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonitoringStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.MonitoringStation)">
+        <MappingFragment StoreEntitySet="MonitoringStations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MontoringStationCode" ColumnName="MontoringStationCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AccessPointID" ColumnName="AccessPointID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+          <ScalarProperty Name="MonitoringStartDate" ColumnName="MonitoringStartDate" />
+          <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+          <ScalarProperty Name="StationNotes" ColumnName="StationNotes" />
+          <ScalarProperty Name="MonitoringEndDate" ColumnName="MonitoringEndDate" />
+          <ScalarProperty Name="RemovalDate" ColumnName="RemovalDate" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="MonitoringNotes" ColumnName="MonitoringNotes" />
+          <ScalarProperty Name="IMSSiteName" ColumnName="IMSSiteName" />
+          <ScalarProperty Name="OutfallID" ColumnName="OutfallID" />
+          <ScalarProperty Name="DataAccquisitionID" ColumnName="DataAccquisitionID" />
+          <ScalarProperty Name="PermanenceID" ColumnName="PermanenceID" />
+          <ScalarProperty Name="PurposeID" ColumnName="PurposeID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="SystemID" ColumnName="SystemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Outfalls">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Outfall)">
+        <MappingFragment StoreEntitySet="Outfalls">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OutfallName" ColumnName="OutfallName" />
+          <ScalarProperty Name="NumberCode" ColumnName="NumberCode" />
+          <ScalarProperty Name="ReceivingWaterBodyID" ColumnName="ReceivingWaterBodyID" />
+          <ScalarProperty Name="OutfallSytemID" ColumnName="OutfallSytemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="E_mailAddress" ColumnName="E-mailAddress" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Pager" ColumnName="Pager" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CubeNumber" ColumnName="CubeNumber" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectAndPrograms">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectAndProgram)">
+        <MappingFragment StoreEntitySet="ProjectAndPrograms">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectOrProgram_ID" ColumnName="ProjectOrProgram_ID" />
+          <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+          <ScalarProperty Name="ADSName" ColumnName="ADSName" />
+          <ScalarProperty Name="ProgTypeID" ColumnName="ProgTypeID" />
+          <ScalarProperty Name="PrimaryContactID" ColumnName="PrimaryContactID" />
+          <ScalarProperty Name="SecondaryContactID" ColumnName="SecondaryContactID" />
+          <ScalarProperty Name="WorkGroupID" ColumnName="WorkGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PumpStations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.PumpStation)">
+        <MappingFragment StoreEntitySet="PumpStations">
+          <ScalarProperty Name="ID_PS" ColumnName="ID_PS" />
+          <ScalarProperty Name="PumpStationCode" ColumnName="PumpStationCode" />
+          <ScalarProperty Name="NumberCode" ColumnName="NumberCode" />
+          <ScalarProperty Name="PumpStationType" ColumnName="PumpStationType" />
+          <ScalarProperty Name="NumberOfPumps" ColumnName="NumberOfPumps" />
+          <ScalarProperty Name="SystemID" ColumnName="SystemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainGages">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.RainGage)">
+        <MappingFragment StoreEntitySet="RainGages">
+          <ScalarProperty Name="ID_RG" ColumnName="ID_RG" />
+          <ScalarProperty Name="RainGageCode" ColumnName="RainGageCode" />
+          <ScalarProperty Name="NumberCode" ColumnName="NumberCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LocationDetails" ColumnName="LocationDetails" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IMSSiteName" ColumnName="IMSSiteName" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceivingWaterBodies">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ReceivingWaterBody)">
+        <MappingFragment StoreEntitySet="ReceivingWaterBodies">
+          <ScalarProperty Name="ID_ReceivingWater" ColumnName="ID_ReceivingWater" />
+          <ScalarProperty Name="ReceivingWaterBody1" ColumnName="ReceivingWaterBody" />
+          <ScalarProperty Name="AlternateName" ColumnName="AlternateName" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_CSFTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_CSFType)">
+        <MappingFragment StoreEntitySet="rt_CSFTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CSFType" ColumnName="CSFType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_DataAccquisitionMethods">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_DataAccquisitionMethod)">
+        <MappingFragment StoreEntitySet="rt_DataAccquisitionMethods">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DataAccquisitionMethod" ColumnName="DataAccquisitionMethod" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_Permanences">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_Permanence)">
+        <MappingFragment StoreEntitySet="rt_Permanences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="PermanenceType" ColumnName="PermanenceType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_Purposes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_Purpose)">
+        <MappingFragment StoreEntitySet="rt_Purposes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_Relationships">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_Relationship)">
+        <MappingFragment StoreEntitySet="rt_Relationships">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_Status">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_Status)">
+        <MappingFragment StoreEntitySet="rt_Status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_Systems">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_System)">
+        <MappingFragment StoreEntitySet="rt_Systems">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SystemCode" ColumnName="SystemCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SensorPoints">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.SensorPoint)">
+        <MappingFragment StoreEntitySet="SensorPoints">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorPointID" ColumnName="SensorPointID" />
+          <ScalarProperty Name="AssociatedEntityID" ColumnName="AssociatedEntityID" />
+          <ScalarProperty Name="FeatureKey" ColumnName="FeatureKey" />
+          <ScalarProperty Name="MonitoringID" ColumnName="MonitoringID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.WorkGroup)">
+        <MappingFragment StoreEntitySet="WorkGroups">
+          <ScalarProperty Name="id_workgroup" ColumnName="id_workgroup" />
+          <ScalarProperty Name="WorkGroupCode" ColumnName="WorkGroupCode" />
+          <ScalarProperty Name="WorkGroupName" ColumnName="WorkGroupName" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="LowOrg" ColumnName="LowOrg" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

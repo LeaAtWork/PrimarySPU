@@ -1,0 +1,1498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:FlipperSQLData"
+    Name="FlipperSQLDataDataService">
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="DataProviderName"
+        Value="91510608-8809-4020-8897-fba057e22d54" />
+      <ConnectionProperty
+        Name="DataSourceName"
+        Value="067ea0d9-ba62-43f7-9106-34930c60c528" />
+      <ConnectionProperty
+        Name="ProviderInvariantName"
+        Value="System.Data.SqlClient" />
+      <ConnectionProperty
+        Name="SafeConnectionString"
+        Value="Data Source=spu10206\sqlserverexpress;Initial Catalog=FlipperSQL;Integrated Security=True" />
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="f5338ba1-7688-4720-9400-6dc76a2a7726" />
+      <ConnectionProperty
+        Name="ProviderManifestToken"
+        Value="2008" />
+    </DataService.ConnectionProperties>
+    <EntitySetMapping
+      EntitySet="as_CSF_MonitoringStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="as_CSF_MonitoringStation" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:as_CSF_MonitoringStation/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:as_CSF_MonitoringStation/Properties[Notes]"
+          Type="nvarchar(max)" />
+        <SsdlForeignKeyProperty
+          Name="CSF"
+          Nullable="True"
+          PropertyName="CSF"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="MonitoringStation"
+          Nullable="True"
+          PropertyName="MonitoringStation"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="RelationshipID"
+          Nullable="True"
+          PropertyName="RelationshipID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="as_Project_MonitoringStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="as_Project_MonitoringStation" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:as_Project_MonitoringStation/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:as_Project_MonitoringStation/Properties[Notes]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="BillingCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:as_Project_MonitoringStation/Properties[BillingCode]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="MonitoringStation"
+          Nullable="False"
+          PropertyName="MonitoringStation"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ProjectProgramID"
+          Nullable="False"
+          PropertyName="ProjectProgramID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="RelationshipID"
+          Nullable="True"
+          PropertyName="RelationshipID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="as_PumpStation_MonitoringStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="as_PumpStation_MonitoringStation" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:as_PumpStation_MonitoringStation/Properties[ID]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="MonitoringStation"
+          Nullable="True"
+          PropertyName="MonitoringStation"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PumpStation"
+          Nullable="True"
+          PropertyName="PumpStation"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="RelationshipID"
+          Nullable="True"
+          PropertyName="RelationshipID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="as_RainGage_MonitoringStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="as_RainGage_MonitoringStation" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:as_RainGage_MonitoringStation/Properties[ID]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="MonitoringStation"
+          Nullable="True"
+          PropertyName="MonitoringStation"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="RainGage"
+          Nullable="True"
+          PropertyName="RainGage"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="RelationshipID"
+          Nullable="True"
+          PropertyName="RelationshipID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="CSFacilities">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="CSFacility" />
+        <SsdlProperty
+          Name="ID_CSF"
+          Nullable="False"
+          Property="LightSwitchCommonModule:CSFacility/Properties[ID_CSF]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CSFacilityCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:CSFacility/Properties[CSFacilityCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="NumberCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:CSFacility/Properties[NumberCode]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AlternateName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:CSFacility/Properties[AlternateName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Hydrobrake"
+          Nullable="False"
+          Property="LightSwitchCommonModule:CSFacility/Properties[Hydrobrake]"
+          Type="bit" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:CSFacility/Properties[Notes]"
+          Type="nvarchar(max)" />
+        <SsdlForeignKeyProperty
+          Name="CSFTypeID"
+          Nullable="True"
+          PropertyName="CSFTypeID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="System"
+          Nullable="True"
+          PropertyName="System"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="MonitoringStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="MonitoringStation" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MontoringStationCode"
+          Nullable="False"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[MontoringStationCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Address"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[Address]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AccessPointID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[AccessPointID]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Owner"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[Owner]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Maintenance"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[Maintenance]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="MonitoringStartDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[MonitoringStartDate]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LocationDescription"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[LocationDescription]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="StationNotes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[StationNotes]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          Name="MonitoringEndDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[MonitoringEndDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="RemovalDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[RemovalDate]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Region"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[Region]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="MonitoringNotes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[MonitoringNotes]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IMSSiteName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:MonitoringStation/Properties[IMSSiteName]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="OutfallID"
+          Nullable="True"
+          PropertyName="OutfallID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="DataAccquisitionID"
+          Nullable="True"
+          PropertyName="DataAccquisitionID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PermanenceID"
+          Nullable="True"
+          PropertyName="PermanenceID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PurposeID"
+          Nullable="True"
+          PropertyName="PurposeID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="StatusID"
+          Nullable="True"
+          PropertyName="StatusID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="SystemID"
+          Nullable="True"
+          PropertyName="SystemID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Outfalls">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Outfall" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Outfall/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OutfallName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Outfall/Properties[OutfallName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="NumberCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Outfall/Properties[NumberCode]"
+          Type="smallint" />
+        <SsdlForeignKeyProperty
+          Name="ReceivingWaterBodyID"
+          Nullable="True"
+          PropertyName="ReceivingWaterBodyID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OutfallSytemID"
+          Nullable="True"
+          PropertyName="OutfallSytemID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="People">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="People" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Person/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FullName"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Person/Properties[FullName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LastName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[LastName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FirstName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[FirstName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Company"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Company]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="E-mailAddress"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[E_mailAddress]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="JobTitle"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[JobTitle]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="BusinessPhone"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[BusinessPhone]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MobilePhone"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[MobilePhone]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Pager"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Pager]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FaxNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[FaxNumber]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Address1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Address1]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="City"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[City]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="State"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[State]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ZIP"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[ZIP]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Notes]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CubeNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[CubeNumber]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Department"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Department]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Role"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Person/Properties[Role]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="ProjectAndPrograms">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="ProjectAndProgram" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ProjectOrProgram_ID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ProjectOrProgram_ID]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CommonName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[CommonName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ADSName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ADSName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="ProgTypeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ProgTypeID]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PrimaryContactID"
+          Nullable="True"
+          PropertyName="PrimaryContactID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="SecondaryContactID"
+          Nullable="True"
+          PropertyName="SecondaryContactID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="WorkGroupID"
+          Nullable="True"
+          PropertyName="WorkGroupID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="PumpStations">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="PumpStation" />
+        <SsdlProperty
+          Name="ID_PS"
+          Nullable="False"
+          Property="LightSwitchCommonModule:PumpStation/Properties[ID_PS]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PumpStationCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:PumpStation/Properties[PumpStationCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="NumberCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:PumpStation/Properties[NumberCode]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PumpStationType"
+          Nullable="True"
+          Property="LightSwitchCommonModule:PumpStation/Properties[PumpStationType]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="NumberOfPumps"
+          Nullable="True"
+          Property="LightSwitchCommonModule:PumpStation/Properties[NumberOfPumps]"
+          Type="smallint" />
+        <SsdlForeignKeyProperty
+          Name="SystemID"
+          Nullable="True"
+          PropertyName="SystemID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="RainGages">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="RainGage" />
+        <SsdlProperty
+          Name="ID_RG"
+          Nullable="False"
+          Property="LightSwitchCommonModule:RainGage/Properties[ID_RG]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="RainGageCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[RainGageCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="NumberCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[NumberCode]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Address"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[Address]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="LocationDetails"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[LocationDetails]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[Notes]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IMSSiteName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[IMSSiteName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Owner"
+          Nullable="True"
+          Property="LightSwitchCommonModule:RainGage/Properties[Owner]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="ContactID"
+          Nullable="True"
+          PropertyName="ContactID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="ReceivingWaterBodies">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="ReceivingWaterBodies" />
+        <SsdlProperty
+          Name="ID_ReceivingWater"
+          Nullable="False"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ID_ReceivingWater]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ReceivingWaterBody"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ReceivingWaterBody1]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AlternateName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[AlternateName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[Notes]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_CSFTypes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_CSFType" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_CSFType/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="CSFType"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_CSFType/Properties[CSFType]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_CSFType/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_DataAccquisitionMethods">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_DataAccquisitionMethod" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_DataAccquisitionMethod/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="DataAccquisitionMethod"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_DataAccquisitionMethod/Properties[DataAccquisitionMethod]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_DataAccquisitionMethod/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_Permanences">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_Permanence" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Permanence/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="PermanenceType"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Permanence/Properties[PermanenceType]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_Permanence/Properties[Description]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_Purposes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_Purpose" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Purpose/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Purpose"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Purpose/Properties[Purpose]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_Purpose/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_Relationships">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_Relationship" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Relationship/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="Relationship"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Relationship/Properties[Relationship]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_Relationship/Properties[Description]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_Status">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_Status" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Status/Properties[id]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="StatusType"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_Status/Properties[StatusType]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_Status/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="rt_Systems">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_System" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_System/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="SystemCode"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_System/Properties[SystemCode]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_System/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="SensorPoints">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="SensorPoint" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:SensorPoint/Properties[ID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="SensorPointID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:SensorPoint/Properties[SensorPointID]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AssociatedEntityID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:SensorPoint/Properties[AssociatedEntityID]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FeatureKey"
+          Nullable="True"
+          Property="LightSwitchCommonModule:SensorPoint/Properties[FeatureKey]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="MonitoringID"
+          Nullable="True"
+          PropertyName="MonitoringID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="WorkGroups">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="WorkGroup" />
+        <SsdlProperty
+          Name="id_workgroup"
+          Nullable="False"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[id_workgroup]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WorkGroupCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[WorkGroupCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WorkGroupName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[WorkGroupName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Division"
+          Nullable="True"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[Division]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LowOrg"
+          Nullable="True"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[LowOrg]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Notes"
+          Nullable="True"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[Notes]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_CSF_MonitoringStation_CSFacility">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_CSF_MonitoringStation_CSFacility" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_CSFacility]/Members[CSFacility]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID_CSF" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_CSFacility]/Members[as_CSF_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CSF" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_CSF_MonitoringStation_MonitoringStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_CSF_MonitoringStation_MonitoringStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_MonitoringStation]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_MonitoringStation]/Members[as_CSF_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MonitoringStation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_CSF_MonitoringStation_rt_Relationship">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_CSF_MonitoringStation_rt_Relationship" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_rt_Relationship]/Members[rt_Relationship]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_CSF_MonitoringStation_rt_Relationship]/Members[as_CSF_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RelationshipID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_Project_MonitoringStation_MonitoringStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_Project_MonitoringStation_MonitoringStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_MonitoringStation]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_MonitoringStation]/Members[as_Project_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MonitoringStation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_Project_MonitoringStation_ProjectAndProgram">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_Project_MonitoringStation_ProjectAndProgram" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_ProjectAndProgram]/Members[ProjectAndProgram]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_ProjectAndProgram]/Members[as_Project_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ProjectProgramID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_Project_MonitoringStation_rt_Relationship">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_Project_MonitoringStation_rt_Relationship" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_rt_Relationship]/Members[rt_Relationship]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_Project_MonitoringStation_rt_Relationship]/Members[as_Project_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RelationshipID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_PumpStation_MonitoringStation_MonitoringStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_PumpStation_MonitoringStation_MonitoringStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_MonitoringStation]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_MonitoringStation]/Members[as_PumpStation_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MonitoringStation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_PumpStation_MonitoringStation_PumpStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_PumpStation_MonitoringStation_PumpStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_PumpStation]/Members[PumpStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID_PS" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_PumpStation]/Members[as_PumpStation_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PumpStation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_PumpStation_MonitoringStation_rt_Relationship">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_PumpStation_MonitoringStation_rt_Relationship" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_rt_Relationship]/Members[rt_Relationship]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_PumpStation_MonitoringStation_rt_Relationship]/Members[as_PumpStation_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RelationshipID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_RainGage_MonitoringStation_MonitoringStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_RainGage_MonitoringStation_MonitoringStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_MonitoringStation]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_MonitoringStation]/Members[as_RainGage_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MonitoringStation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_RainGage_MonitoringStation_RainGage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_RainGage_MonitoringStation_RainGage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_RainGage]/Members[RainGage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID_RG" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_RainGage]/Members[as_RainGage_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RainGage" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_as_RainGage_MonitoringStation_rt_Relationship">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_as_RainGage_MonitoringStation_rt_Relationship" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_rt_Relationship]/Members[rt_Relationship]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_as_RainGage_MonitoringStation_rt_Relationship]/Members[as_RainGage_MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RelationshipID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_CSFacility_rt_CSFType">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_CSFacility_rt_CSFType" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_CSFacility_rt_CSFType]/Members[rt_CSFType]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_CSFacility_rt_CSFType]/Members[CSFacility]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CSFTypeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_CSFacility_rt_System">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_CSFacility_rt_System" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_CSFacility_rt_System]/Members[rt_System]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_CSFacility_rt_System]/Members[CSFacility]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="System" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_Outfall">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_Outfall" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_Outfall]/Members[Outfall]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_Outfall]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OutfallID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_rt_DataAccquisitionMethod">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_rt_DataAccquisitionMethod" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_DataAccquisitionMethod]/Members[rt_DataAccquisitionMethod]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_DataAccquisitionMethod]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DataAccquisitionID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_rt_Permanence">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_rt_Permanence" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Permanence]/Members[rt_Permanence]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Permanence]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PermanenceID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_rt_Purpose">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_rt_Purpose" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Purpose]/Members[rt_Purpose]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Purpose]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PurposeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_rt_Status">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_rt_Status" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Status]/Members[rt_Status]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_Status]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="StatusID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonitoringStation_rt_System">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonitoringStation_rt_System" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_System]/Members[rt_System]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_MonitoringStation_rt_System]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SystemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Outfall_ReceivingWaterBodies">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Outfall_ReceivingWaterBodies" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_Outfall_ReceivingWaterBodies]/Members[ReceivingWaterBodies]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID_ReceivingWater" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_Outfall_ReceivingWaterBodies]/Members[Outfall]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ReceivingWaterBodyID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Outfall_rt_System">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Outfall_rt_System" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_Outfall_rt_System]/Members[rt_System]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_Outfall_rt_System]/Members[Outfall]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OutfallSytemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ProjectAndProgram_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ProjectAndProgram_People" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_People]/Members[People]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_People]/Members[ProjectAndProgram]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PrimaryContactID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ProjectAndProgram_People1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ProjectAndProgram_People1" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_People1]/Members[People]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_People1]/Members[ProjectAndProgram]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SecondaryContactID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ProjectAndProgram_WorkGroup">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ProjectAndProgram_WorkGroup" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_WorkGroup]/Members[WorkGroup]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id_workgroup" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_WorkGroup]/Members[ProjectAndProgram]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="WorkGroupID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PumpStation_rt_System">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PumpStation_rt_System" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_PumpStation_rt_System]/Members[rt_System]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_PumpStation_rt_System]/Members[PumpStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SystemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_RainGage_People">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_RainGage_People" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_RainGage_People]/Members[People]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_RainGage_People]/Members[RainGage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContactID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_SensorPoint_MonitoringStation">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_SensorPoint_MonitoringStation" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_SensorPoint_MonitoringStation]/Members[MonitoringStation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_SensorPoint_MonitoringStation]/Members[SensorPoint]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MonitoringID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ModelFragment>

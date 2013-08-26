@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FlipperSQLDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="FlipperSQLDataStore">
+    <EntitySet Name="as_CSF_MonitoringStations" EntityType="FlipperSQLDataStore.as_CSF_MonitoringStation" store:Type="Tables" Schema="dbo" Table="as_CSF_MonitoringStation" />
+    <EntitySet Name="as_Project_MonitoringStations" EntityType="FlipperSQLDataStore.as_Project_MonitoringStation" store:Type="Tables" Schema="dbo" Table="as_Project_MonitoringStation" />
+    <EntitySet Name="as_PumpStation_MonitoringStations" EntityType="FlipperSQLDataStore.as_PumpStation_MonitoringStation" store:Type="Tables" Schema="dbo" Table="as_PumpStation_MonitoringStation" />
+    <EntitySet Name="as_RainGage_MonitoringStations" EntityType="FlipperSQLDataStore.as_RainGage_MonitoringStation" store:Type="Tables" Schema="dbo" Table="as_RainGage_MonitoringStation" />
+    <EntitySet Name="CSFacilities" EntityType="FlipperSQLDataStore.CSFacility" store:Type="Tables" Schema="dbo" Table="CSFacility" />
+    <EntitySet Name="MonitoringStations" EntityType="FlipperSQLDataStore.MonitoringStation" store:Type="Tables" Schema="dbo" Table="MonitoringStation" />
+    <EntitySet Name="Outfalls" EntityType="FlipperSQLDataStore.Outfall" store:Type="Tables" Schema="dbo" Table="Outfall" />
+    <EntitySet Name="People" EntityType="FlipperSQLDataStore.Person" store:Type="Tables" Schema="dbo" Table="People" />
+    <EntitySet Name="ProjectAndPrograms" EntityType="FlipperSQLDataStore.ProjectAndProgram" store:Type="Tables" Schema="dbo" Table="ProjectAndProgram" />
+    <EntitySet Name="PumpStations" EntityType="FlipperSQLDataStore.PumpStation" store:Type="Tables" Schema="dbo" Table="PumpStation" />
+    <EntitySet Name="RainGages" EntityType="FlipperSQLDataStore.RainGage" store:Type="Tables" Schema="dbo" Table="RainGage" />
+    <EntitySet Name="ReceivingWaterBodies" EntityType="FlipperSQLDataStore.ReceivingWaterBody" store:Type="Tables" Schema="dbo" Table="ReceivingWaterBodies" />
+    <EntitySet Name="rt_CSFTypes" EntityType="FlipperSQLDataStore.rt_CSFType" store:Type="Tables" Schema="dbo" Table="rt_CSFType" />
+    <EntitySet Name="rt_DataAccquisitionMethods" EntityType="FlipperSQLDataStore.rt_DataAccquisitionMethod" store:Type="Tables" Schema="dbo" Table="rt_DataAccquisitionMethod" />
+    <EntitySet Name="rt_Permanences" EntityType="FlipperSQLDataStore.rt_Permanence" store:Type="Tables" Schema="dbo" Table="rt_Permanence" />
+    <EntitySet Name="rt_Purposes" EntityType="FlipperSQLDataStore.rt_Purpose" store:Type="Tables" Schema="dbo" Table="rt_Purpose" />
+    <EntitySet Name="rt_Relationships" EntityType="FlipperSQLDataStore.rt_Relationship" store:Type="Tables" Schema="dbo" Table="rt_Relationship" />
+    <EntitySet Name="rt_Status" EntityType="FlipperSQLDataStore.rt_Status" store:Type="Tables" Schema="dbo" Table="rt_Status" />
+    <EntitySet Name="rt_Systems" EntityType="FlipperSQLDataStore.rt_System" store:Type="Tables" Schema="dbo" Table="rt_System" />
+    <EntitySet Name="SensorPoints" EntityType="FlipperSQLDataStore.SensorPoint" store:Type="Tables" Schema="dbo" Table="SensorPoint" />
+    <EntitySet Name="WorkGroups" EntityType="FlipperSQLDataStore.WorkGroup" store:Type="Tables" Schema="dbo" Table="WorkGroup" />
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_CSFacility" Association="FlipperSQLDataStore.FK_as_CSF_MonitoringStation_CSFacility">
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_MonitoringStation" Association="FlipperSQLDataStore.FK_as_CSF_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_CSF_MonitoringStation_rt_Relationship" Association="FlipperSQLDataStore.FK_as_CSF_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_CSF_MonitoringStation" EntitySet="as_CSF_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_MonitoringStation" Association="FlipperSQLDataStore.FK_as_Project_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_ProjectAndProgram" Association="FlipperSQLDataStore.FK_as_Project_MonitoringStation_ProjectAndProgram">
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_Project_MonitoringStation_rt_Relationship" Association="FlipperSQLDataStore.FK_as_Project_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_Project_MonitoringStation" EntitySet="as_Project_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_MonitoringStation" Association="FlipperSQLDataStore.FK_as_PumpStation_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_PumpStation" Association="FlipperSQLDataStore.FK_as_PumpStation_MonitoringStation_PumpStation">
+      <End Role="PumpStation" EntitySet="PumpStations" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_PumpStation_MonitoringStation_rt_Relationship" Association="FlipperSQLDataStore.FK_as_PumpStation_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_PumpStation_MonitoringStation" EntitySet="as_PumpStation_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_MonitoringStation" Association="FlipperSQLDataStore.FK_as_RainGage_MonitoringStation_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_RainGage" Association="FlipperSQLDataStore.FK_as_RainGage_MonitoringStation_RainGage">
+      <End Role="RainGage" EntitySet="RainGages" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_as_RainGage_MonitoringStation_rt_Relationship" Association="FlipperSQLDataStore.FK_as_RainGage_MonitoringStation_rt_Relationship">
+      <End Role="rt_Relationship" EntitySet="rt_Relationships" />
+      <End Role="as_RainGage_MonitoringStation" EntitySet="as_RainGage_MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSFacility_rt_CSFType" Association="FlipperSQLDataStore.FK_CSFacility_rt_CSFType">
+      <End Role="rt_CSFType" EntitySet="rt_CSFTypes" />
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CSFacility_rt_System" Association="FlipperSQLDataStore.FK_CSFacility_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="CSFacility" EntitySet="CSFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_Outfall" Association="FlipperSQLDataStore.FK_MonitoringStation_Outfall">
+      <End Role="Outfall" EntitySet="Outfalls" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_DataAccquisitionMethod" Association="FlipperSQLDataStore.FK_MonitoringStation_rt_DataAccquisitionMethod">
+      <End Role="rt_DataAccquisitionMethod" EntitySet="rt_DataAccquisitionMethods" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Permanence" Association="FlipperSQLDataStore.FK_MonitoringStation_rt_Permanence">
+      <End Role="rt_Permanence" EntitySet="rt_Permanences" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Purpose" Association="FlipperSQLDataStore.FK_MonitoringStation_rt_Purpose">
+      <End Role="rt_Purpose" EntitySet="rt_Purposes" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_Status" Association="FlipperSQLDataStore.FK_MonitoringStation_rt_Status">
+      <End Role="rt_Status" EntitySet="rt_Status" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringStation_rt_System" Association="FlipperSQLDataStore.FK_MonitoringStation_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outfall_ReceivingWaterBodies" Association="FlipperSQLDataStore.FK_Outfall_ReceivingWaterBodies">
+      <End Role="ReceivingWaterBodies" EntitySet="ReceivingWaterBodies" />
+      <End Role="Outfall" EntitySet="Outfalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outfall_rt_System" Association="FlipperSQLDataStore.FK_Outfall_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="Outfall" EntitySet="Outfalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_People" Association="FlipperSQLDataStore.FK_ProjectAndProgram_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_People1" Association="FlipperSQLDataStore.FK_ProjectAndProgram_People1">
+      <End Role="People" EntitySet="People" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_WorkGroup" Association="FlipperSQLDataStore.FK_ProjectAndProgram_WorkGroup">
+      <End Role="WorkGroup" EntitySet="WorkGroups" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PumpStation_rt_System" Association="FlipperSQLDataStore.FK_PumpStation_rt_System">
+      <End Role="rt_System" EntitySet="rt_Systems" />
+      <End Role="PumpStation" EntitySet="PumpStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RainGage_People" Association="FlipperSQLDataStore.FK_RainGage_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="RainGage" EntitySet="RainGages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SensorPoint_MonitoringStation" Association="FlipperSQLDataStore.FK_SensorPoint_MonitoringStation">
+      <End Role="MonitoringStation" EntitySet="MonitoringStations" />
+      <End Role="SensorPoint" EntitySet="SensorPoints" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="as_CSF_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CSF" Type="int" />
+    <Property Name="MonitoringStation" Type="int" />
+    <Property Name="RelationshipID" Type="int" />
+  </EntityType>
+  <EntityType Name="as_Project_MonitoringStation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="BillingCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonitoringStation" Type="int" Nullable="false" />
+    <Property Name="ProjectProgramID" Type="int" Nullable="false" />
+    <Property Name="RelationshipID" Type="int" />
+  </EntityType>
+  <EntityType Name="as_PumpStation_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MonitoringStation" Type="int" />
+    <Property Name="PumpStation" Type="int" />
+    <Property Name="RelationshipID" Type="int" />
+  </EntityType>
+  <EntityType Name="as_RainGage_MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MonitoringStation" Type="int" />
+    <Property Name="RainGage" Type="int" />
+    <Property Name="RelationshipID" Type="int" />
+  </EntityType>
+  <EntityType Name="CSFacility">
+    <Key>
+      <PropertyRef Name="ID_CSF" />
+    </Key>
+    <Property Name="ID_CSF" Type="int" Nullable="false" />
+    <Property Name="CSFacilityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberCode" Type="smallint" />
+    <Property Name="AlternateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hydrobrake" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CSFTypeID" Type="int" />
+    <Property Name="System" Type="int" />
+  </EntityType>
+  <EntityType Name="MonitoringStation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MontoringStationCode" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="AccessPointID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="255" />
+    <Property Name="Maintenance" Type="nvarchar" MaxLength="255" />
+    <Property Name="MonitoringStartDate" Type="datetime" />
+    <Property Name="LocationDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="StationNotes" Type="nvarchar(max)" />
+    <Property Name="MonitoringEndDate" Type="datetime" />
+    <Property Name="RemovalDate" Type="datetime" />
+    <Property Name="Region" Type="nvarchar" MaxLength="255" />
+    <Property Name="MonitoringNotes" Type="nvarchar(max)" />
+    <Property Name="IMSSiteName" Type="nvarchar" MaxLength="255" />
+    <Property Name="OutfallID" Type="int" />
+    <Property Name="DataAccquisitionID" Type="int" />
+    <Property Name="PermanenceID" Type="int" />
+    <Property Name="PurposeID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="SystemID" Type="int" />
+  </EntityType>
+  <EntityType Name="Outfall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="OutfallName" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberCode" Type="smallint" />
+    <Property Name="ReceivingWaterBodyID" Type="int" />
+    <Property Name="OutfallSytemID" Type="int" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+    <Property Name="E-mailAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="BusinessPhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pager" Type="nvarchar" MaxLength="255" />
+    <Property Name="FaxNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="ZIP" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CubeNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="Department" Type="nvarchar" MaxLength="255" />
+    <Property Name="Role" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ProjectAndProgram">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProjectOrProgram_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="CommonName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADSName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProgTypeID" Type="int" />
+    <Property Name="PrimaryContactID" Type="int" />
+    <Property Name="SecondaryContactID" Type="int" />
+    <Property Name="WorkGroupID" Type="int" />
+  </EntityType>
+  <EntityType Name="PumpStation">
+    <Key>
+      <PropertyRef Name="ID_PS" />
+    </Key>
+    <Property Name="ID_PS" Type="int" Nullable="false" />
+    <Property Name="PumpStationCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberCode" Type="smallint" />
+    <Property Name="PumpStationType" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberOfPumps" Type="smallint" />
+    <Property Name="SystemID" Type="int" />
+  </EntityType>
+  <EntityType Name="RainGage">
+    <Key>
+      <PropertyRef Name="ID_RG" />
+    </Key>
+    <Property Name="ID_RG" Type="int" Nullable="false" />
+    <Property Name="RainGageCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberCode" Type="smallint" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="LocationDetails" Type="nvarchar(max)" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="IMSSiteName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="255" />
+    <Property Name="ContactID" Type="int" />
+  </EntityType>
+  <EntityType Name="ReceivingWaterBody">
+    <Key>
+      <PropertyRef Name="ID_ReceivingWater" />
+    </Key>
+    <Property Name="ID_ReceivingWater" Type="int" Nullable="false" />
+    <Property Name="ReceivingWaterBody" Type="nvarchar" MaxLength="255" />
+    <Property Name="AlternateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="rt_CSFType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="CSFType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="rt_DataAccquisitionMethod">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="DataAccquisitionMethod" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="rt_Permanence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="PermanenceType" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="rt_Purpose">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="rt_Relationship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Relationship" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="rt_Status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="StatusType" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="rt_System">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SystemCode" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SensorPoint">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SensorPointID" Type="nvarchar" MaxLength="255" />
+    <Property Name="AssociatedEntityID" Type="nvarchar" MaxLength="255" />
+    <Property Name="FeatureKey" Type="nvarchar" MaxLength="255" />
+    <Property Name="MonitoringID" Type="int" />
+  </EntityType>
+  <EntityType Name="WorkGroup">
+    <Key>
+      <PropertyRef Name="id_workgroup" />
+    </Key>
+    <Property Name="id_workgroup" Type="int" Nullable="false" />
+    <Property Name="WorkGroupCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkGroupName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Division" Type="nvarchar" MaxLength="255" />
+    <Property Name="LowOrg" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_as_CSF_MonitoringStation_CSFacility">
+    <End Role="CSFacility" Type="FlipperSQLDataStore.CSFacility" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="FlipperSQLDataStore.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CSFacility">
+        <PropertyRef Name="ID_CSF" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="CSF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_CSF_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="FlipperSQLDataStore.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_CSF_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="FlipperSQLDataStore.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_CSF_MonitoringStation" Type="FlipperSQLDataStore.as_CSF_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_CSF_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="1" />
+    <End Role="as_Project_MonitoringStation" Type="FlipperSQLDataStore.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_ProjectAndProgram">
+    <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="1" />
+    <End Role="as_Project_MonitoringStation" Type="FlipperSQLDataStore.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectAndProgram">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="ProjectProgramID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_Project_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="FlipperSQLDataStore.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_Project_MonitoringStation" Type="FlipperSQLDataStore.as_Project_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_Project_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="FlipperSQLDataStore.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_PumpStation">
+    <End Role="PumpStation" Type="FlipperSQLDataStore.PumpStation" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="FlipperSQLDataStore.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PumpStation">
+        <PropertyRef Name="ID_PS" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="PumpStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_PumpStation_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="FlipperSQLDataStore.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_PumpStation_MonitoringStation" Type="FlipperSQLDataStore.as_PumpStation_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_PumpStation_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_MonitoringStation">
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="FlipperSQLDataStore.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="MonitoringStation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_RainGage">
+    <End Role="RainGage" Type="FlipperSQLDataStore.RainGage" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="FlipperSQLDataStore.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainGage">
+        <PropertyRef Name="ID_RG" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="RainGage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_as_RainGage_MonitoringStation_rt_Relationship">
+    <End Role="rt_Relationship" Type="FlipperSQLDataStore.rt_Relationship" Multiplicity="0..1" />
+    <End Role="as_RainGage_MonitoringStation" Type="FlipperSQLDataStore.as_RainGage_MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Relationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="as_RainGage_MonitoringStation">
+        <PropertyRef Name="RelationshipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSFacility_rt_CSFType">
+    <End Role="rt_CSFType" Type="FlipperSQLDataStore.rt_CSFType" Multiplicity="0..1" />
+    <End Role="CSFacility" Type="FlipperSQLDataStore.CSFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_CSFType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CSFacility">
+        <PropertyRef Name="CSFTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CSFacility_rt_System">
+    <End Role="rt_System" Type="FlipperSQLDataStore.rt_System" Multiplicity="0..1" />
+    <End Role="CSFacility" Type="FlipperSQLDataStore.CSFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CSFacility">
+        <PropertyRef Name="System" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_Outfall">
+    <End Role="Outfall" Type="FlipperSQLDataStore.Outfall" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outfall">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="OutfallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_DataAccquisitionMethod">
+    <End Role="rt_DataAccquisitionMethod" Type="FlipperSQLDataStore.rt_DataAccquisitionMethod" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_DataAccquisitionMethod">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="DataAccquisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Permanence">
+    <End Role="rt_Permanence" Type="FlipperSQLDataStore.rt_Permanence" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Permanence">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="PermanenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Purpose">
+    <End Role="rt_Purpose" Type="FlipperSQLDataStore.rt_Purpose" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Purpose">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="PurposeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_Status">
+    <End Role="rt_Status" Type="FlipperSQLDataStore.rt_Status" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_Status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringStation_rt_System">
+    <End Role="rt_System" Type="FlipperSQLDataStore.rt_System" Multiplicity="0..1" />
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MonitoringStation">
+        <PropertyRef Name="SystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outfall_ReceivingWaterBodies">
+    <End Role="ReceivingWaterBodies" Type="FlipperSQLDataStore.ReceivingWaterBody" Multiplicity="0..1" />
+    <End Role="Outfall" Type="FlipperSQLDataStore.Outfall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReceivingWaterBodies">
+        <PropertyRef Name="ID_ReceivingWater" />
+      </Principal>
+      <Dependent Role="Outfall">
+        <PropertyRef Name="ReceivingWaterBodyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outfall_rt_System">
+    <End Role="rt_System" Type="FlipperSQLDataStore.rt_System" Multiplicity="0..1" />
+    <End Role="Outfall" Type="FlipperSQLDataStore.Outfall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Outfall">
+        <PropertyRef Name="OutfallSytemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_People">
+    <End Role="People" Type="FlipperSQLDataStore.Person" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="PrimaryContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_People1">
+    <End Role="People" Type="FlipperSQLDataStore.Person" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="SecondaryContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAndProgram_WorkGroup">
+    <End Role="WorkGroup" Type="FlipperSQLDataStore.WorkGroup" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkGroup">
+        <PropertyRef Name="id_workgroup" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="WorkGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PumpStation_rt_System">
+    <End Role="rt_System" Type="FlipperSQLDataStore.rt_System" Multiplicity="0..1" />
+    <End Role="PumpStation" Type="FlipperSQLDataStore.PumpStation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_System">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PumpStation">
+        <PropertyRef Name="SystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RainGage_People">
+    <End Role="People" Type="FlipperSQLDataStore.Person" Multiplicity="0..1" />
+    <End Role="RainGage" Type="FlipperSQLDataStore.RainGage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RainGage">
+        <PropertyRef Name="ContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SensorPoint_MonitoringStation">
+    <End Role="MonitoringStation" Type="FlipperSQLDataStore.MonitoringStation" Multiplicity="0..1" />
+    <End Role="SensorPoint" Type="FlipperSQLDataStore.SensorPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringStation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SensorPoint">
+        <PropertyRef Name="MonitoringID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
