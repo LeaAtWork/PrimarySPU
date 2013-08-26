@@ -127,9 +127,9 @@
           <ScalarProperty Name="ProjectOrProgram_ID" ColumnName="ProjectOrProgram_ID" />
           <ScalarProperty Name="CommonName" ColumnName="CommonName" />
           <ScalarProperty Name="ADSName" ColumnName="ADSName" />
-          <ScalarProperty Name="ProgTypeID" ColumnName="ProgTypeID" />
           <ScalarProperty Name="PrimaryContactID" ColumnName="PrimaryContactID" />
           <ScalarProperty Name="SecondaryContactID" ColumnName="SecondaryContactID" />
+          <ScalarProperty Name="ProgTypeID" ColumnName="ProgTypeID" />
           <ScalarProperty Name="WorkGroupID" ColumnName="WorkGroupID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -164,10 +164,10 @@
     <EntitySetMapping Name="ReceivingWaterBodies">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ReceivingWaterBody)">
         <MappingFragment StoreEntitySet="ReceivingWaterBodies">
-          <ScalarProperty Name="ID_ReceivingWater" ColumnName="ID_ReceivingWater" />
-          <ScalarProperty Name="ReceivingWaterBody1" ColumnName="ReceivingWaterBody" />
           <ScalarProperty Name="AlternateName" ColumnName="AlternateName" />
           <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReceivingWaterName" ColumnName="ReceivingWaterName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -194,6 +194,15 @@
         <MappingFragment StoreEntitySet="rt_Permanences">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="PermanenceType" ColumnName="PermanenceType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rt_ProgTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.rt_ProgType)">
+        <MappingFragment StoreEntitySet="rt_ProgTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProgType" ColumnName="ProgType" />
           <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -248,12 +257,12 @@
     <EntitySetMapping Name="WorkGroups">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.WorkGroup)">
         <MappingFragment StoreEntitySet="WorkGroups">
-          <ScalarProperty Name="id_workgroup" ColumnName="id_workgroup" />
           <ScalarProperty Name="WorkGroupCode" ColumnName="WorkGroupCode" />
           <ScalarProperty Name="WorkGroupName" ColumnName="WorkGroupName" />
           <ScalarProperty Name="Division" ColumnName="Division" />
           <ScalarProperty Name="LowOrg" ColumnName="LowOrg" />
           <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

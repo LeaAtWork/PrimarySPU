@@ -11,7 +11,7 @@
 Option Strict On
 Option Explicit On
 
-Imports __rt_Permanence = LightSwitchApplication.rt_Permanence
+Imports __rt_ProgType = LightSwitchApplication.rt_ProgType
 
 Namespace LightSwitchApplication
 
@@ -21,13 +21,13 @@ Namespace LightSwitchApplication
     ''' No Modeled Description Available
     ''' </summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-    Public NotInheritable Partial Class rt_Permanence
-        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __rt_Permanence, __rt_Permanence.DetailsClass)
+    Public NotInheritable Partial Class rt_ProgType
+        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __rt_ProgType, __rt_ProgType.DetailsClass)
     
         #Region "Constructors"
     
         ''' <summary>
-        ''' Initializes a new instance of the rt_Permanence entity.
+        ''' Initializes a new instance of the rt_ProgType entity.
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
@@ -37,17 +37,17 @@ Namespace LightSwitchApplication
     
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_Permanence))
+        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_ProgType))
             MyBase.New(entitySet)
             
-            __rt_Permanence.DetailsClass.Initialize(Me)
+            __rt_ProgType.DetailsClass.Initialize(Me)
         End Sub
     
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_Permanence_Created()
+        Private Partial Sub rt_ProgType_Created()
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_Permanence_AllowSaveWithErrors(ByRef result As Boolean)
+        Private Partial Sub rt_ProgType_AllowSaveWithErrors(ByRef result As Boolean)
         End Sub
     
         #End Region
@@ -87,10 +87,10 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public Property id As Integer
             Get
-                Return __rt_Permanence.DetailsClass.GetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.id)
+                Return __rt_ProgType.DetailsClass.GetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.id)
             End Get
             Set
-                __rt_Permanence.DetailsClass.SetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.id, Value)
+                __rt_ProgType.DetailsClass.SetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.id, Value)
             End Set
         End Property
         
@@ -109,23 +109,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property PermanenceType As String
+        Public Property ProgType As String
             Get
-                Return __rt_Permanence.DetailsClass.GetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.PermanenceType)
+                Return __rt_ProgType.DetailsClass.GetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.ProgType)
             End Get
             Set
-                __rt_Permanence.DetailsClass.SetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.PermanenceType, Value)
+                __rt_ProgType.DetailsClass.SetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.ProgType, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PermanenceType_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub ProgType_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PermanenceType_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub ProgType_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PermanenceType_Changed()
+        Private Partial Sub ProgType_Changed()
         End Sub
 
         ''' <summary>
@@ -135,10 +135,10 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public Property Description As String
             Get
-                Return __rt_Permanence.DetailsClass.GetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.Description)
+                Return __rt_ProgType.DetailsClass.GetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.Description)
             End Get
             Set
-                __rt_Permanence.DetailsClass.SetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.Description, Value)
+                __rt_ProgType.DetailsClass.SetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.Description, Value)
             End Set
         End Property
         
@@ -157,17 +157,17 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.MonitoringStation)
+        Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.ProjectAndProgram)
             Get
-                Return __rt_Permanence.DetailsClass.GetValue(Me, __rt_Permanence.DetailsClass.PropertySetProperties.MonitoringStations)
+                Return __rt_ProgType.DetailsClass.GetValue(Me, __rt_ProgType.DetailsClass.PropertySetProperties.ProjectAndPrograms)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property MonitoringStationsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.MonitoringStation)
+        Public ReadOnly Property ProjectAndProgramsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.ProjectAndProgram)
             Get
-                Return __rt_Permanence.DetailsClass.GetQuery(Me, __rt_Permanence.DetailsClass.PropertySetProperties.MonitoringStations)
+                Return __rt_ProgType.DetailsClass.GetQuery(Me, __rt_ProgType.DetailsClass.PropertySetProperties.ProjectAndPrograms)
             End Get
         End Property
 
@@ -181,32 +181,32 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public NotInheritable Class DetailsClass
             Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of _
-                __rt_Permanence, _
-                __rt_Permanence.DetailsClass, _
-                __rt_Permanence.DetailsClass.IImplementation, _
-                __rt_Permanence.DetailsClass.PropertySet, _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_Permanence, __rt_Permanence.DetailsClass), _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_Permanence, __rt_Permanence.DetailsClass))
+                __rt_ProgType, _
+                __rt_ProgType.DetailsClass, _
+                __rt_ProgType.DetailsClass.IImplementation, _
+                __rt_ProgType.DetailsClass.PropertySet, _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_ProgType, __rt_ProgType.DetailsClass), _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_ProgType, __rt_ProgType.DetailsClass))
     
             Shared Sub New()
-                Dim initializeEntry = __rt_Permanence.DetailsClass.PropertySetProperties.id
+                Dim initializeEntry = __rt_ProgType.DetailsClass.PropertySetProperties.id
             End Sub
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private Shared ReadOnly __rt_PermanenceEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_Permanence, __rt_Permanence.DetailsClass).Entry = _
-                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_Permanence, __rt_Permanence.DetailsClass).Entry( _
-                    AddressOf __rt_Permanence.DetailsClass.__rt_Permanence_CreateNew, _
-                    AddressOf __rt_Permanence.DetailsClass.__rt_Permanence_Created, _
-                    AddressOf __rt_Permanence.DetailsClass.__rt_Permanence_AllowSaveWithErrors)
-            Private Shared Function __rt_Permanence_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_Permanence)) As __rt_Permanence
-                Return New __rt_Permanence(es)
+            Private Shared ReadOnly __rt_ProgTypeEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_ProgType, __rt_ProgType.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_ProgType, __rt_ProgType.DetailsClass).Entry( _
+                    AddressOf __rt_ProgType.DetailsClass.__rt_ProgType_CreateNew, _
+                    AddressOf __rt_ProgType.DetailsClass.__rt_ProgType_Created, _
+                    AddressOf __rt_ProgType.DetailsClass.__rt_ProgType_AllowSaveWithErrors)
+            Private Shared Function __rt_ProgType_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_ProgType)) As __rt_ProgType
+                Return New __rt_ProgType(es)
             End Function
-            Private Shared Sub __rt_Permanence_Created(e As __rt_Permanence)
-                e.rt_Permanence_Created()
+            Private Shared Sub __rt_ProgType_Created(e As __rt_ProgType)
+                e.rt_ProgType_Created()
             End Sub
-            Private Shared Function __rt_Permanence_AllowSaveWithErrors(e As __rt_Permanence) As Boolean
+            Private Shared Function __rt_ProgType_AllowSaveWithErrors(e As __rt_ProgType) As Boolean
                 Dim result As Boolean = False
-                e.rt_Permanence_AllowSaveWithErrors(result)
+                e.rt_ProgType_AllowSaveWithErrors(result)
                 Return result
             End Function
     
@@ -214,19 +214,19 @@ Namespace LightSwitchApplication
                 MyBase.New()
             End Sub
     
-            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_Permanence, __rt_Permanence.DetailsClass)
+            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_ProgType, __rt_ProgType.DetailsClass)
                 Get
                     Return MyBase.Commands
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_Permanence, __rt_Permanence.DetailsClass)
+            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_ProgType, __rt_ProgType.DetailsClass)
                 Get
                     Return MyBase.Methods
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Properties As __rt_Permanence.DetailsClass.PropertySet
+            Public ReadOnly Shadows Property Properties As __rt_ProgType.DetailsClass.PropertySet
                 Get
                     Return MyBase.Properties
                 End Get
@@ -237,41 +237,41 @@ Namespace LightSwitchApplication
             <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
             Public NotInheritable Class PropertySet
-                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __rt_Permanence, __rt_Permanence.DetailsClass)
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __rt_ProgType, __rt_ProgType.DetailsClass)
     
                 Public Sub New()
                     MyBase.New()
                 End Sub
     
-                Public ReadOnly Property id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer)
+                Public ReadOnly Property id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__rt_Permanence.DetailsClass.PropertySetProperties.id),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer))
+                            MyBase.GetItem(__rt_ProgType.DetailsClass.PropertySetProperties.id),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer))
                     End Get
                 End Property
                 
-                Public ReadOnly Property PermanenceType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String)
+                Public ReadOnly Property ProgType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__rt_Permanence.DetailsClass.PropertySetProperties.PermanenceType),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String))
+                            MyBase.GetItem(__rt_ProgType.DetailsClass.PropertySetProperties.ProgType),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String)
+                Public ReadOnly Property Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__rt_Permanence.DetailsClass.PropertySetProperties.Description),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String))
+                            MyBase.GetItem(__rt_ProgType.DetailsClass.PropertySetProperties.Description),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation)
+                Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__rt_Permanence.DetailsClass.PropertySetProperties.MonitoringStations),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation))
+                            MyBase.GetItem(__rt_ProgType.DetailsClass.PropertySetProperties.ProjectAndPrograms),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram))
                     End Get
                 End Property
                 
@@ -282,9 +282,9 @@ Namespace LightSwitchApplication
                 Inherits Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
                 Shadows Property id As Integer
-                Shadows Property PermanenceType As String
+                Shadows Property ProgType As String
                 Shadows Property Description As String
-                Shadows ReadOnly Property MonitoringStations As Global.System.Collections.IEnumerable
+                Shadows ReadOnly Property ProjectAndPrograms As Global.System.Collections.IEnumerable
     
             End Interface
     
@@ -294,128 +294,128 @@ Namespace LightSwitchApplication
             Friend Class PropertySetProperties
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer).Entry( _
+                Public Shared ReadOnly id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer).Entry( _
                         "id", _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_Stub, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_Validate, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_GetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_SetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._id_OnValueChanged)
-                Private Shared Sub _id_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_Permanence.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer).Data), d As __rt_Permanence.DetailsClass, sf As Object)
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_Stub, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_Validate, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_GetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_SetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._id_OnValueChanged)
+                Private Shared Sub _id_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_ProgType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer).Data), d As __rt_ProgType.DetailsClass, sf As Object)
                     c(d, d._id, sf)
                 End Sub
-                Private Shared Function _id_ComputeIsReadOnly(e As __rt_Permanence) As Boolean
+                Private Shared Function _id_ComputeIsReadOnly(e As __rt_ProgType) As Boolean
                     Dim result As Boolean = False
                     e.id_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _id_Validate(e As __rt_Permanence, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                Private Shared Sub _id_Validate(e As __rt_ProgType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
                     e.id_Validate(r)
                 End Sub
-                Private Shared Function _id_GetImplementationValue(d As __rt_Permanence.DetailsClass) As Integer
+                Private Shared Function _id_GetImplementationValue(d As __rt_ProgType.DetailsClass) As Integer
                     Return d.ImplementationEntity.id
                 End Function
-                Private Shared Sub _id_SetImplementationValue(d As __rt_Permanence.DetailsClass, v As Integer)
+                Private Shared Sub _id_SetImplementationValue(d As __rt_ProgType.DetailsClass, v As Integer)
                     d.ImplementationEntity.id = v
                 End Sub
-                Private Shared Sub _id_OnValueChanged(e As __rt_Permanence)
+                Private Shared Sub _id_OnValueChanged(e As __rt_ProgType)
                     e.id_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly PermanenceType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Entry( _
-                        "PermanenceType", _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_Stub, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_ComputeIsReadOnly, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_Validate, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_GetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_SetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._PermanenceType_OnValueChanged)
-                Private Shared Sub _PermanenceType_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_Permanence.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Data), d As __rt_Permanence.DetailsClass, sf As Object)
-                    c(d, d._PermanenceType, sf)
+                Public Shared ReadOnly ProgType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Entry( _
+                        "ProgType", _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_Stub, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_ComputeIsReadOnly, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_Validate, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_GetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_SetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProgType_OnValueChanged)
+                Private Shared Sub _ProgType_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_ProgType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Data), d As __rt_ProgType.DetailsClass, sf As Object)
+                    c(d, d._ProgType, sf)
                 End Sub
-                Private Shared Function _PermanenceType_ComputeIsReadOnly(e As __rt_Permanence) As Boolean
+                Private Shared Function _ProgType_ComputeIsReadOnly(e As __rt_ProgType) As Boolean
                     Dim result As Boolean = False
-                    e.PermanenceType_IsReadOnly(result)
+                    e.ProgType_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _PermanenceType_Validate(e As __rt_Permanence, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.PermanenceType_Validate(r)
+                Private Shared Sub _ProgType_Validate(e As __rt_ProgType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.ProgType_Validate(r)
                 End Sub
-                Private Shared Function _PermanenceType_GetImplementationValue(d As __rt_Permanence.DetailsClass) As String
-                    Return d.ImplementationEntity.PermanenceType
+                Private Shared Function _ProgType_GetImplementationValue(d As __rt_ProgType.DetailsClass) As String
+                    Return d.ImplementationEntity.ProgType
                 End Function
-                Private Shared Sub _PermanenceType_SetImplementationValue(d As __rt_Permanence.DetailsClass, v As String)
-                    d.ImplementationEntity.PermanenceType = v
+                Private Shared Sub _ProgType_SetImplementationValue(d As __rt_ProgType.DetailsClass, v As String)
+                    d.ImplementationEntity.ProgType = v
                 End Sub
-                Private Shared Sub _PermanenceType_OnValueChanged(e As __rt_Permanence)
-                    e.PermanenceType_Changed()
+                Private Shared Sub _ProgType_OnValueChanged(e As __rt_ProgType)
+                    e.ProgType_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Entry( _
+                Public Shared ReadOnly Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Entry( _
                         "Description", _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_Stub, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_ComputeIsReadOnly, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_Validate, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_GetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_SetImplementationValue, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._Description_OnValueChanged)
-                Private Shared Sub _Description_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_Permanence.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Data), d As __rt_Permanence.DetailsClass, sf As Object)
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_Stub, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_ComputeIsReadOnly, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_Validate, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_GetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_SetImplementationValue, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._Description_OnValueChanged)
+                Private Shared Sub _Description_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_ProgType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Data), d As __rt_ProgType.DetailsClass, sf As Object)
                     c(d, d._Description, sf)
                 End Sub
-                Private Shared Function _Description_ComputeIsReadOnly(e As __rt_Permanence) As Boolean
+                Private Shared Function _Description_ComputeIsReadOnly(e As __rt_ProgType) As Boolean
                     Dim result As Boolean = False
                     e.Description_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _Description_Validate(e As __rt_Permanence, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                Private Shared Sub _Description_Validate(e As __rt_ProgType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
                     e.Description_Validate(r)
                 End Sub
-                Private Shared Function _Description_GetImplementationValue(d As __rt_Permanence.DetailsClass) As String
+                Private Shared Function _Description_GetImplementationValue(d As __rt_ProgType.DetailsClass) As String
                     Return d.ImplementationEntity.Description
                 End Function
-                Private Shared Sub _Description_SetImplementationValue(d As __rt_Permanence.DetailsClass, v As String)
+                Private Shared Sub _Description_SetImplementationValue(d As __rt_ProgType.DetailsClass, v As String)
                     d.ImplementationEntity.Description = v
                 End Sub
-                Private Shared Sub _Description_OnValueChanged(e As __rt_Permanence)
+                Private Shared Sub _Description_OnValueChanged(e As __rt_ProgType)
                     e.Description_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Entry( _
-                        "MonitoringStations", _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._MonitoringStations_Stub, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._MonitoringStations_GetReferencedEntities, _
-                        AddressOf __rt_Permanence.DetailsClass.PropertySetProperties._MonitoringStations_GetEntityCollection)
-                Private Shared Sub _MonitoringStations_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_Permanence.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data), d As __rt_Permanence.DetailsClass, sf As Object)
-                    c(d, d._MonitoringStations, sf)
+                Public Shared ReadOnly ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry( _
+                        "ProjectAndPrograms", _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProjectAndPrograms_Stub, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProjectAndPrograms_GetReferencedEntities, _
+                        AddressOf __rt_ProgType.DetailsClass.PropertySetProperties._ProjectAndPrograms_GetEntityCollection)
+                Private Shared Sub _ProjectAndPrograms_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_ProgType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data), d As __rt_ProgType.DetailsClass, sf As Object)
+                    c(d, d._ProjectAndPrograms, sf)
                 End Sub
-                Private Shared Function _MonitoringStations_GetReferencedEntities(d As __rt_Permanence.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.MonitoringStation)
-                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.MonitoringStation, Global.LightSwitchApplication.MonitoringStation.DetailsClass)(__rt_Permanence.DetailsClass.PropertySetProperties.MonitoringStations, d._MonitoringStations)
+                Private Shared Function _ProjectAndPrograms_GetReferencedEntities(d As __rt_ProgType.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.ProjectAndProgram)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.ProjectAndProgram, Global.LightSwitchApplication.ProjectAndProgram.DetailsClass)(__rt_ProgType.DetailsClass.PropertySetProperties.ProjectAndPrograms, d._ProjectAndPrograms)
                 End Function
-                Private Shared Function _MonitoringStations_GetEntityCollection(d As __rt_Permanence.DetailsClass) As Global.System.Collections.IEnumerable
-                    Return d.ImplementationEntity.MonitoringStations
+                Private Shared Function _ProjectAndPrograms_GetEntityCollection(d As __rt_ProgType.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.ProjectAndPrograms
                 End Function
     
             End Class
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Integer).Data
+            Private _id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Integer).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _PermanenceType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Data
+            Private _ProgType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, String).Data
+            Private _Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_Permanence, __rt_Permanence.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data
+            Private _ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_ProgType, __rt_ProgType.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data
             
         End Class
     

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="c:\users\beardl\documents\visual studio 2012\Projects\FipperEntry\FipperEntry\Client\My Project\Client.lsml" Checksum="A0636951BB5B2F9FD0B9DD9931AB73A7823F71B1F0AB80A9C8BA6378A466F54C" />
-    <Document FullPath="c:\users\beardl\documents\visual studio 2012\Projects\FipperEntry\FipperEntry\Common\My Project\Common.lsml" Checksum="E2CFFC7589DA79BD9BBCB14E0ED8BD9CFCE9CD1FFE4F2C13A428C79020C59537" />
+    <Document FullPath="c:\users\beardl\documents\visual studio 2012\Projects\FipperEntry\FipperEntry\Client\My Project\Client.lsml" Checksum="067B4D7A328802A3AB96D2FC7CBB5A4918EDE36BD781837C4FD83BB18BC6A4E3" />
+    <Document FullPath="c:\users\beardl\documents\visual studio 2012\Projects\FipperEntry\FipperEntry\Common\My Project\Common.lsml" Checksum="EFC3FF679230C02B7C3549C25049A52EA622065132081FEABDB05EAE21495C1A" />
   </Documents>
 </ModelDocumentManifest>

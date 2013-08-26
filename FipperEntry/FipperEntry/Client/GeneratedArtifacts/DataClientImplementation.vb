@@ -1255,7 +1255,7 @@ Namespace LightSwitchApplication.Implementation
                         Me, _
                         "ReceivingWaterBody", _
                         New Global.System.String() {"ReceivingWaterBodyID"}, _
-                        Function(e) Global.System.Object.Equals(e.ID_ReceivingWater, Me.ReceivingWaterBodyID), _
+                        Function(e) Global.System.Object.Equals(e.ID, Me.ReceivingWaterBodyID), _
                         Function() Me._ReceivingWaterBody, _
                         Sub(e) Me._ReceivingWaterBody = e)
                 End If
@@ -1629,6 +1629,11 @@ Namespace LightSwitchApplication.Implementation
             Me.___OnPropertyChanged("Person1")
         End Sub
         
+        Private Sub OnProgTypeIDChanged()
+            Me.___OnPropertyChanged("ProgTypeID")
+            Me.___OnPropertyChanged("rt_ProgType")
+        End Sub
+        
         Private Sub OnWorkGroupIDChanged()
             Me.___OnPropertyChanged("WorkGroupID")
             Me.___OnPropertyChanged("WorkGroup")
@@ -1684,19 +1689,6 @@ Namespace LightSwitchApplication.Implementation
         
         Private Sub OnADSNameChanged()
             Me.___OnPropertyChanged("ADSName")
-        End Sub
-        
-        Private Property _ProgTypeIDImplementation() As Global.System.Nullable(Of Integer) Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.ProgTypeID
-            Get
-                Return Me.ProgTypeID
-            End Get
-            Set(ByVal value As Global.System.Nullable(Of Integer))
-                Me.ProgTypeID = value
-            End Set
-        End Property
-        
-        Private Sub OnProgTypeIDChanged()
-            Me.___OnPropertyChanged("ProgTypeID")
         End Sub
         
         Private ReadOnly Property _as_Project_MonitoringStationsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.as_Project_MonitoringStations
@@ -1772,6 +1764,32 @@ Namespace LightSwitchApplication.Implementation
         
         Private ___Person1 As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef(Of Global.LightSwitchApplication.Implementation.Person)
         
+        Private Property _rt_ProgTypeImplementation() As Global.Microsoft.LightSwitch.Internal.IEntityImplementation Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.rt_ProgType
+            Get
+                Return Me.rt_ProgType
+            End Get
+            Set(ByVal value As Global.Microsoft.LightSwitch.Internal.IEntityImplementation)
+                Me.rt_ProgType = DirectCast(value, Global.LightSwitchApplication.Implementation.rt_ProgType)
+            End Set
+        End Property
+        
+        Private ReadOnly Property __rt_ProgType As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef(Of Global.LightSwitchApplication.Implementation.rt_ProgType) 
+            Get
+                If (Me.___rt_ProgType Is Nothing) Then
+                    Me.___rt_ProgType = New Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef(Of Global.LightSwitchApplication.Implementation.rt_ProgType)( _
+                        Me, _
+                        "rt_ProgType", _
+                        New Global.System.String() {"ProgTypeID"}, _
+                        Function(e) Global.System.Object.Equals(e.id, Me.ProgTypeID), _
+                        Function() Me._rt_ProgType, _
+                        Sub(e) Me._rt_ProgType = e)
+                End If
+                Return Me.___rt_ProgType
+            End Get
+        End Property
+        
+        Private ___rt_ProgType As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef(Of Global.LightSwitchApplication.Implementation.rt_ProgType)
+        
         Private Property _WorkGroupImplementation() As Global.Microsoft.LightSwitch.Internal.IEntityImplementation Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.WorkGroup
             Get
                 Return Me.WorkGroup
@@ -1788,7 +1806,7 @@ Namespace LightSwitchApplication.Implementation
                         Me, _
                         "WorkGroup", _
                         New Global.System.String() {"WorkGroupID"}, _
-                        Function(e) Global.System.Object.Equals(e.id_workgroup, Me.WorkGroupID), _
+                        Function(e) Global.System.Object.Equals(e.id, Me.WorkGroupID), _
                         Function() Me._WorkGroup, _
                         Sub(e) Me._WorkGroup = e)
                 End If
@@ -2098,32 +2116,6 @@ Namespace LightSwitchApplication.Implementation
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
     Public Class ReceivingWaterBody
         Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation
-        Private Property _ID_ReceivingWaterImplementation() As Integer Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ID_ReceivingWater
-            Get
-                Return Me.ID_ReceivingWater
-            End Get
-            Set(ByVal value As Integer)
-                Me.ID_ReceivingWater = value
-            End Set
-        End Property
-        
-        Private Sub OnID_ReceivingWaterChanged()
-            Me.___OnPropertyChanged("ID_ReceivingWater")
-        End Sub
-        
-        Private Property _ReceivingWaterBody1Implementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ReceivingWaterBody1
-            Get
-                Return Me.ReceivingWaterBody1
-            End Get
-            Set(ByVal value As String)
-                Me.ReceivingWaterBody1 = value
-            End Set
-        End Property
-        
-        Private Sub OnReceivingWaterBody1Changed()
-            Me.___OnPropertyChanged("ReceivingWaterBody1")
-        End Sub
-        
         Private Property _AlternateNameImplementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.AlternateName
             Get
                 Return Me.AlternateName
@@ -2150,6 +2142,29 @@ Namespace LightSwitchApplication.Implementation
             Me.___OnPropertyChanged("Notes")
         End Sub
         
+        Private ReadOnly Property _IDImplementation() As Integer Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ID
+            Get
+                Return Me.ID
+            End Get
+        End Property
+        
+        Private Sub OnIDChanged()
+            Me.___OnPropertyChanged("ID")
+        End Sub
+        
+        Private Property _ReceivingWaterNameImplementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ReceivingWaterName
+            Get
+                Return Me.ReceivingWaterName
+            End Get
+            Set(ByVal value As String)
+                Me.ReceivingWaterName = value
+            End Set
+        End Property
+        
+        Private Sub OnReceivingWaterNameChanged()
+            Me.___OnPropertyChanged("ReceivingWaterName")
+        End Sub
+        
         Private ReadOnly Property _OutfallsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.Outfalls
             Get
                 Return Me.Outfalls
@@ -2163,7 +2178,7 @@ Namespace LightSwitchApplication.Implementation
                         Me, _
                         "Outfalls", _
                         Function() Me._Outfalls, _
-                        Function(e) Global.System.Object.Equals(e.ReceivingWaterBodyID, Me.ID_ReceivingWater))
+                        Function(e) Global.System.Object.Equals(e.ReceivingWaterBodyID, Me.ID))
                 End If
                 Return Me.___Outfalls
             End Get
@@ -2377,6 +2392,75 @@ Namespace LightSwitchApplication.Implementation
         End Property
         
         Private ___MonitoringStations As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection(Of Global.LightSwitchApplication.Implementation.MonitoringStation)
+        
+    End Class
+    #End Region
+    
+    #Region "rt_ProgType"
+    <Global.System.Runtime.Serialization.DataContract(Namespace:="http://schemas.datacontract.org/2004/07/FlipperSQLData.Implementation")> _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+    Public Class rt_ProgType
+        Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation
+        Private Property _idImplementation() As Integer Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.id
+            Get
+                Return Me.id
+            End Get
+            Set(ByVal value As Integer)
+                Me.id = value
+            End Set
+        End Property
+        
+        Private Sub OnidChanged()
+            Me.___OnPropertyChanged("id")
+        End Sub
+        
+        Private Property _ProgTypeImplementation() As String Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.ProgType
+            Get
+                Return Me.ProgType
+            End Get
+            Set(ByVal value As String)
+                Me.ProgType = value
+            End Set
+        End Property
+        
+        Private Sub OnProgTypeChanged()
+            Me.___OnPropertyChanged("ProgType")
+        End Sub
+        
+        Private Property _DescriptionImplementation() As String Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.Description
+            Get
+                Return Me.Description
+            End Get
+            Set(ByVal value As String)
+                Me.Description = value
+            End Set
+        End Property
+        
+        Private Sub OnDescriptionChanged()
+            Me.___OnPropertyChanged("Description")
+        End Sub
+        
+        Private ReadOnly Property _ProjectAndProgramsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.ProjectAndPrograms
+            Get
+                Return Me.ProjectAndPrograms
+            End Get
+        End Property
+        
+        Friend ReadOnly Property __ProjectAndPrograms As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection(Of Global.LightSwitchApplication.Implementation.ProjectAndProgram) 
+            Get
+                If (Me.___ProjectAndPrograms Is Nothing) Then
+                    Me.___ProjectAndPrograms = New Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection(Of Global.LightSwitchApplication.Implementation.ProjectAndProgram)( _
+                        Me, _
+                        "ProjectAndPrograms", _
+                        Function() Me._ProjectAndPrograms, _
+                        Function(e) Global.System.Object.Equals(e.ProgTypeID, Me.id))
+                End If
+                Return Me.___ProjectAndPrograms
+            End Get
+        End Property
+        
+        Private ___ProjectAndPrograms As Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection(Of Global.LightSwitchApplication.Implementation.ProjectAndProgram)
         
     End Class
     #End Region
@@ -2881,19 +2965,6 @@ Namespace LightSwitchApplication.Implementation
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
     Public Class WorkGroup
         Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation
-        Private Property _id_workgroupImplementation() As Integer Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.id_workgroup
-            Get
-                Return Me.id_workgroup
-            End Get
-            Set(ByVal value As Integer)
-                Me.id_workgroup = value
-            End Set
-        End Property
-        
-        Private Sub Onid_workgroupChanged()
-            Me.___OnPropertyChanged("id_workgroup")
-        End Sub
-        
         Private Property _WorkGroupCodeImplementation() As String Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.WorkGroupCode
             Get
                 Return Me.WorkGroupCode
@@ -2959,6 +3030,16 @@ Namespace LightSwitchApplication.Implementation
             Me.___OnPropertyChanged("Notes")
         End Sub
         
+        Private ReadOnly Property _idImplementation() As Integer Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.id
+            Get
+                Return Me.id
+            End Get
+        End Property
+        
+        Private Sub OnidChanged()
+            Me.___OnPropertyChanged("id")
+        End Sub
+        
         Private ReadOnly Property _ProjectAndProgramsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.ProjectAndPrograms
             Get
                 Return Me.ProjectAndPrograms
@@ -2972,7 +3053,7 @@ Namespace LightSwitchApplication.Implementation
                         Me, _
                         "ProjectAndPrograms", _
                         Function() Me._ProjectAndPrograms, _
-                        Function(e) Global.System.Object.Equals(e.WorkGroupID, Me.id_workgroup))
+                        Function(e) Global.System.Object.Equals(e.WorkGroupID, Me.id))
                 End If
                 Return Me.___ProjectAndPrograms
             End Get
@@ -3032,6 +3113,9 @@ Namespace LightSwitchApplication.Implementation
             End If
             If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_Permanence)) Then
                 Return New Global.LightSwitchApplication.Implementation.rt_Permanence()
+            End If
+            If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_ProgType)) Then
+                Return New Global.LightSwitchApplication.Implementation.rt_ProgType()
             End If
             If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_Purpose)) Then
                 Return New Global.LightSwitchApplication.Implementation.rt_Purpose()
@@ -3131,6 +3215,9 @@ Namespace LightSwitchApplication.Implementation
             End If
             If GetType(Global.LightSwitchApplication.rt_Permanence).Equals(definitionType)
                 Return GetType(Global.LightSwitchApplication.Implementation.rt_Permanence)
+            End If
+            If GetType(Global.LightSwitchApplication.rt_ProgType).Equals(definitionType)
+                Return GetType(Global.LightSwitchApplication.Implementation.rt_ProgType)
             End If
             If GetType(Global.LightSwitchApplication.rt_Purpose).Equals(definitionType)
                 Return GetType(Global.LightSwitchApplication.Implementation.rt_Purpose)

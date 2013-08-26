@@ -307,6 +307,17 @@ Namespace LightSwitchApplication
         End Property
         
         ''' <summary>
+        ''' Gets the rt_ProgTypes entity set.  The entity set provides members to access entities of a specific type.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property rt_ProgTypes As Global.Microsoft.LightSwitch.Framework.EntitySet(Of Global.LightSwitchApplication.rt_ProgType)
+            Get
+                Return Global.LightSwitchApplication.FlipperSQLData.DetailsClass.GetValue(Me, Global.LightSwitchApplication.FlipperSQLData.DetailsClass.PropertySetProperties.rt_ProgTypes)
+            End Get
+        End Property
+        
+        ''' <summary>
         ''' Gets the rt_Purposes entity set.  The entity set provides members to access entities of a specific type.
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
@@ -599,21 +610,21 @@ Namespace LightSwitchApplication
         ''' <summary>
         ''' Returns the entity whose identity is specified by the parameter(s).
         ''' </summary>
-        ''' <param name="ID_ReceivingWater">
-        ''' The value of the 'ID_ReceivingWater' key property of the entity to retrieve.
+        ''' <param name="ID">
+        ''' The value of the 'ID' key property of the entity to retrieve.
         ''' </param>
-        Public Function ReceivingWaterBodies_Single(ByVal ID_ReceivingWater As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.ReceivingWaterBody
-            Return Me.Details.Methods.ReceivingWaterBodies_Single.CreateInvocation(ID_ReceivingWater).Execute()
+        Public Function ReceivingWaterBodies_Single(ByVal ID As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.ReceivingWaterBody
+            Return Me.Details.Methods.ReceivingWaterBodies_Single.CreateInvocation(ID).Execute()
         End Function
         
         ''' <summary>
         ''' Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists.
         ''' </summary>
-        ''' <param name="ID_ReceivingWater">
-        ''' The value of the 'ID_ReceivingWater' key property of the entity to retrieve.
+        ''' <param name="ID">
+        ''' The value of the 'ID' key property of the entity to retrieve.
         ''' </param>
-        Public Function ReceivingWaterBodies_SingleOrDefault(ByVal ID_ReceivingWater As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.ReceivingWaterBody
-            Return Me.Details.Methods.ReceivingWaterBodies_SingleOrDefault.CreateInvocation(ID_ReceivingWater).Execute()
+        Public Function ReceivingWaterBodies_SingleOrDefault(ByVal ID As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.ReceivingWaterBody
+            Return Me.Details.Methods.ReceivingWaterBodies_SingleOrDefault.CreateInvocation(ID).Execute()
         End Function
         
         ''' <summary>
@@ -674,6 +685,26 @@ Namespace LightSwitchApplication
         ''' </param>
         Public Function rt_Permanences_SingleOrDefault(ByVal id As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.rt_Permanence
             Return Me.Details.Methods.rt_Permanences_SingleOrDefault.CreateInvocation(id).Execute()
+        End Function
+        
+        ''' <summary>
+        ''' Returns the entity whose identity is specified by the parameter(s).
+        ''' </summary>
+        ''' <param name="id">
+        ''' The value of the 'id' key property of the entity to retrieve.
+        ''' </param>
+        Public Function rt_ProgTypes_Single(ByVal id As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.rt_ProgType
+            Return Me.Details.Methods.rt_ProgTypes_Single.CreateInvocation(id).Execute()
+        End Function
+        
+        ''' <summary>
+        ''' Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists.
+        ''' </summary>
+        ''' <param name="id">
+        ''' The value of the 'id' key property of the entity to retrieve.
+        ''' </param>
+        Public Function rt_ProgTypes_SingleOrDefault(ByVal id As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.rt_ProgType
+            Return Me.Details.Methods.rt_ProgTypes_SingleOrDefault.CreateInvocation(id).Execute()
         End Function
         
         ''' <summary>
@@ -779,21 +810,21 @@ Namespace LightSwitchApplication
         ''' <summary>
         ''' Returns the entity whose identity is specified by the parameter(s).
         ''' </summary>
-        ''' <param name="id_workgroup">
-        ''' The value of the 'id_workgroup' key property of the entity to retrieve.
+        ''' <param name="id">
+        ''' The value of the 'id' key property of the entity to retrieve.
         ''' </param>
-        Public Function WorkGroups_Single(ByVal id_workgroup As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.WorkGroup
-            Return Me.Details.Methods.WorkGroups_Single.CreateInvocation(id_workgroup).Execute()
+        Public Function WorkGroups_Single(ByVal id As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.WorkGroup
+            Return Me.Details.Methods.WorkGroups_Single.CreateInvocation(id).Execute()
         End Function
         
         ''' <summary>
         ''' Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists.
         ''' </summary>
-        ''' <param name="id_workgroup">
-        ''' The value of the 'id_workgroup' key property of the entity to retrieve.
+        ''' <param name="id">
+        ''' The value of the 'id' key property of the entity to retrieve.
         ''' </param>
-        Public Function WorkGroups_SingleOrDefault(ByVal id_workgroup As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.WorkGroup
-            Return Me.Details.Methods.WorkGroups_SingleOrDefault.CreateInvocation(id_workgroup).Execute()
+        Public Function WorkGroups_SingleOrDefault(ByVal id As Global.System.Nullable(Of Integer)) As Global.LightSwitchApplication.WorkGroup
+            Return Me.Details.Methods.WorkGroups_SingleOrDefault.CreateInvocation(id).Execute()
         End Function
         
         #End Region
@@ -1079,6 +1110,22 @@ Namespace LightSwitchApplication
                     End Get
                 End Property
                 
+                Public ReadOnly Property rt_ProgTypes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(Global.LightSwitchApplication.FlipperSQLData.DetailsClass.MethodSetProperties.rt_ProgTypes_Single),
+                            Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property rt_ProgTypes_SingleOrDefault As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(Global.LightSwitchApplication.FlipperSQLData.DetailsClass.MethodSetProperties.rt_ProgTypes_SingleOrDefault),
+                            Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType))
+                    End Get
+                End Property
+                
                 Public ReadOnly Property rt_Purposes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose)
                     Get
                         Return TryCast(
@@ -1305,6 +1352,14 @@ Namespace LightSwitchApplication
                         Return TryCast(
                             MyBase.GetItem(Global.LightSwitchApplication.FlipperSQLData.DetailsClass.PropertySetProperties.rt_Permanences),
                             Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Permanence))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property rt_ProgTypes As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(Global.LightSwitchApplication.FlipperSQLData.DetailsClass.PropertySetProperties.rt_ProgTypes),
+                            Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType))
                     End Get
                 End Property
                 
@@ -1634,6 +1689,24 @@ Namespace LightSwitchApplication
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly rt_ProgTypes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry( _
+                        "rt_ProgTypes_Single", _
+                        AddressOf Global.LightSwitchApplication.FlipperSQLData.DetailsClass.MethodSetProperties._rt_ProgTypes_Single_Stub)
+                Private Shared Sub _rt_ProgTypes_Single_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data), d As Global.LightSwitchApplication.FlipperSQLData.DetailsClass, sf As Object)
+                    c(d, d._rt_ProgTypes_Single, sf)
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly rt_ProgTypes_SingleOrDefault As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry( _
+                        "rt_ProgTypes_SingleOrDefault", _
+                        AddressOf Global.LightSwitchApplication.FlipperSQLData.DetailsClass.MethodSetProperties._rt_ProgTypes_SingleOrDefault_Stub)
+                Private Shared Sub _rt_ProgTypes_SingleOrDefault_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data), d As Global.LightSwitchApplication.FlipperSQLData.DetailsClass, sf As Object)
+                    c(d, d._rt_ProgTypes_SingleOrDefault, sf)
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
                 Public Shared ReadOnly rt_Purposes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Entry = _
                     New Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Entry( _
                         "rt_Purposes_Single", _
@@ -1884,6 +1957,15 @@ Namespace LightSwitchApplication
                 End Sub
      
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly rt_ProgTypes As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Entry( _
+                        "rt_ProgTypes", _
+                        AddressOf Global.LightSwitchApplication.FlipperSQLData.DetailsClass.PropertySetProperties._rt_ProgTypes_Stub)
+                Private Shared Sub _rt_ProgTypes_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data), d As Global.LightSwitchApplication.FlipperSQLData.DetailsClass, sf As Object)
+                    c(d, d._rt_ProgTypes, sf)
+                End Sub
+     
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
                 Public Shared ReadOnly rt_Purposes As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Entry = _
                     New Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Entry( _
                         "rt_Purposes", _
@@ -1983,6 +2065,9 @@ Namespace LightSwitchApplication
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _rt_Permanences As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Permanence).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _rt_ProgTypes As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _rt_Purposes As Global.Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Data
@@ -2091,6 +2176,12 @@ Namespace LightSwitchApplication
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _rt_Permanences_SingleOrDefault As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Permanence).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _rt_ProgTypes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _rt_ProgTypes_SingleOrDefault As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_ProgType).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _rt_Purposes_Single As Global.Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod(Of Global.LightSwitchApplication.FlipperSQLData, Global.LightSwitchApplication.FlipperSQLData.DetailsClass, Global.LightSwitchApplication.rt_Purpose).Data

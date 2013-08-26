@@ -85,6 +85,9 @@ Namespace LightSwitchApplication.Implementation
             If (type Is GetType(Global.FlipperSQLData.Implementation.rt_Permanence)) Then
                 Return New Global.FlipperSQLData.Implementation.rt_Permanence
             End If
+            If (type Is GetType(Global.FlipperSQLData.Implementation.rt_ProgType)) Then
+                Return New Global.FlipperSQLData.Implementation.rt_ProgType
+            End If
             If (type Is GetType(Global.FlipperSQLData.Implementation.rt_Purpose)) Then
                 Return New Global.FlipperSQLData.Implementation.rt_Purpose
             End If
@@ -160,6 +163,9 @@ Namespace LightSwitchApplication.Implementation
             End If
             If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_Permanence)) Then
                 Return New Global.FlipperSQLData.Implementation.rt_Permanence()
+            End If
+            If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_ProgType)) Then
+                Return New Global.FlipperSQLData.Implementation.rt_ProgType()
             End If
             If GetType(T).Equals(GetType(Global.LightSwitchApplication.rt_Purpose)) Then
                 Return New Global.FlipperSQLData.Implementation.rt_Purpose()
@@ -262,6 +268,9 @@ Namespace LightSwitchApplication.Implementation
             End If
             If GetType(Global.LightSwitchApplication.rt_Permanence).Equals(definitionType)
                 Return GetType(Global.FlipperSQLData.Implementation.rt_Permanence)
+            End If
+            If GetType(Global.LightSwitchApplication.rt_ProgType).Equals(definitionType)
+                Return GetType(Global.FlipperSQLData.Implementation.rt_ProgType)
             End If
             If GetType(Global.LightSwitchApplication.rt_Purpose).Equals(definitionType)
                 Return GetType(Global.FlipperSQLData.Implementation.rt_Purpose)
@@ -1450,15 +1459,6 @@ Namespace FlipperSQLData.Implementation
             End Set
         End Property
         
-        Private Property _ProgTypeIDImplementation() As Global.System.Nullable(Of Integer) Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.ProgTypeID
-            Get
-                Return Me.ProgTypeID
-            End Get
-            Set(ByVal value As Global.System.Nullable(Of Integer))
-                Me.ProgTypeID = value
-            End Set
-        End Property
-        
         Private ReadOnly Property _as_Project_MonitoringStationsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.as_Project_MonitoringStations
             Get
                 Return Me.as_Project_MonitoringStations
@@ -1489,6 +1489,18 @@ Namespace FlipperSQLData.Implementation
             End Set
         End Property
         
+        Private Property _rt_ProgTypeImplementation() As Global.Microsoft.LightSwitch.Internal.IEntityImplementation Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.rt_ProgType
+            Get
+                Return Me.rt_ProgType
+            End Get
+            Set(ByVal value As Global.Microsoft.LightSwitch.Internal.IEntityImplementation)
+                Me.rt_ProgType = DirectCast(value, Global.FlipperSQLData.Implementation.rt_ProgType)
+                If Me.__host IsNot Nothing Then
+                    Me.__host.RaisePropertyChanged("rt_ProgType")
+                End If
+            End Set
+        End Property
+        
         Private Property _WorkGroupImplementation() As Global.Microsoft.LightSwitch.Internal.IEntityImplementation Implements Global.LightSwitchApplication.ProjectAndProgram.DetailsClass.IImplementation.WorkGroup
             Get
                 Return Me.WorkGroup
@@ -1510,6 +1522,12 @@ Namespace FlipperSQLData.Implementation
         Private Sub OnSecondaryContactIDChanged()
             If Me.__host IsNot Nothing Then
                 Me.__host.RaisePropertyChanged("Person1")
+            End If
+        End Sub
+        
+        Private Sub OnProgTypeIDChanged()
+            If Me.__host IsNot Nothing Then
+                Me.__host.RaisePropertyChanged("rt_ProgType")
             End If
         End Sub
         
@@ -1768,24 +1786,6 @@ Namespace FlipperSQLData.Implementation
     Partial Public Class ReceivingWaterBody
         Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation
 
-        Private Property _ID_ReceivingWaterImplementation() As Integer Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ID_ReceivingWater
-            Get
-                Return Me.ID_ReceivingWater
-            End Get
-            Set(ByVal value As Integer)
-                Me.ID_ReceivingWater = value
-            End Set
-        End Property
-        
-        Private Property _ReceivingWaterBody1Implementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ReceivingWaterBody1
-            Get
-                Return Me.ReceivingWaterBody1
-            End Get
-            Set(ByVal value As String)
-                Me.ReceivingWaterBody1 = value
-            End Set
-        End Property
-        
         Private Property _AlternateNameImplementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.AlternateName
             Get
                 Return Me.AlternateName
@@ -1801,6 +1801,21 @@ Namespace FlipperSQLData.Implementation
             End Get
             Set(ByVal value As String)
                 Me.Notes = value
+            End Set
+        End Property
+        
+        Private ReadOnly Property _IDImplementation() As Integer Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ID
+            Get
+                Return Me.ID
+            End Get
+        End Property
+        
+        Private Property _ReceivingWaterNameImplementation() As String Implements Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass.IImplementation.ReceivingWaterName
+            Get
+                Return Me.ReceivingWaterName
+            End Get
+            Set(ByVal value As String)
+                Me.ReceivingWaterName = value
             End Set
         End Property
         
@@ -1990,6 +2005,67 @@ Namespace FlipperSQLData.Implementation
         Private ReadOnly Property _MonitoringStationsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.rt_Permanence.DetailsClass.IImplementation.MonitoringStations
             Get
                 Return Me.MonitoringStations
+            End Get
+        End Property
+        
+        #Region "IEntityImplementation Members"
+        Private __host As Global.Microsoft.LightSwitch.Internal.IEntityImplementationHost
+        
+        Private ReadOnly Property __HostImplementation() As Global.Microsoft.LightSwitch.Internal.IEntityImplementationHost Implements Global.Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+            Get
+                Return Me.__host
+            End Get
+        End Property
+        
+        Private Sub _Initialize(ByVal host As Global.Microsoft.LightSwitch.Internal.IEntityImplementationHost) Implements Global.Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize
+            Me.__host = host
+        End Sub
+        
+        Protected Overrides Sub OnPropertyChanged(ByVal propertyName As String)
+            MyBase.OnPropertyChanged(propertyName)
+        
+            If Not Me.__host Is Nothing Then
+                Me.__host.RaisePropertyChanged(propertyName)
+            End If
+        End Sub
+        #End Region
+    End Class
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+    Partial Public Class rt_ProgType
+        Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation
+
+        Private Property _idImplementation() As Integer Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.id
+            Get
+                Return Me.id
+            End Get
+            Set(ByVal value As Integer)
+                Me.id = value
+            End Set
+        End Property
+        
+        Private Property _ProgTypeImplementation() As String Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.ProgType
+            Get
+                Return Me.ProgType
+            End Get
+            Set(ByVal value As String)
+                Me.ProgType = value
+            End Set
+        End Property
+        
+        Private Property _DescriptionImplementation() As String Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.Description
+            Get
+                Return Me.Description
+            End Get
+            Set(ByVal value As String)
+                Me.Description = value
+            End Set
+        End Property
+        
+        Private ReadOnly Property _ProjectAndProgramsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.rt_ProgType.DetailsClass.IImplementation.ProjectAndPrograms
+            Get
+                Return Me.ProjectAndPrograms
             End Get
         End Property
         
@@ -2383,15 +2459,6 @@ Namespace FlipperSQLData.Implementation
     Partial Public Class WorkGroup
         Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation
 
-        Private Property _id_workgroupImplementation() As Integer Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.id_workgroup
-            Get
-                Return Me.id_workgroup
-            End Get
-            Set(ByVal value As Integer)
-                Me.id_workgroup = value
-            End Set
-        End Property
-        
         Private Property _WorkGroupCodeImplementation() As String Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.WorkGroupCode
             Get
                 Return Me.WorkGroupCode
@@ -2435,6 +2502,12 @@ Namespace FlipperSQLData.Implementation
             Set(ByVal value As String)
                 Me.Notes = value
             End Set
+        End Property
+        
+        Private ReadOnly Property _idImplementation() As Integer Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.id
+            Get
+                Return Me.id
+            End Get
         End Property
         
         Private ReadOnly Property _ProjectAndProgramsImplementation() As Global.System.Collections.IEnumerable Implements Global.LightSwitchApplication.WorkGroup.DetailsClass.IImplementation.ProjectAndPrograms

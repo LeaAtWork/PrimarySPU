@@ -210,6 +210,7 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Hidden />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -259,12 +260,22 @@
         Association="FK_CSFacility_rt_CSFType"
         FromEnd="CSFacility"
         Name="rt_CSFType"
-        ToEnd="rt_CSFType" />
+        ToEnd="rt_CSFType">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="CSFType" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_CSFacility_rt_System"
         FromEnd="CSFacility"
         Name="rt_System"
-        ToEnd="rt_System" />
+        ToEnd="rt_System">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="System" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -284,6 +295,7 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Hidden />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -332,6 +344,7 @@
         PropertyType=":DateTime?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
+            Kind="Unspecified"
             Precision="3"
             PreserveSeconds="True" />
           <NotSearchable />
@@ -357,6 +370,7 @@
         PropertyType=":DateTime?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
+            Kind="Unspecified"
             Precision="3"
             PreserveSeconds="True" />
           <NotSearchable />
@@ -367,6 +381,7 @@
         PropertyType=":DateTime?">
         <EntityProperty.Attributes>
           <DateTimeConstraint
+            Kind="Unspecified"
             Precision="3"
             PreserveSeconds="True" />
           <NotSearchable />
@@ -424,27 +439,52 @@
         Association="FK_MonitoringStation_rt_DataAccquisitionMethod"
         FromEnd="MonitoringStation"
         Name="rt_DataAccquisitionMethod"
-        ToEnd="rt_DataAccquisitionMethod" />
+        ToEnd="rt_DataAccquisitionMethod">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Data Accquisition Method" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_MonitoringStation_rt_Permanence"
         FromEnd="MonitoringStation"
         Name="rt_Permanence"
-        ToEnd="rt_Permanence" />
+        ToEnd="rt_Permanence">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Permanence" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_MonitoringStation_rt_Purpose"
         FromEnd="MonitoringStation"
         Name="rt_Purpose"
-        ToEnd="rt_Purpose" />
+        ToEnd="rt_Purpose">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Purpose" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_MonitoringStation_rt_Status"
         FromEnd="MonitoringStation"
         Name="rt_Status"
-        ToEnd="rt_Status" />
+        ToEnd="rt_Status">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Status" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_MonitoringStation_rt_System"
         FromEnd="MonitoringStation"
         Name="rt_System"
-        ToEnd="rt_System" />
+        ToEnd="rt_System">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="System" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="FK_SensorPoint_MonitoringStation"
         FromEnd="MonitoringStation"
@@ -469,6 +509,7 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Hidden />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -500,7 +541,12 @@
         Association="FK_Outfall_rt_System"
         FromEnd="Outfall"
         Name="rt_System"
-        ToEnd="rt_System" />
+        ToEnd="rt_System">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="System" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -726,13 +772,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="ProgTypeID"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Association="FK_as_Project_MonitoringStation_ProjectAndProgram"
         FromEnd="ProjectAndProgram"
@@ -748,6 +787,11 @@
         FromEnd="ProjectAndProgram"
         Name="Person1"
         ToEnd="People" />
+      <NavigationProperty
+        Association="FK_ProjectAndProgram_rt_ProgType"
+        FromEnd="ProjectAndProgram"
+        Name="rt_ProgType"
+        ToEnd="rt_ProgType" />
       <NavigationProperty
         Association="FK_ProjectAndProgram_WorkGroup"
         FromEnd="ProjectAndProgram"
@@ -911,22 +955,6 @@
       </EntityMethod>
     </EntityType.Methods>
     <EntityType.Properties>
-      <KeyProperty
-        Name="ID_ReceivingWater"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="ReceivingWaterBody1"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <EntityProperty
         Name="AlternateName"
         PropertyType=":String?">
@@ -947,6 +975,24 @@
         FromEnd="ReceivingWaterBodies"
         Name="Outfalls"
         ToEnd="Outfall" />
+      <KeyProperty
+        IsReadOnly="True"
+        Name="ID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ReceivingWaterName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -1076,6 +1122,48 @@
         FromEnd="rt_Permanence"
         Name="MonitoringStations"
         ToEnd="MonitoringStation" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="rt_ProgType">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ProgType"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK_ProjectAndProgram_rt_ProgType"
+        FromEnd="rt_ProgType"
+        Name="ProjectAndPrograms"
+        ToEnd="ProjectAndProgram" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -1341,14 +1429,6 @@
       </EntityMethod>
     </EntityType.Methods>
     <EntityType.Properties>
-      <KeyProperty
-        Name="id_workgroup"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
       <EntityProperty
         Name="WorkGroupCode"
         PropertyType=":String?">
@@ -1393,6 +1473,16 @@
         FromEnd="WorkGroup"
         Name="ProjectAndPrograms"
         ToEnd="ProjectAndProgram" />
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -1758,6 +1848,21 @@
       Name="ProjectAndProgram" />
   </Association>
   <Association
+    Name="FK_ProjectAndProgram_rt_ProgType">
+    <AssociationEnd
+      EntityType="rt_ProgType"
+      Name="rt_ProgType">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="ProjectAndProgram"
+      Multiplicity="Many"
+      Name="ProjectAndProgram" />
+  </Association>
+  <Association
     Name="FK_ProjectAndProgram_WorkGroup">
     <AssociationEnd
       EntityType="WorkGroup"
@@ -1909,6 +2014,12 @@
       CanUpdate="True"
       EntityType="rt_Permanence"
       Name="rt_Permanences" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="rt_ProgType"
+      Name="rt_ProgTypes" />
     <EntitySet
       CanDelete="True"
       CanInsert="True"
@@ -2181,6 +2292,16 @@
       <AssociationSetEnd
         EntitySet="People"
         Name="People" />
+      <AssociationSetEnd
+        EntitySet="ProjectAndPrograms"
+        Name="ProjectAndProgram" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK_ProjectAndProgram_rt_ProgType"
+      Name="FK_ProjectAndProgram_rt_ProgType">
+      <AssociationSetEnd
+        EntitySet="rt_ProgTypes"
+        Name="rt_ProgType" />
       <AssociationSetEnd
         EntitySet="ProjectAndPrograms"
         Name="ProjectAndProgram" />
@@ -3122,12 +3243,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="ID_ReceivingWater" />
+                  Member="ID" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="ID_ReceivingWater" />
+                Parameter="ID" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -3139,11 +3260,11 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="ID_ReceivingWater"
+        Name="ID"
         ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'ID_ReceivingWater' key property of the entity to retrieve." />
+            Value="The value of the 'ID' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -3162,12 +3283,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="ID_ReceivingWater" />
+                  Member="ID" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="ID_ReceivingWater" />
+                Parameter="ID" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -3179,11 +3300,11 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="ID_ReceivingWater"
+        Name="ID"
         ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'ID_ReceivingWater' key property of the entity to retrieve." />
+            Value="The value of the 'ID' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -3416,6 +3537,86 @@
         <QuerySourceExpressionTree>
           <MemberExpression
             Member="rt_Permanences" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="rt_ProgTypes_Single"
+      ReturnType="rt_ProgType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="rt_ProgTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="rt_ProgTypes_SingleOrDefault"
+      ReturnType="rt_ProgType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="rt_ProgTypes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -3842,12 +4043,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="id_workgroup" />
+                  Member="id" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="id_workgroup" />
+                Parameter="id" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -3859,11 +4060,11 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="id_workgroup"
+        Name="id"
         ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'id_workgroup' key property of the entity to retrieve." />
+            Value="The value of the 'id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -3882,12 +4083,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="id_workgroup" />
+                  Member="id" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="id_workgroup" />
+                Parameter="id" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -3899,11 +4100,11 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="id_workgroup"
+        Name="id"
         ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'id_workgroup' key property of the entity to retrieve." />
+            Value="The value of the 'id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>

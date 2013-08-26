@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityType Name="as_CSF_MonitoringStation">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <Property Name="CSF" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
@@ -17,7 +17,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <Property Name="BillingCode" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
     <Property Name="MonitoringStation" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
@@ -31,7 +31,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="PumpStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
@@ -43,7 +43,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MonitoringStation" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="RainGage" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="RelationshipID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
@@ -71,7 +71,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MontoringStationCode" Type="Edm.String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="Address" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="AccessPointID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
@@ -107,7 +107,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OutfallName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
     <Property Name="ReceivingWaterBodyID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
@@ -120,7 +120,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="Edm.String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="LastName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="FirstName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
@@ -147,24 +147,25 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProjectOrProgram_ID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="CommonName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="ADSName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
-    <Property Name="ProgTypeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="PrimaryContactID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="SecondaryContactID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProgTypeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="WorkGroupID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="as_Project_MonitoringStations" Relationship="LightSwitchApplication.FK_as_Project_MonitoringStation_ProjectAndProgram" ToRole="as_Project_MonitoringStation" FromRole="ProjectAndProgram" />
     <NavigationProperty Name="Person" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People" ToRole="People" FromRole="ProjectAndProgram" />
     <NavigationProperty Name="Person1" Relationship="LightSwitchApplication.FK_ProjectAndProgram_People1" ToRole="People" FromRole="ProjectAndProgram" />
+    <NavigationProperty Name="rt_ProgType" Relationship="LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType" ToRole="rt_ProgType" FromRole="ProjectAndProgram" />
     <NavigationProperty Name="WorkGroup" Relationship="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup" ToRole="WorkGroup" FromRole="ProjectAndProgram" />
   </EntityType>
   <EntityType Name="PumpStation">
     <Key>
       <PropertyRef Name="ID_PS" />
     </Key>
-    <Property Name="ID_PS" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID_PS" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PumpStationCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
     <Property Name="PumpStationType" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
@@ -177,7 +178,7 @@
     <Key>
       <PropertyRef Name="ID_RG" />
     </Key>
-    <Property Name="ID_RG" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID_RG" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RainGageCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="NumberCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
     <Property Name="Address" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
@@ -191,19 +192,19 @@
   </EntityType>
   <EntityType Name="ReceivingWaterBody">
     <Key>
-      <PropertyRef Name="ID_ReceivingWater" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID_ReceivingWater" Type="Edm.Int32" Nullable="false" />
-    <Property Name="ReceivingWaterBody1" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="AlternateName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReceivingWaterName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="Outfalls" Relationship="LightSwitchApplication.FK_Outfall_ReceivingWaterBodies" ToRole="Outfall" FromRole="ReceivingWaterBodies" />
   </EntityType>
   <EntityType Name="rt_CSFType">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CSFType" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="CSFacilities" Relationship="LightSwitchApplication.FK_CSFacility_rt_CSFType" ToRole="CSFacility" FromRole="rt_CSFType" />
@@ -212,7 +213,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DataAccquisitionMethod" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_DataAccquisitionMethod" ToRole="MonitoringStation" FromRole="rt_DataAccquisitionMethod" />
@@ -221,16 +222,25 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PermanenceType" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Permanence" ToRole="MonitoringStation" FromRole="rt_Permanence" />
+  </EntityType>
+  <EntityType Name="rt_ProgType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgType" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ProjectAndPrograms" Relationship="LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType" ToRole="ProjectAndProgram" FromRole="rt_ProgType" />
   </EntityType>
   <EntityType Name="rt_Purpose">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Purpose" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="MonitoringStations" Relationship="LightSwitchApplication.FK_MonitoringStation_rt_Purpose" ToRole="MonitoringStation" FromRole="rt_Purpose" />
@@ -239,7 +249,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Relationship" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="as_CSF_MonitoringStations" Relationship="LightSwitchApplication.FK_as_CSF_MonitoringStation_rt_Relationship" ToRole="as_CSF_MonitoringStation" FromRole="rt_Relationship" />
@@ -260,7 +270,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SystemCode" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="true" ConcurrencyMode="Fixed" />
     <Property Name="Description" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="CSFacilities" Relationship="LightSwitchApplication.FK_CSFacility_rt_System" ToRole="CSFacility" FromRole="rt_System" />
@@ -272,7 +282,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SensorPointID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="AssociatedEntityID" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="FeatureKey" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
@@ -281,14 +291,14 @@
   </EntityType>
   <EntityType Name="WorkGroup">
     <Key>
-      <PropertyRef Name="id_workgroup" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="id_workgroup" Type="Edm.Int32" Nullable="false" />
     <Property Name="WorkGroupCode" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="WorkGroupName" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="Division" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="LowOrg" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="Notes" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="ProjectAndPrograms" Relationship="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup" ToRole="ProjectAndProgram" FromRole="WorkGroup" />
   </EntityType>
   <Association Name="FK_as_CSF_MonitoringStation_CSFacility">
@@ -536,7 +546,7 @@
     <End Role="Outfall" Type="LightSwitchApplication.Outfall" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ReceivingWaterBodies">
-        <PropertyRef Name="ID_ReceivingWater" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Outfall">
         <PropertyRef Name="ReceivingWaterBodyID" />
@@ -579,12 +589,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProjectAndProgram_rt_ProgType">
+    <End Role="rt_ProgType" Type="LightSwitchApplication.rt_ProgType" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_ProgType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="ProgTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProjectAndProgram_WorkGroup">
     <End Role="WorkGroup" Type="LightSwitchApplication.WorkGroup" Multiplicity="0..1" />
     <End Role="ProjectAndProgram" Type="LightSwitchApplication.ProjectAndProgram" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="WorkGroup">
-        <PropertyRef Name="id_workgroup" />
+        <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="ProjectAndProgram">
         <PropertyRef Name="WorkGroupID" />
@@ -643,6 +665,7 @@
     <EntitySet Name="rt_CSFTypes" EntityType="LightSwitchApplication.rt_CSFType" />
     <EntitySet Name="rt_DataAccquisitionMethods" EntityType="LightSwitchApplication.rt_DataAccquisitionMethod" />
     <EntitySet Name="rt_Permanences" EntityType="LightSwitchApplication.rt_Permanence" />
+    <EntitySet Name="rt_ProgTypes" EntityType="LightSwitchApplication.rt_ProgType" />
     <EntitySet Name="rt_Purposes" EntityType="LightSwitchApplication.rt_Purpose" />
     <EntitySet Name="rt_Relationships" EntityType="LightSwitchApplication.rt_Relationship" />
     <EntitySet Name="rt_Status" EntityType="LightSwitchApplication.rt_Status" />
@@ -743,6 +766,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_ProjectAndProgram_People1" Association="LightSwitchApplication.FK_ProjectAndProgram_People1">
       <End Role="People" EntitySet="People" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_rt_ProgType" Association="LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType">
+      <End Role="rt_ProgType" EntitySet="rt_ProgTypes" />
       <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
     </AssociationSet>
     <AssociationSet Name="FK_ProjectAndProgram_WorkGroup" Association="LightSwitchApplication.FK_ProjectAndProgram_WorkGroup">

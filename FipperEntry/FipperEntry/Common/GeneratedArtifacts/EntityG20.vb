@@ -85,30 +85,6 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property id_workgroup As Integer
-            Get
-                Return __WorkGroup.DetailsClass.GetValue(Me, __WorkGroup.DetailsClass.PropertySetProperties.id_workgroup)
-            End Get
-            Set
-                __WorkGroup.DetailsClass.SetValue(Me, __WorkGroup.DetailsClass.PropertySetProperties.id_workgroup, Value)
-            End Set
-        End Property
-        
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub id_workgroup_IsReadOnly(ByRef result As Boolean)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub id_workgroup_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub id_workgroup_Changed()
-        End Sub
-
-        ''' <summary>
-        ''' No Modeled Description Available
-        ''' </summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public Property WorkGroupCode As String
             Get
                 Return __WorkGroup.DetailsClass.GetValue(Me, __WorkGroup.DetailsClass.PropertySetProperties.WorkGroupCode)
@@ -229,6 +205,27 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property id As Integer
+            Get
+                Return __WorkGroup.DetailsClass.GetValue(Me, __WorkGroup.DetailsClass.PropertySetProperties.id)
+            End Get
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub id_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub id_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub id_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.ProjectAndProgram)
             Get
                 Return __WorkGroup.DetailsClass.GetValue(Me, __WorkGroup.DetailsClass.PropertySetProperties.ProjectAndPrograms)
@@ -261,7 +258,7 @@ Namespace LightSwitchApplication
                 Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __WorkGroup, __WorkGroup.DetailsClass))
     
             Shared Sub New()
-                Dim initializeEntry = __WorkGroup.DetailsClass.PropertySetProperties.id_workgroup
+                Dim initializeEntry = __WorkGroup.DetailsClass.PropertySetProperties.WorkGroupCode
             End Sub
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
@@ -315,14 +312,6 @@ Namespace LightSwitchApplication
                     MyBase.New()
                 End Sub
     
-                Public ReadOnly Property id_workgroup As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer)
-                    Get
-                        Return TryCast(
-                            MyBase.GetItem(__WorkGroup.DetailsClass.PropertySetProperties.id_workgroup),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer))
-                    End Get
-                End Property
-                
                 Public ReadOnly Property WorkGroupCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, String)
                     Get
                         Return TryCast(
@@ -363,6 +352,14 @@ Namespace LightSwitchApplication
                     End Get
                 End Property
                 
+                Public ReadOnly Property id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__WorkGroup.DetailsClass.PropertySetProperties.id),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer))
+                    End Get
+                End Property
+                
                 Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram)
                     Get
                         Return TryCast(
@@ -377,12 +374,12 @@ Namespace LightSwitchApplication
             Public Interface IImplementation
                 Inherits Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
-                Shadows Property id_workgroup As Integer
                 Shadows Property WorkGroupCode As String
                 Shadows Property WorkGroupName As String
                 Shadows Property Division As String
                 Shadows Property LowOrg As String
                 Shadows Property Notes As String
+                Shadows ReadOnly Property id As Integer
                 Shadows ReadOnly Property ProjectAndPrograms As Global.System.Collections.IEnumerable
     
             End Interface
@@ -391,37 +388,6 @@ Namespace LightSwitchApplication
             <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
             Friend Class PropertySetProperties
-    
-                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly id_workgroup As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Entry( _
-                        "id_workgroup", _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_Stub, _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_ComputeIsReadOnly, _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_Validate, _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_GetImplementationValue, _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_SetImplementationValue, _
-                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_workgroup_OnValueChanged)
-                Private Shared Sub _id_workgroup_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __WorkGroup.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Data), d As __WorkGroup.DetailsClass, sf As Object)
-                    c(d, d._id_workgroup, sf)
-                End Sub
-                Private Shared Function _id_workgroup_ComputeIsReadOnly(e As __WorkGroup) As Boolean
-                    Dim result As Boolean = False
-                    e.id_workgroup_IsReadOnly(result)
-                    Return result
-                End Function
-                Private Shared Sub _id_workgroup_Validate(e As __WorkGroup, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.id_workgroup_Validate(r)
-                End Sub
-                Private Shared Function _id_workgroup_GetImplementationValue(d As __WorkGroup.DetailsClass) As Integer
-                    Return d.ImplementationEntity.id_workgroup
-                End Function
-                Private Shared Sub _id_workgroup_SetImplementationValue(d As __WorkGroup.DetailsClass, v As Integer)
-                    d.ImplementationEntity.id_workgroup = v
-                End Sub
-                Private Shared Sub _id_workgroup_OnValueChanged(e As __WorkGroup)
-                    e.id_workgroup_Changed()
-                End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
                 Public Shared ReadOnly WorkGroupCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, String).Entry = _
@@ -579,6 +545,34 @@ Namespace LightSwitchApplication
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Entry( _
+                        "id", _
+                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_Stub, _
+                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly, _
+                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_Validate, _
+                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_GetImplementationValue, _
+                        Nothing, _
+                        AddressOf __WorkGroup.DetailsClass.PropertySetProperties._id_OnValueChanged)
+                Private Shared Sub _id_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __WorkGroup.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Data), d As __WorkGroup.DetailsClass, sf As Object)
+                    c(d, d._id, sf)
+                End Sub
+                Private Shared Function _id_ComputeIsReadOnly(e As __WorkGroup) As Boolean
+                    Dim result As Boolean = False
+                    e.id_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _id_Validate(e As __WorkGroup, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.id_Validate(r)
+                End Sub
+                Private Shared Function _id_GetImplementationValue(d As __WorkGroup.DetailsClass) As Integer
+                    Return d.ImplementationEntity.id
+                End Function
+                Private Shared Sub _id_OnValueChanged(e As __WorkGroup)
+                    e.id_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
                 Public Shared ReadOnly ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry = _
                     New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry( _
                         "ProjectAndPrograms", _
@@ -598,9 +592,6 @@ Namespace LightSwitchApplication
             End Class
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _id_workgroup As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Data
-            
-            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _WorkGroupCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
@@ -614,6 +605,9 @@ Namespace LightSwitchApplication
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Integer).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
             Private _ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __WorkGroup, __WorkGroup.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data

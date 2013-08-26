@@ -11,7 +11,7 @@
 Option Strict On
 Option Explicit On
 
-Imports __ReceivingWaterBody = LightSwitchApplication.ReceivingWaterBody
+Imports __rt_CSFType = LightSwitchApplication.rt_CSFType
 
 Namespace LightSwitchApplication
 
@@ -21,13 +21,13 @@ Namespace LightSwitchApplication
     ''' No Modeled Description Available
     ''' </summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-    Public NotInheritable Partial Class ReceivingWaterBody
-        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass)
+    Public NotInheritable Partial Class rt_CSFType
+        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __rt_CSFType, __rt_CSFType.DetailsClass)
     
         #Region "Constructors"
     
         ''' <summary>
-        ''' Initializes a new instance of the ReceivingWaterBody entity.
+        ''' Initializes a new instance of the rt_CSFType entity.
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
@@ -37,17 +37,17 @@ Namespace LightSwitchApplication
     
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __ReceivingWaterBody))
+        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_CSFType))
             MyBase.New(entitySet)
             
-            __ReceivingWaterBody.DetailsClass.Initialize(Me)
+            __rt_CSFType.DetailsClass.Initialize(Me)
         End Sub
     
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody_Created()
+        Private Partial Sub rt_CSFType_Created()
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody_AllowSaveWithErrors(ByRef result As Boolean)
+        Private Partial Sub rt_CSFType_AllowSaveWithErrors(ByRef result As Boolean)
         End Sub
     
         #End Region
@@ -85,23 +85,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property ID_ReceivingWater As Integer
+        Public Property id As Integer
             Get
-                Return __ReceivingWaterBody.DetailsClass.GetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.ID_ReceivingWater)
+                Return __rt_CSFType.DetailsClass.GetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.id)
             End Get
             Set
-                __ReceivingWaterBody.DetailsClass.SetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.ID_ReceivingWater, Value)
+                __rt_CSFType.DetailsClass.SetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.id, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_ReceivingWater_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub id_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_ReceivingWater_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub id_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_ReceivingWater_Changed()
+        Private Partial Sub id_Changed()
         End Sub
 
         ''' <summary>
@@ -109,23 +109,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property ReceivingWaterBody1 As String
+        Public Property CSFType As String
             Get
-                Return __ReceivingWaterBody.DetailsClass.GetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.ReceivingWaterBody1)
+                Return __rt_CSFType.DetailsClass.GetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.CSFType)
             End Get
             Set
-                __ReceivingWaterBody.DetailsClass.SetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.ReceivingWaterBody1, Value)
+                __rt_CSFType.DetailsClass.SetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.CSFType, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody1_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub CSFType_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody1_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub CSFType_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody1_Changed()
+        Private Partial Sub CSFType_Changed()
         End Sub
 
         ''' <summary>
@@ -133,23 +133,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property AlternateName As String
+        Public Property Description As String
             Get
-                Return __ReceivingWaterBody.DetailsClass.GetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.AlternateName)
+                Return __rt_CSFType.DetailsClass.GetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.Description)
             End Get
             Set
-                __ReceivingWaterBody.DetailsClass.SetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.AlternateName, Value)
+                __rt_CSFType.DetailsClass.SetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.Description, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub AlternateName_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub Description_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub AlternateName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub Description_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub AlternateName_Changed()
+        Private Partial Sub Description_Changed()
         End Sub
 
         ''' <summary>
@@ -157,41 +157,17 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property Notes As String
+        Public ReadOnly Property CSFacilities As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.CSFacility)
             Get
-                Return __ReceivingWaterBody.DetailsClass.GetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.Notes)
-            End Get
-            Set
-                __ReceivingWaterBody.DetailsClass.SetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.Notes, Value)
-            End Set
-        End Property
-        
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub Notes_IsReadOnly(ByRef result As Boolean)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub Notes_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub Notes_Changed()
-        End Sub
-
-        ''' <summary>
-        ''' No Modeled Description Available
-        ''' </summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property Outfalls As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.Outfall)
-            Get
-                Return __ReceivingWaterBody.DetailsClass.GetValue(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.Outfalls)
+                Return __rt_CSFType.DetailsClass.GetValue(Me, __rt_CSFType.DetailsClass.PropertySetProperties.CSFacilities)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property OutfallsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.Outfall)
+        Public ReadOnly Property CSFacilitiesQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.CSFacility)
             Get
-                Return __ReceivingWaterBody.DetailsClass.GetQuery(Me, __ReceivingWaterBody.DetailsClass.PropertySetProperties.Outfalls)
+                Return __rt_CSFType.DetailsClass.GetQuery(Me, __rt_CSFType.DetailsClass.PropertySetProperties.CSFacilities)
             End Get
         End Property
 
@@ -205,32 +181,32 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public NotInheritable Class DetailsClass
             Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of _
-                __ReceivingWaterBody, _
-                __ReceivingWaterBody.DetailsClass, _
-                __ReceivingWaterBody.DetailsClass.IImplementation, _
-                __ReceivingWaterBody.DetailsClass.PropertySet, _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass), _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass))
+                __rt_CSFType, _
+                __rt_CSFType.DetailsClass, _
+                __rt_CSFType.DetailsClass.IImplementation, _
+                __rt_CSFType.DetailsClass.PropertySet, _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_CSFType, __rt_CSFType.DetailsClass), _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_CSFType, __rt_CSFType.DetailsClass))
     
             Shared Sub New()
-                Dim initializeEntry = __ReceivingWaterBody.DetailsClass.PropertySetProperties.ID_ReceivingWater
+                Dim initializeEntry = __rt_CSFType.DetailsClass.PropertySetProperties.id
             End Sub
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private Shared ReadOnly __ReceivingWaterBodyEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass).Entry = _
-                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass).Entry( _
-                    AddressOf __ReceivingWaterBody.DetailsClass.__ReceivingWaterBody_CreateNew, _
-                    AddressOf __ReceivingWaterBody.DetailsClass.__ReceivingWaterBody_Created, _
-                    AddressOf __ReceivingWaterBody.DetailsClass.__ReceivingWaterBody_AllowSaveWithErrors)
-            Private Shared Function __ReceivingWaterBody_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __ReceivingWaterBody)) As __ReceivingWaterBody
-                Return New __ReceivingWaterBody(es)
+            Private Shared ReadOnly __rt_CSFTypeEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_CSFType, __rt_CSFType.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __rt_CSFType, __rt_CSFType.DetailsClass).Entry( _
+                    AddressOf __rt_CSFType.DetailsClass.__rt_CSFType_CreateNew, _
+                    AddressOf __rt_CSFType.DetailsClass.__rt_CSFType_Created, _
+                    AddressOf __rt_CSFType.DetailsClass.__rt_CSFType_AllowSaveWithErrors)
+            Private Shared Function __rt_CSFType_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __rt_CSFType)) As __rt_CSFType
+                Return New __rt_CSFType(es)
             End Function
-            Private Shared Sub __ReceivingWaterBody_Created(e As __ReceivingWaterBody)
-                e.ReceivingWaterBody_Created()
+            Private Shared Sub __rt_CSFType_Created(e As __rt_CSFType)
+                e.rt_CSFType_Created()
             End Sub
-            Private Shared Function __ReceivingWaterBody_AllowSaveWithErrors(e As __ReceivingWaterBody) As Boolean
+            Private Shared Function __rt_CSFType_AllowSaveWithErrors(e As __rt_CSFType) As Boolean
                 Dim result As Boolean = False
-                e.ReceivingWaterBody_AllowSaveWithErrors(result)
+                e.rt_CSFType_AllowSaveWithErrors(result)
                 Return result
             End Function
     
@@ -238,19 +214,19 @@ Namespace LightSwitchApplication
                 MyBase.New()
             End Sub
     
-            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass)
+            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __rt_CSFType, __rt_CSFType.DetailsClass)
                 Get
                     Return MyBase.Commands
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass)
+            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __rt_CSFType, __rt_CSFType.DetailsClass)
                 Get
                     Return MyBase.Methods
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Properties As __ReceivingWaterBody.DetailsClass.PropertySet
+            Public ReadOnly Shadows Property Properties As __rt_CSFType.DetailsClass.PropertySet
                 Get
                     Return MyBase.Properties
                 End Get
@@ -261,49 +237,41 @@ Namespace LightSwitchApplication
             <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
             Public NotInheritable Class PropertySet
-                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass)
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __rt_CSFType, __rt_CSFType.DetailsClass)
     
                 Public Sub New()
                     MyBase.New()
                 End Sub
     
-                Public ReadOnly Property ID_ReceivingWater As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer)
+                Public ReadOnly Property id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__ReceivingWaterBody.DetailsClass.PropertySetProperties.ID_ReceivingWater),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer))
+                            MyBase.GetItem(__rt_CSFType.DetailsClass.PropertySetProperties.id),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer))
                     End Get
                 End Property
                 
-                Public ReadOnly Property ReceivingWaterBody1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String)
+                Public ReadOnly Property CSFType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__ReceivingWaterBody.DetailsClass.PropertySetProperties.ReceivingWaterBody1),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String))
+                            MyBase.GetItem(__rt_CSFType.DetailsClass.PropertySetProperties.CSFType),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property AlternateName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String)
+                Public ReadOnly Property Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__ReceivingWaterBody.DetailsClass.PropertySetProperties.AlternateName),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String))
+                            MyBase.GetItem(__rt_CSFType.DetailsClass.PropertySetProperties.Description),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String)
+                Public ReadOnly Property CSFacilities As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__ReceivingWaterBody.DetailsClass.PropertySetProperties.Notes),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String))
-                    End Get
-                End Property
-                
-                Public ReadOnly Property Outfalls As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall)
-                    Get
-                        Return TryCast(
-                            MyBase.GetItem(__ReceivingWaterBody.DetailsClass.PropertySetProperties.Outfalls),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall))
+                            MyBase.GetItem(__rt_CSFType.DetailsClass.PropertySetProperties.CSFacilities),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility))
                     End Get
                 End Property
                 
@@ -313,11 +281,10 @@ Namespace LightSwitchApplication
             Public Interface IImplementation
                 Inherits Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
-                Shadows Property ID_ReceivingWater As Integer
-                Shadows Property ReceivingWaterBody1 As String
-                Shadows Property AlternateName As String
-                Shadows Property Notes As String
-                Shadows ReadOnly Property Outfalls As Global.System.Collections.IEnumerable
+                Shadows Property id As Integer
+                Shadows Property CSFType As String
+                Shadows Property Description As String
+                Shadows ReadOnly Property CSFacilities As Global.System.Collections.IEnumerable
     
             End Interface
     
@@ -327,162 +294,128 @@ Namespace LightSwitchApplication
             Friend Class PropertySetProperties
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly ID_ReceivingWater As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer).Entry( _
-                        "ID_ReceivingWater", _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_Stub, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_ComputeIsReadOnly, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_Validate, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_GetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_SetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ID_ReceivingWater_OnValueChanged)
-                Private Shared Sub _ID_ReceivingWater_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __ReceivingWaterBody.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer).Data), d As __ReceivingWaterBody.DetailsClass, sf As Object)
-                    c(d, d._ID_ReceivingWater, sf)
+                Public Shared ReadOnly id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer).Entry( _
+                        "id", _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_Stub, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_Validate, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_GetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_SetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._id_OnValueChanged)
+                Private Shared Sub _id_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_CSFType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer).Data), d As __rt_CSFType.DetailsClass, sf As Object)
+                    c(d, d._id, sf)
                 End Sub
-                Private Shared Function _ID_ReceivingWater_ComputeIsReadOnly(e As __ReceivingWaterBody) As Boolean
+                Private Shared Function _id_ComputeIsReadOnly(e As __rt_CSFType) As Boolean
                     Dim result As Boolean = False
-                    e.ID_ReceivingWater_IsReadOnly(result)
+                    e.id_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _ID_ReceivingWater_Validate(e As __ReceivingWaterBody, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.ID_ReceivingWater_Validate(r)
+                Private Shared Sub _id_Validate(e As __rt_CSFType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.id_Validate(r)
                 End Sub
-                Private Shared Function _ID_ReceivingWater_GetImplementationValue(d As __ReceivingWaterBody.DetailsClass) As Integer
-                    Return d.ImplementationEntity.ID_ReceivingWater
+                Private Shared Function _id_GetImplementationValue(d As __rt_CSFType.DetailsClass) As Integer
+                    Return d.ImplementationEntity.id
                 End Function
-                Private Shared Sub _ID_ReceivingWater_SetImplementationValue(d As __ReceivingWaterBody.DetailsClass, v As Integer)
-                    d.ImplementationEntity.ID_ReceivingWater = v
+                Private Shared Sub _id_SetImplementationValue(d As __rt_CSFType.DetailsClass, v As Integer)
+                    d.ImplementationEntity.id = v
                 End Sub
-                Private Shared Sub _ID_ReceivingWater_OnValueChanged(e As __ReceivingWaterBody)
-                    e.ID_ReceivingWater_Changed()
+                Private Shared Sub _id_OnValueChanged(e As __rt_CSFType)
+                    e.id_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly ReceivingWaterBody1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry( _
-                        "ReceivingWaterBody1", _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_Stub, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_ComputeIsReadOnly, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_Validate, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_GetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_SetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._ReceivingWaterBody1_OnValueChanged)
-                Private Shared Sub _ReceivingWaterBody1_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __ReceivingWaterBody.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data), d As __ReceivingWaterBody.DetailsClass, sf As Object)
-                    c(d, d._ReceivingWaterBody1, sf)
+                Public Shared ReadOnly CSFType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Entry( _
+                        "CSFType", _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_Stub, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_ComputeIsReadOnly, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_Validate, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_GetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_SetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFType_OnValueChanged)
+                Private Shared Sub _CSFType_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_CSFType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Data), d As __rt_CSFType.DetailsClass, sf As Object)
+                    c(d, d._CSFType, sf)
                 End Sub
-                Private Shared Function _ReceivingWaterBody1_ComputeIsReadOnly(e As __ReceivingWaterBody) As Boolean
+                Private Shared Function _CSFType_ComputeIsReadOnly(e As __rt_CSFType) As Boolean
                     Dim result As Boolean = False
-                    e.ReceivingWaterBody1_IsReadOnly(result)
+                    e.CSFType_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _ReceivingWaterBody1_Validate(e As __ReceivingWaterBody, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.ReceivingWaterBody1_Validate(r)
+                Private Shared Sub _CSFType_Validate(e As __rt_CSFType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.CSFType_Validate(r)
                 End Sub
-                Private Shared Function _ReceivingWaterBody1_GetImplementationValue(d As __ReceivingWaterBody.DetailsClass) As String
-                    Return d.ImplementationEntity.ReceivingWaterBody1
+                Private Shared Function _CSFType_GetImplementationValue(d As __rt_CSFType.DetailsClass) As String
+                    Return d.ImplementationEntity.CSFType
                 End Function
-                Private Shared Sub _ReceivingWaterBody1_SetImplementationValue(d As __ReceivingWaterBody.DetailsClass, v As String)
-                    d.ImplementationEntity.ReceivingWaterBody1 = v
+                Private Shared Sub _CSFType_SetImplementationValue(d As __rt_CSFType.DetailsClass, v As String)
+                    d.ImplementationEntity.CSFType = v
                 End Sub
-                Private Shared Sub _ReceivingWaterBody1_OnValueChanged(e As __ReceivingWaterBody)
-                    e.ReceivingWaterBody1_Changed()
+                Private Shared Sub _CSFType_OnValueChanged(e As __rt_CSFType)
+                    e.CSFType_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly AlternateName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry( _
-                        "AlternateName", _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_Stub, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_ComputeIsReadOnly, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_Validate, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_GetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_SetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._AlternateName_OnValueChanged)
-                Private Shared Sub _AlternateName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __ReceivingWaterBody.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data), d As __ReceivingWaterBody.DetailsClass, sf As Object)
-                    c(d, d._AlternateName, sf)
+                Public Shared ReadOnly Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Entry( _
+                        "Description", _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_Stub, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_ComputeIsReadOnly, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_Validate, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_GetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_SetImplementationValue, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._Description_OnValueChanged)
+                Private Shared Sub _Description_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_CSFType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Data), d As __rt_CSFType.DetailsClass, sf As Object)
+                    c(d, d._Description, sf)
                 End Sub
-                Private Shared Function _AlternateName_ComputeIsReadOnly(e As __ReceivingWaterBody) As Boolean
+                Private Shared Function _Description_ComputeIsReadOnly(e As __rt_CSFType) As Boolean
                     Dim result As Boolean = False
-                    e.AlternateName_IsReadOnly(result)
+                    e.Description_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _AlternateName_Validate(e As __ReceivingWaterBody, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.AlternateName_Validate(r)
+                Private Shared Sub _Description_Validate(e As __rt_CSFType, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Description_Validate(r)
                 End Sub
-                Private Shared Function _AlternateName_GetImplementationValue(d As __ReceivingWaterBody.DetailsClass) As String
-                    Return d.ImplementationEntity.AlternateName
+                Private Shared Function _Description_GetImplementationValue(d As __rt_CSFType.DetailsClass) As String
+                    Return d.ImplementationEntity.Description
                 End Function
-                Private Shared Sub _AlternateName_SetImplementationValue(d As __ReceivingWaterBody.DetailsClass, v As String)
-                    d.ImplementationEntity.AlternateName = v
+                Private Shared Sub _Description_SetImplementationValue(d As __rt_CSFType.DetailsClass, v As String)
+                    d.ImplementationEntity.Description = v
                 End Sub
-                Private Shared Sub _AlternateName_OnValueChanged(e As __ReceivingWaterBody)
-                    e.AlternateName_Changed()
+                Private Shared Sub _Description_OnValueChanged(e As __rt_CSFType)
+                    e.Description_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Entry( _
-                        "Notes", _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_Stub, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_ComputeIsReadOnly, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_Validate, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_GetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_SetImplementationValue, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Notes_OnValueChanged)
-                Private Shared Sub _Notes_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __ReceivingWaterBody.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data), d As __ReceivingWaterBody.DetailsClass, sf As Object)
-                    c(d, d._Notes, sf)
+                Public Shared ReadOnly CSFacilities As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility).Entry( _
+                        "CSFacilities", _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFacilities_Stub, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFacilities_GetReferencedEntities, _
+                        AddressOf __rt_CSFType.DetailsClass.PropertySetProperties._CSFacilities_GetEntityCollection)
+                Private Shared Sub _CSFacilities_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __rt_CSFType.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility).Data), d As __rt_CSFType.DetailsClass, sf As Object)
+                    c(d, d._CSFacilities, sf)
                 End Sub
-                Private Shared Function _Notes_ComputeIsReadOnly(e As __ReceivingWaterBody) As Boolean
-                    Dim result As Boolean = False
-                    e.Notes_IsReadOnly(result)
-                    Return result
+                Private Shared Function _CSFacilities_GetReferencedEntities(d As __rt_CSFType.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.CSFacility)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.CSFacility, Global.LightSwitchApplication.CSFacility.DetailsClass)(__rt_CSFType.DetailsClass.PropertySetProperties.CSFacilities, d._CSFacilities)
                 End Function
-                Private Shared Sub _Notes_Validate(e As __ReceivingWaterBody, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.Notes_Validate(r)
-                End Sub
-                Private Shared Function _Notes_GetImplementationValue(d As __ReceivingWaterBody.DetailsClass) As String
-                    Return d.ImplementationEntity.Notes
-                End Function
-                Private Shared Sub _Notes_SetImplementationValue(d As __ReceivingWaterBody.DetailsClass, v As String)
-                    d.ImplementationEntity.Notes = v
-                End Sub
-                Private Shared Sub _Notes_OnValueChanged(e As __ReceivingWaterBody)
-                    e.Notes_Changed()
-                End Sub
-    
-                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly Outfalls As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall).Entry( _
-                        "Outfalls", _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Outfalls_Stub, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Outfalls_GetReferencedEntities, _
-                        AddressOf __ReceivingWaterBody.DetailsClass.PropertySetProperties._Outfalls_GetEntityCollection)
-                Private Shared Sub _Outfalls_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __ReceivingWaterBody.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall).Data), d As __ReceivingWaterBody.DetailsClass, sf As Object)
-                    c(d, d._Outfalls, sf)
-                End Sub
-                Private Shared Function _Outfalls_GetReferencedEntities(d As __ReceivingWaterBody.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.Outfall)
-                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.Outfall, Global.LightSwitchApplication.Outfall.DetailsClass)(__ReceivingWaterBody.DetailsClass.PropertySetProperties.Outfalls, d._Outfalls)
-                End Function
-                Private Shared Function _Outfalls_GetEntityCollection(d As __ReceivingWaterBody.DetailsClass) As Global.System.Collections.IEnumerable
-                    Return d.ImplementationEntity.Outfalls
+                Private Shared Function _CSFacilities_GetEntityCollection(d As __rt_CSFType.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.CSFacilities
                 End Function
     
             End Class
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _ID_ReceivingWater As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Integer).Data
+            Private _id As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Integer).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _ReceivingWaterBody1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data
+            Private _CSFType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _AlternateName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data
+            Private _Description As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, String).Data
-            
-            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _Outfalls As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __ReceivingWaterBody, __ReceivingWaterBody.DetailsClass, Global.LightSwitchApplication.Outfall).Data
+            Private _CSFacilities As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __rt_CSFType, __rt_CSFType.DetailsClass, Global.LightSwitchApplication.CSFacility).Data
             
         End Class
     

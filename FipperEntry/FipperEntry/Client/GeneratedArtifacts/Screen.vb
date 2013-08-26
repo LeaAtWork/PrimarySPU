@@ -10,7 +10,517 @@
 Option Strict On
 Option Explicit On
 
+Imports __EditableOutfallsGrid = LightSwitchApplication.EditableOutfallsGrid
+Imports __EditableMonitoringStationsGrid = LightSwitchApplication.EditableMonitoringStationsGrid
 
 Namespace LightSwitchApplication
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+    Partial Public NotInheritable Class EditableOutfallsGrid
+        Inherits Global.Microsoft.LightSwitch.Framework.Client.ScreenObject(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass)
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private Sub New()
+            MyBase.New("LightSwitchApplication:EditableOutfallsGrid")
+            __EditableOutfallsGrid.DetailsClass.Initialize(Me)
+        End Sub
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+        Public Shared Function CreateInstance() As EditableOutfallsGrid
+            Return New __EditableOutfallsGrid( _
+            )
+        End Function
+
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_InitializeDataWorkspace(ByVal saveChangesTo As Global.System.Collections.Generic.List(Of Global.Microsoft.LightSwitch.IDataService))
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_Created()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_Activated()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_Saving(ByRef handled As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_Saved()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_Closing(ByRef cancel As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableOutfallsGrid_SaveError(ByVal exception As Global.System.Exception, ByRef handled As Boolean)
+        End Sub
+     
+        #Region "Private Properties"
+        
+        ''' <summary>
+        ''' Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private ReadOnly Property Application As Global.LightSwitchApplication.Application
+            Get
+                Return Global.LightSwitchApplication.Application.Current
+            End Get
+        End Property
+        
+        ''' <summary>
+        ''' Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private ReadOnly Property DataWorkspace As Global.LightSwitchApplication.DataWorkspace
+            Get
+                Return DirectCast(DirectCast(Me.Details, Global.Microsoft.LightSwitch.Details.Client.IScreenDetails).DataWorkspace, Global.LightSwitchApplication.DataWorkspace)
+            End Get
+        End Property
+        
+        #End Region
+ 
+        Partial Private Sub Outfalls_SelectionChanged()
+        End Sub
+
+        Partial Private Sub Outfalls_Changed(ByVal e As Global.System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+        End Sub
+
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Outfalls_Loaded(ByVal succeeded As Boolean)
+        End Sub
+
+        ''' <summary>
+        ''' Gets the Outfalls visual collection. The collection contains all records currently shown on the respective list or grid control.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property Outfalls As Global.Microsoft.LightSwitch.Framework.Client.VisualCollection(Of Global.LightSwitchApplication.Outfall)
+            Get
+                Return __EditableOutfallsGrid.DetailsClass.GetValue(Me, __EditableOutfallsGrid.DetailsClass.PropertySetProperties.Outfalls)
+            End Get
+        End Property
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Outfalls_Validate(ByVal results As Global.Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder)
+        End Sub
+ 
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public NotInheritable Class DetailsClass
+            Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, __EditableOutfallsGrid.DetailsClass.PropertySet, __EditableOutfallsGrid.DetailsClass.CommandSet, __EditableOutfallsGrid.DetailsClass.MethodSet)
+
+            Shared Sub New()
+                Dim initializePropertyEntry = __EditableOutfallsGrid.DetailsClass.PropertySetProperties.Outfalls
+            End Sub
+
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private Shared ReadOnly __EditableOutfallsGridEntry As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass).Entry( _
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeInitializeDataWorkspace,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeSavingEvent,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeSavedEvent,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeClosingEvent,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeCreated,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeActivated,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.__EditableOutfallsGrid_InvokeSaveErrorEvent)
+            Private Shared Sub __EditableOutfallsGrid_InvokeInitializeDataWorkspace(s As __EditableOutfallsGrid, saveChangesTo As Global.System.Collections.Generic.List(Of Global.Microsoft.LightSwitch.IDataService))
+                s.EditableOutfallsGrid_InitializeDataWorkspace(saveChangesTo)
+            End Sub
+            Private Shared Function __EditableOutfallsGrid_InvokeSavingEvent(s As __EditableOutfallsGrid) As Boolean
+                Dim handled = False
+                s.EditableOutfallsGrid_Saving(handled)
+                Return handled
+            End Function
+            Private Shared Sub __EditableOutfallsGrid_InvokeSavedEvent(s As __EditableOutfallsGrid)
+                s.EditableOutfallsGrid_Saved()
+            End Sub
+            Private Shared Function __EditableOutfallsGrid_InvokeClosingEvent(s As __EditableOutfallsGrid) As Boolean
+                Dim cancel = False
+                s.EditableOutfallsGrid_Closing(cancel)
+                Return cancel
+            End Function
+            Private Shared Sub __EditableOutfallsGrid_InvokeCreated(s As __EditableOutfallsGrid)
+                s.EditableOutfallsGrid_Created()
+            End Sub
+            Private Shared Sub __EditableOutfallsGrid_InvokeActivated(s As __EditableOutfallsGrid)
+                s.EditableOutfallsGrid_Activated()
+            End Sub
+            Private Shared Function __EditableOutfallsGrid_InvokeSaveErrorEvent(s As __EditableOutfallsGrid, ex As Global.System.Exception) As Boolean
+                Dim handled = False
+                s.EditableOutfallsGrid_SaveError(ex, handled)
+                Return handled
+            End Function
+
+            Public Sub New()
+                MyBase.New()
+            End Sub
+
+            Public Shadows ReadOnly Property Properties As __EditableOutfallsGrid.DetailsClass.PropertySet
+                Get
+                    Return MyBase.Properties
+                End Get
+            End Property
+
+            Public Shadows ReadOnly Property Commands As __EditableOutfallsGrid.DetailsClass.CommandSet
+                Get
+                    Return MyBase.Commands
+                End Get
+            End Property
+
+            Public Shadows ReadOnly Property Methods As __EditableOutfallsGrid.DetailsClass.MethodSet
+                Get
+                    Return MyBase.Methods
+                End Get
+            End Property
+
+            Private Function OutfallsQuery() As Global.Microsoft.LightSwitch.IDataServiceQueryable
+                Return Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        Me.Screen.DataWorkspace.FlipperSQLData.Outfalls,
+                        "ReceivingWaterBody"),
+                    "rt_System")
+            End Function
+
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)>
+            Private _Outfalls As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, Global.LightSwitchApplication.Outfall).Data
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class PropertySet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass)
+
+                Public ReadOnly Property Outfalls As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, Global.LightSwitchApplication.Outfall)
+                    Get
+                        Return DirectCast(MyBase.GetItem(__EditableOutfallsGrid.DetailsClass.PropertySetProperties.Outfalls), Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, Global.LightSwitchApplication.Outfall))
+                    End Get
+                End Property
+
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class CommandSet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass)
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class MethodSet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass)
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class PropertySetProperties
+
+                Public Shared ReadOnly Outfalls As New Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, Global.LightSwitchApplication.Outfall).Entry( _
+                    "Outfalls",
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_Stub,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_Validate,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_CreateQuery,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_SelectionChanged,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_OnCollectionChanged,
+                    AddressOf __EditableOutfallsGrid.DetailsClass.PropertySetProperties._Outfalls_OnLoaded)
+                Private Shared Sub _Outfalls_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __EditableOutfallsGrid.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableOutfallsGrid, __EditableOutfallsGrid.DetailsClass, Global.LightSwitchApplication.Outfall).Data), d As __EditableOutfallsGrid.DetailsClass, sf As Object)
+                    c(d, d._Outfalls, sf)
+                End Sub
+                Private Shared Sub _Outfalls_Validate(s As __EditableOutfallsGrid, r As Global.Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder)
+                    s.Outfalls_Validate(r)
+                End Sub
+                Private Shared Function _Outfalls_CreateQuery(d As __EditableOutfallsGrid.DetailsClass, args As Object()) As Global.Microsoft.LightSwitch.IDataServiceQueryable
+                    Return d.OutfallsQuery()
+                End Function
+                Private Shared Sub _Outfalls_SelectionChanged(s As __EditableOutfallsGrid)
+                    s.Outfalls_SelectionChanged()
+                End Sub
+                Private Shared Sub _Outfalls_OnCollectionChanged(s As __EditableOutfallsGrid, e As Global.System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+                    s.Outfalls_Changed(e)
+                End Sub
+                Private Shared Sub _Outfalls_OnLoaded(s As __EditableOutfallsGrid, succeeded As Boolean)
+                    s.Outfalls_Loaded(succeeded)
+                End Sub
+
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class CommandSetProperties
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class MethodSetProperties
+            End Class
+
+        End Class
+
+    End Class
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+    Partial Public NotInheritable Class EditableMonitoringStationsGrid
+        Inherits Global.Microsoft.LightSwitch.Framework.Client.ScreenObject(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass)
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private Sub New()
+            MyBase.New("LightSwitchApplication:EditableMonitoringStationsGrid")
+            __EditableMonitoringStationsGrid.DetailsClass.Initialize(Me)
+        End Sub
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+        Public Shared Function CreateInstance() As EditableMonitoringStationsGrid
+            Return New __EditableMonitoringStationsGrid( _
+            )
+        End Function
+
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_InitializeDataWorkspace(ByVal saveChangesTo As Global.System.Collections.Generic.List(Of Global.Microsoft.LightSwitch.IDataService))
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_Created()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_Activated()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_Saving(ByRef handled As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_Saved()
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_Closing(ByRef cancel As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub EditableMonitoringStationsGrid_SaveError(ByVal exception As Global.System.Exception, ByRef handled As Boolean)
+        End Sub
+     
+        #Region "Private Properties"
+        
+        ''' <summary>
+        ''' Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private ReadOnly Property Application As Global.LightSwitchApplication.Application
+            Get
+                Return Global.LightSwitchApplication.Application.Current
+            End Get
+        End Property
+        
+        ''' <summary>
+        ''' Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Private ReadOnly Property DataWorkspace As Global.LightSwitchApplication.DataWorkspace
+            Get
+                Return DirectCast(DirectCast(Me.Details, Global.Microsoft.LightSwitch.Details.Client.IScreenDetails).DataWorkspace, Global.LightSwitchApplication.DataWorkspace)
+            End Get
+        End Property
+        
+        #End Region
+ 
+        Partial Private Sub MonitoringStations_SelectionChanged()
+        End Sub
+
+        Partial Private Sub MonitoringStations_Changed(ByVal e As Global.System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+        End Sub
+
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub MonitoringStations_Loaded(ByVal succeeded As Boolean)
+        End Sub
+
+        ''' <summary>
+        ''' Gets the MonitoringStations visual collection. The collection contains all records currently shown on the respective list or grid control.
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Framework.Client.VisualCollection(Of Global.LightSwitchApplication.MonitoringStation)
+            Get
+                Return __EditableMonitoringStationsGrid.DetailsClass.GetValue(Me, __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties.MonitoringStations)
+            End Get
+        End Property
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub MonitoringStations_Validate(ByVal results As Global.Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder)
+        End Sub
+ 
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public NotInheritable Class DetailsClass
+            Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, __EditableMonitoringStationsGrid.DetailsClass.PropertySet, __EditableMonitoringStationsGrid.DetailsClass.CommandSet, __EditableMonitoringStationsGrid.DetailsClass.MethodSet)
+
+            Shared Sub New()
+                Dim initializePropertyEntry = __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties.MonitoringStations
+            End Sub
+
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private Shared ReadOnly __EditableMonitoringStationsGridEntry As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass).Entry( _
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeInitializeDataWorkspace,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeSavingEvent,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeSavedEvent,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeClosingEvent,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeCreated,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeActivated,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.__EditableMonitoringStationsGrid_InvokeSaveErrorEvent)
+            Private Shared Sub __EditableMonitoringStationsGrid_InvokeInitializeDataWorkspace(s As __EditableMonitoringStationsGrid, saveChangesTo As Global.System.Collections.Generic.List(Of Global.Microsoft.LightSwitch.IDataService))
+                s.EditableMonitoringStationsGrid_InitializeDataWorkspace(saveChangesTo)
+            End Sub
+            Private Shared Function __EditableMonitoringStationsGrid_InvokeSavingEvent(s As __EditableMonitoringStationsGrid) As Boolean
+                Dim handled = False
+                s.EditableMonitoringStationsGrid_Saving(handled)
+                Return handled
+            End Function
+            Private Shared Sub __EditableMonitoringStationsGrid_InvokeSavedEvent(s As __EditableMonitoringStationsGrid)
+                s.EditableMonitoringStationsGrid_Saved()
+            End Sub
+            Private Shared Function __EditableMonitoringStationsGrid_InvokeClosingEvent(s As __EditableMonitoringStationsGrid) As Boolean
+                Dim cancel = False
+                s.EditableMonitoringStationsGrid_Closing(cancel)
+                Return cancel
+            End Function
+            Private Shared Sub __EditableMonitoringStationsGrid_InvokeCreated(s As __EditableMonitoringStationsGrid)
+                s.EditableMonitoringStationsGrid_Created()
+            End Sub
+            Private Shared Sub __EditableMonitoringStationsGrid_InvokeActivated(s As __EditableMonitoringStationsGrid)
+                s.EditableMonitoringStationsGrid_Activated()
+            End Sub
+            Private Shared Function __EditableMonitoringStationsGrid_InvokeSaveErrorEvent(s As __EditableMonitoringStationsGrid, ex As Global.System.Exception) As Boolean
+                Dim handled = False
+                s.EditableMonitoringStationsGrid_SaveError(ex, handled)
+                Return handled
+            End Function
+
+            Public Sub New()
+                MyBase.New()
+            End Sub
+
+            Public Shadows ReadOnly Property Properties As __EditableMonitoringStationsGrid.DetailsClass.PropertySet
+                Get
+                    Return MyBase.Properties
+                End Get
+            End Property
+
+            Public Shadows ReadOnly Property Commands As __EditableMonitoringStationsGrid.DetailsClass.CommandSet
+                Get
+                    Return MyBase.Commands
+                End Get
+            End Property
+
+            Public Shadows ReadOnly Property Methods As __EditableMonitoringStationsGrid.DetailsClass.MethodSet
+                Get
+                    Return MyBase.Methods
+                End Get
+            End Property
+
+            Private Function MonitoringStationsQuery() As Global.Microsoft.LightSwitch.IDataServiceQueryable
+                Return Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                            Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                                Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                                    Global.Microsoft.LightSwitch.DataServiceQueryable.Include(
+                                        Me.Screen.DataWorkspace.FlipperSQLData.MonitoringStations,
+                                        "Outfall"),
+                                    "rt_DataAccquisitionMethod"),
+                                "rt_Permanence"),
+                            "rt_Purpose"),
+                        "rt_Status"),
+                    "rt_System")
+            End Function
+
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)>
+            Private _MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class PropertySet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass)
+
+                Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, Global.LightSwitchApplication.MonitoringStation)
+                    Get
+                        Return DirectCast(MyBase.GetItem(__EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties.MonitoringStations), Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, Global.LightSwitchApplication.MonitoringStation))
+                    End Get
+                End Property
+
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class CommandSet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass)
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Public NotInheritable Class MethodSet
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass)
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class PropertySetProperties
+
+                Public Shared ReadOnly MonitoringStations As New Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Entry( _
+                    "MonitoringStations",
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_Stub,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_Validate,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_CreateQuery,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_SelectionChanged,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_OnCollectionChanged,
+                    AddressOf __EditableMonitoringStationsGrid.DetailsClass.PropertySetProperties._MonitoringStations_OnLoaded)
+                Private Shared Sub _MonitoringStations_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __EditableMonitoringStationsGrid.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty(Of __EditableMonitoringStationsGrid, __EditableMonitoringStationsGrid.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data), d As __EditableMonitoringStationsGrid.DetailsClass, sf As Object)
+                    c(d, d._MonitoringStations, sf)
+                End Sub
+                Private Shared Sub _MonitoringStations_Validate(s As __EditableMonitoringStationsGrid, r As Global.Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder)
+                    s.MonitoringStations_Validate(r)
+                End Sub
+                Private Shared Function _MonitoringStations_CreateQuery(d As __EditableMonitoringStationsGrid.DetailsClass, args As Object()) As Global.Microsoft.LightSwitch.IDataServiceQueryable
+                    Return d.MonitoringStationsQuery()
+                End Function
+                Private Shared Sub _MonitoringStations_SelectionChanged(s As __EditableMonitoringStationsGrid)
+                    s.MonitoringStations_SelectionChanged()
+                End Sub
+                Private Shared Sub _MonitoringStations_OnCollectionChanged(s As __EditableMonitoringStationsGrid, e As Global.System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+                    s.MonitoringStations_Changed(e)
+                End Sub
+                Private Shared Sub _MonitoringStations_OnLoaded(s As __EditableMonitoringStationsGrid, succeeded As Boolean)
+                    s.MonitoringStations_Loaded(succeeded)
+                End Sub
+
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class CommandSetProperties
+            End Class
+
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+            Friend NotInheritable Class MethodSetProperties
+            End Class
+
+        End Class
+
+    End Class
 
 End Namespace

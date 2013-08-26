@@ -779,6 +779,54 @@ Namespace LightSwitchApplication
         End Sub
     
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_CanInsert(ByRef result As Boolean)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_CanUpdate(ByRef result As Boolean)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_CanDelete(ByRef result As Boolean)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_CanRead(ByRef result As Boolean)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Inserting(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Inserted(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Updating(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Updated(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Deleting(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Deleted(ByVal entity As Global.LightSwitchApplication.rt_ProgType)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Validate(ByVal entity As Global.LightSwitchApplication.rt_ProgType, ByVal results As Global.Microsoft.LightSwitch.EntitySetValidationResultsBuilder)
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Partial Private Sub rt_ProgTypes_Filter(ByRef filter As Global.System.Linq.Expressions.Expression(Of Global.System.Func(Of Global.LightSwitchApplication.rt_ProgType, Boolean)))
+        End Sub
+    
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
         Partial Private Sub rt_Purposes_CanInsert(ByRef result As Boolean)
         End Sub
     
@@ -2051,6 +2099,69 @@ Namespace LightSwitchApplication
             Private Shared Function __rt_Permanences_Filter(d As Global.LightSwitchApplication.FlipperSQLDataService) As Global.System.Linq.Expressions.Expression(Of Global.System.Func(Of Global.LightSwitchApplication.rt_Permanence, Boolean))
                 Dim filter As Global.System.Linq.Expressions.Expression(Of Global.System.Func(Of Global.LightSwitchApplication.rt_Permanence, Boolean)) = Nothing
                 d.rt_Permanences_Filter(filter)
+                return filter
+            End Function
+            
+            <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+            Private Shared ReadOnly __rt_ProgTypesEntry As Global.Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry(Of Global.LightSwitchApplication.FlipperSQLDataService, Global.LightSwitchApplication.rt_ProgType) = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry(Of Global.LightSwitchApplication.FlipperSQLDataService, Global.LightSwitchApplication.rt_ProgType)( _
+                    "rt_ProgTypes",
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_CanInsert, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_CanUpdate, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_CanDelete, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_CanRead, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Inserting, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Inserted, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Updating, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Updated, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Deleting, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Deleted, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Validate, _
+                    AddressOf Global.LightSwitchApplication.FlipperSQLDataService.DetailsClass.__rt_ProgTypes_Filter)
+            Private Shared Function __rt_ProgTypes_CanInsert(d As Global.LightSwitchApplication.FlipperSQLDataService) As Boolean
+                Dim result As Boolean = True
+                d.rt_ProgTypes_CanInsert(result)
+                Return result
+            End Function
+            Private Shared Function __rt_ProgTypes_CanUpdate(d As Global.LightSwitchApplication.FlipperSQLDataService) As Boolean
+                Dim result As Boolean = True
+                d.rt_ProgTypes_CanUpdate(result)
+                Return result
+            End Function
+            Private Shared Function __rt_ProgTypes_CanDelete(d As Global.LightSwitchApplication.FlipperSQLDataService) As Boolean
+                Dim result As Boolean = True
+                d.rt_ProgTypes_CanDelete(result)
+                Return result
+            End Function
+            Private Shared Function __rt_ProgTypes_CanRead(d As Global.LightSwitchApplication.FlipperSQLDataService) As Boolean
+                Dim result As Boolean = True
+                d.rt_ProgTypes_CanRead(result)
+                Return result
+            End Function
+            Private Shared Sub __rt_ProgTypes_Inserting(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Inserting(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Inserted(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Inserted(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Updating(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Updating(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Updated(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Updated(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Deleting(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Deleting(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Deleted(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType)
+                d.rt_ProgTypes_Deleted(e)
+            End Sub
+            Private Shared Sub __rt_ProgTypes_Validate(d As Global.LightSwitchApplication.FlipperSQLDataService, e As Global.LightSwitchApplication.rt_ProgType, r As Global.Microsoft.LightSwitch.EntitySetValidationResultsBuilder)
+                d.rt_ProgTypes_Validate(e, r)
+            End Sub
+            Private Shared Function __rt_ProgTypes_Filter(d As Global.LightSwitchApplication.FlipperSQLDataService) As Global.System.Linq.Expressions.Expression(Of Global.System.Func(Of Global.LightSwitchApplication.rt_ProgType, Boolean))
+                Dim filter As Global.System.Linq.Expressions.Expression(Of Global.System.Func(Of Global.LightSwitchApplication.rt_ProgType, Boolean)) = Nothing
+                d.rt_ProgTypes_Filter(filter)
                 return filter
             End Function
             

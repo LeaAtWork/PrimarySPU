@@ -27,7 +27,7 @@
         Value="Data Source=spu10206\sqlserverexpress;Initial Catalog=FlipperSQL;Integrated Security=True" />
       <ConnectionProperty
         Name="ConnectionStringGuid"
-        Value="f5338ba1-7688-4720-9400-6dc76a2a7726" />
+        Value="070bd038-9645-477e-84cb-11d267459c2e" />
       <ConnectionProperty
         Name="ProviderManifestToken"
         Value="2008" />
@@ -42,6 +42,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:as_CSF_MonitoringStation/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           Name="Notes"
@@ -75,6 +76,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:as_Project_MonitoringStation/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           Name="Notes"
@@ -114,6 +116,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:as_PumpStation_MonitoringStation/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlForeignKeyProperty
           Name="MonitoringStation"
@@ -142,6 +145,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:as_RainGage_MonitoringStation/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlForeignKeyProperty
           Name="MonitoringStation"
@@ -220,6 +224,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:MonitoringStation/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -336,6 +341,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:Outfall/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -370,6 +376,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:Person/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -490,6 +497,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -509,11 +517,6 @@
           Nullable="True"
           Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ADSName]"
           Type="nvarchar" />
-        <SsdlProperty
-          Name="ProgTypeID"
-          Nullable="True"
-          Property="LightSwitchCommonModule:ProjectAndProgram/Properties[ProgTypeID]"
-          Type="int" />
         <SsdlForeignKeyProperty
           Name="PrimaryContactID"
           Nullable="True"
@@ -523,6 +526,11 @@
           Name="SecondaryContactID"
           Nullable="True"
           PropertyName="SecondaryContactID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ProgTypeID"
+          Nullable="True"
+          PropertyName="ProgTypeID"
           Type="int" />
         <SsdlForeignKeyProperty
           Name="WorkGroupID"
@@ -541,6 +549,7 @@
           Name="ID_PS"
           Nullable="False"
           Property="LightSwitchCommonModule:PumpStation/Properties[ID_PS]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -581,6 +590,7 @@
           Name="ID_RG"
           Nullable="False"
           Property="LightSwitchCommonModule:RainGage/Properties[ID_RG]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -635,15 +645,16 @@
           Schema="dbo"
           Table="ReceivingWaterBodies" />
         <SsdlProperty
-          Name="ID_ReceivingWater"
+          Name="ID"
           Nullable="False"
-          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ID_ReceivingWater]"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
-          Name="ReceivingWaterBody"
+          Name="ReceivingWaterName"
           Nullable="True"
-          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ReceivingWaterBody1]"
+          Property="LightSwitchCommonModule:ReceivingWaterBody/Properties[ReceivingWaterName]"
           Type="nvarchar" />
         <SsdlProperty
           MaxLength="255"
@@ -668,6 +679,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_CSFType/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="50"
@@ -692,6 +704,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_DataAccquisitionMethod/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="10"
@@ -716,6 +729,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_Permanence/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="10"
@@ -732,6 +746,31 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <EntitySetMapping
+      EntitySet="rt_ProgTypes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="rt_ProgType" />
+        <SsdlProperty
+          Name="id"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_ProgType/Properties[id]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="ProgType"
+          Nullable="False"
+          Property="LightSwitchCommonModule:rt_ProgType/Properties[ProgType]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:rt_ProgType/Properties[Description]"
+          Type="nvarchar(max)" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
       EntitySet="rt_Purposes">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
@@ -741,6 +780,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_Purpose/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="50"
@@ -765,6 +805,7 @@
           Name="id"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_Relationship/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="10"
@@ -814,6 +855,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:rt_System/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="10"
@@ -838,6 +880,7 @@
           Name="ID"
           Nullable="False"
           Property="LightSwitchCommonModule:SensorPoint/Properties[ID]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -871,9 +914,10 @@
           Schema="dbo"
           Table="WorkGroup" />
         <SsdlProperty
-          Name="id_workgroup"
+          Name="id"
           Nullable="False"
-          Property="LightSwitchCommonModule:WorkGroup/Properties[id_workgroup]"
+          Property="LightSwitchCommonModule:WorkGroup/Properties[id]"
+          StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           MaxLength="255"
@@ -1335,7 +1379,7 @@
           End="LightSwitchCommonModule:FlipperSQLData/Members[FK_Outfall_ReceivingWaterBodies]/Members[ReceivingWaterBodies]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="ID_ReceivingWater" />
+              Name="ID" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
@@ -1411,6 +1455,27 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
+      AssociationSet="FK_ProjectAndProgram_rt_ProgType">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ProjectAndProgram_rt_ProgType" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_rt_ProgType]/Members[rt_ProgType]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_rt_ProgType]/Members[ProjectAndProgram]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ProgTypeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
       AssociationSet="FK_ProjectAndProgram_WorkGroup">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
@@ -1419,7 +1484,7 @@
           End="LightSwitchCommonModule:FlipperSQLData/Members[FK_ProjectAndProgram_WorkGroup]/Members[WorkGroup]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="id_workgroup" />
+              Name="id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd

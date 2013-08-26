@@ -11,7 +11,7 @@
 Option Strict On
 Option Explicit On
 
-Imports __PumpStation = LightSwitchApplication.PumpStation
+Imports __RainGage = LightSwitchApplication.RainGage
 
 Namespace LightSwitchApplication
 
@@ -21,13 +21,13 @@ Namespace LightSwitchApplication
     ''' No Modeled Description Available
     ''' </summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-    Public NotInheritable Partial Class PumpStation
-        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __PumpStation, __PumpStation.DetailsClass)
+    Public NotInheritable Partial Class RainGage
+        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __RainGage, __RainGage.DetailsClass)
     
         #Region "Constructors"
     
         ''' <summary>
-        ''' Initializes a new instance of the PumpStation entity.
+        ''' Initializes a new instance of the RainGage entity.
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
@@ -37,17 +37,17 @@ Namespace LightSwitchApplication
     
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __PumpStation))
+        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __RainGage))
             MyBase.New(entitySet)
             
-            __PumpStation.DetailsClass.Initialize(Me)
+            __RainGage.DetailsClass.Initialize(Me)
         End Sub
     
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStation_Created()
+        Private Partial Sub RainGage_Created()
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStation_AllowSaveWithErrors(ByRef result As Boolean)
+        Private Partial Sub RainGage_AllowSaveWithErrors(ByRef result As Boolean)
         End Sub
     
         #End Region
@@ -85,23 +85,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property ID_PS As Integer
+        Public Property ID_RG As Integer
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.ID_PS)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.ID_RG)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.ID_PS, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.ID_RG, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_PS_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub ID_RG_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_PS_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub ID_RG_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ID_PS_Changed()
+        Private Partial Sub ID_RG_Changed()
         End Sub
 
         ''' <summary>
@@ -109,23 +109,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property PumpStationCode As String
+        Public Property RainGageCode As String
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.PumpStationCode)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.RainGageCode)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.PumpStationCode, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.RainGageCode, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationCode_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub RainGageCode_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationCode_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub RainGageCode_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationCode_Changed()
+        Private Partial Sub RainGageCode_Changed()
         End Sub
 
         ''' <summary>
@@ -135,10 +135,10 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public Property NumberCode As Global.System.Nullable(Of Short)
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.NumberCode)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.NumberCode)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.NumberCode, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.NumberCode, Value)
             End Set
         End Property
         
@@ -157,23 +157,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property PumpStationType As String
+        Public Property Address As String
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.PumpStationType)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Address)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.PumpStationType, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Address, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationType_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub Address_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationType_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub Address_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub PumpStationType_Changed()
+        Private Partial Sub Address_Changed()
         End Sub
 
         ''' <summary>
@@ -181,23 +181,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property NumberOfPumps As Global.System.Nullable(Of Short)
+        Public Property LocationDetails As String
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.NumberOfPumps)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.LocationDetails)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.NumberOfPumps, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.LocationDetails, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberOfPumps_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub LocationDetails_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberOfPumps_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub LocationDetails_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberOfPumps_Changed()
+        Private Partial Sub LocationDetails_Changed()
         End Sub
 
         ''' <summary>
@@ -205,17 +205,89 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property as_PumpStation_MonitoringStations As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.as_PumpStation_MonitoringStation)
+        Public Property Notes As String
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.as_PumpStation_MonitoringStations)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Notes)
+            End Get
+            Set
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Notes, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property IMSSiteName As String
+            Get
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.IMSSiteName)
+            End Get
+            Set
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.IMSSiteName, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub IMSSiteName_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub IMSSiteName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub IMSSiteName_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Owner As String
+            Get
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Owner)
+            End Get
+            Set
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Owner, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Owner_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Owner_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Owner_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property as_RainGage_MonitoringStations As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.as_RainGage_MonitoringStation)
+            Get
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.as_RainGage_MonitoringStations)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property as_PumpStation_MonitoringStationsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.as_PumpStation_MonitoringStation)
+        Public ReadOnly Property as_RainGage_MonitoringStationsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.as_RainGage_MonitoringStation)
             Get
-                Return __PumpStation.DetailsClass.GetQuery(Me, __PumpStation.DetailsClass.PropertySetProperties.as_PumpStation_MonitoringStations)
+                Return __RainGage.DetailsClass.GetQuery(Me, __RainGage.DetailsClass.PropertySetProperties.as_RainGage_MonitoringStations)
             End Get
         End Property
 
@@ -224,23 +296,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property rt_System As Global.LightSwitchApplication.rt_System
+        Public Property Person As Global.LightSwitchApplication.Person
             Get
-                Return __PumpStation.DetailsClass.GetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.rt_System)
+                Return __RainGage.DetailsClass.GetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Person)
             End Get
             Set
-                __PumpStation.DetailsClass.SetValue(Me, __PumpStation.DetailsClass.PropertySetProperties.rt_System, Value)
+                __RainGage.DetailsClass.SetValue(Me, __RainGage.DetailsClass.PropertySetProperties.Person, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub Person_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub Person_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_Changed()
+        Private Partial Sub Person_Changed()
         End Sub
 
         #End Region
@@ -253,32 +325,32 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public NotInheritable Class DetailsClass
             Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of _
-                __PumpStation, _
-                __PumpStation.DetailsClass, _
-                __PumpStation.DetailsClass.IImplementation, _
-                __PumpStation.DetailsClass.PropertySet, _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __PumpStation, __PumpStation.DetailsClass), _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __PumpStation, __PumpStation.DetailsClass))
+                __RainGage, _
+                __RainGage.DetailsClass, _
+                __RainGage.DetailsClass.IImplementation, _
+                __RainGage.DetailsClass.PropertySet, _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __RainGage, __RainGage.DetailsClass), _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __RainGage, __RainGage.DetailsClass))
     
             Shared Sub New()
-                Dim initializeEntry = __PumpStation.DetailsClass.PropertySetProperties.ID_PS
+                Dim initializeEntry = __RainGage.DetailsClass.PropertySetProperties.ID_RG
             End Sub
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private Shared ReadOnly __PumpStationEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __PumpStation, __PumpStation.DetailsClass).Entry = _
-                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __PumpStation, __PumpStation.DetailsClass).Entry( _
-                    AddressOf __PumpStation.DetailsClass.__PumpStation_CreateNew, _
-                    AddressOf __PumpStation.DetailsClass.__PumpStation_Created, _
-                    AddressOf __PumpStation.DetailsClass.__PumpStation_AllowSaveWithErrors)
-            Private Shared Function __PumpStation_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __PumpStation)) As __PumpStation
-                Return New __PumpStation(es)
+            Private Shared ReadOnly __RainGageEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __RainGage, __RainGage.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __RainGage, __RainGage.DetailsClass).Entry( _
+                    AddressOf __RainGage.DetailsClass.__RainGage_CreateNew, _
+                    AddressOf __RainGage.DetailsClass.__RainGage_Created, _
+                    AddressOf __RainGage.DetailsClass.__RainGage_AllowSaveWithErrors)
+            Private Shared Function __RainGage_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __RainGage)) As __RainGage
+                Return New __RainGage(es)
             End Function
-            Private Shared Sub __PumpStation_Created(e As __PumpStation)
-                e.PumpStation_Created()
+            Private Shared Sub __RainGage_Created(e As __RainGage)
+                e.RainGage_Created()
             End Sub
-            Private Shared Function __PumpStation_AllowSaveWithErrors(e As __PumpStation) As Boolean
+            Private Shared Function __RainGage_AllowSaveWithErrors(e As __RainGage) As Boolean
                 Dim result As Boolean = False
-                e.PumpStation_AllowSaveWithErrors(result)
+                e.RainGage_AllowSaveWithErrors(result)
                 Return result
             End Function
     
@@ -286,19 +358,19 @@ Namespace LightSwitchApplication
                 MyBase.New()
             End Sub
     
-            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __PumpStation, __PumpStation.DetailsClass)
+            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __RainGage, __RainGage.DetailsClass)
                 Get
                     Return MyBase.Commands
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __PumpStation, __PumpStation.DetailsClass)
+            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __RainGage, __RainGage.DetailsClass)
                 Get
                     Return MyBase.Methods
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Properties As __PumpStation.DetailsClass.PropertySet
+            Public ReadOnly Shadows Property Properties As __RainGage.DetailsClass.PropertySet
                 Get
                     Return MyBase.Properties
                 End Get
@@ -309,65 +381,89 @@ Namespace LightSwitchApplication
             <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
             Public NotInheritable Class PropertySet
-                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __PumpStation, __PumpStation.DetailsClass)
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __RainGage, __RainGage.DetailsClass)
     
                 Public Sub New()
                     MyBase.New()
                 End Sub
     
-                Public ReadOnly Property ID_PS As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer)
+                Public ReadOnly Property ID_RG As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.ID_PS),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.ID_RG),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer))
                     End Get
                 End Property
                 
-                Public ReadOnly Property PumpStationCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String)
+                Public ReadOnly Property RainGageCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.PumpStationCode),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.RainGageCode),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short))
+                Public ReadOnly Property NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short))
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.NumberCode),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.NumberCode),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short)))
                     End Get
                 End Property
                 
-                Public ReadOnly Property PumpStationType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String)
+                Public ReadOnly Property Address As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.PumpStationType),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.Address),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property NumberOfPumps As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short))
+                Public ReadOnly Property LocationDetails As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.NumberOfPumps),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.LocationDetails),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property as_PumpStation_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation)
+                Public ReadOnly Property Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.as_PumpStation_MonitoringStations),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.Notes),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System)
+                Public ReadOnly Property IMSSiteName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__PumpStation.DetailsClass.PropertySetProperties.rt_System),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System))
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.IMSSiteName),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Owner As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.Owner),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property as_RainGage_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.as_RainGage_MonitoringStations),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Person As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__RainGage.DetailsClass.PropertySetProperties.Person),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person))
                     End Get
                 End Property
                 
@@ -377,13 +473,16 @@ Namespace LightSwitchApplication
             Public Interface IImplementation
                 Inherits Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
-                Shadows Property ID_PS As Integer
-                Shadows Property PumpStationCode As String
+                Shadows Property ID_RG As Integer
+                Shadows Property RainGageCode As String
                 Shadows Property NumberCode As Global.System.Nullable(Of Short)
-                Shadows Property PumpStationType As String
-                Shadows Property NumberOfPumps As Global.System.Nullable(Of Short)
-                Shadows ReadOnly Property as_PumpStation_MonitoringStations As Global.System.Collections.IEnumerable
-                Shadows Property rt_System As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
+                Shadows Property Address As String
+                Shadows Property LocationDetails As String
+                Shadows Property Notes As String
+                Shadows Property IMSSiteName As String
+                Shadows Property Owner As String
+                Shadows ReadOnly Property as_RainGage_MonitoringStations As Global.System.Collections.IEnumerable
+                Shadows Property Person As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
             End Interface
     
@@ -393,238 +492,340 @@ Namespace LightSwitchApplication
             Friend Class PropertySetProperties
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly ID_PS As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer).Entry( _
-                        "ID_PS", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._ID_PS_OnValueChanged)
-                Private Shared Sub _ID_PS_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._ID_PS, sf)
+                Public Shared ReadOnly ID_RG As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer).Entry( _
+                        "ID_RG", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._ID_RG_OnValueChanged)
+                Private Shared Sub _ID_RG_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._ID_RG, sf)
                 End Sub
-                Private Shared Function _ID_PS_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _ID_RG_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
-                    e.ID_PS_IsReadOnly(result)
+                    e.ID_RG_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _ID_PS_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.ID_PS_Validate(r)
+                Private Shared Sub _ID_RG_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.ID_RG_Validate(r)
                 End Sub
-                Private Shared Function _ID_PS_GetImplementationValue(d As __PumpStation.DetailsClass) As Integer
-                    Return d.ImplementationEntity.ID_PS
+                Private Shared Function _ID_RG_GetImplementationValue(d As __RainGage.DetailsClass) As Integer
+                    Return d.ImplementationEntity.ID_RG
                 End Function
-                Private Shared Sub _ID_PS_SetImplementationValue(d As __PumpStation.DetailsClass, v As Integer)
-                    d.ImplementationEntity.ID_PS = v
+                Private Shared Sub _ID_RG_SetImplementationValue(d As __RainGage.DetailsClass, v As Integer)
+                    d.ImplementationEntity.ID_RG = v
                 End Sub
-                Private Shared Sub _ID_PS_OnValueChanged(e As __PumpStation)
-                    e.ID_PS_Changed()
+                Private Shared Sub _ID_RG_OnValueChanged(e As __RainGage)
+                    e.ID_RG_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly PumpStationCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Entry( _
-                        "PumpStationCode", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationCode_OnValueChanged)
-                Private Shared Sub _PumpStationCode_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._PumpStationCode, sf)
+                Public Shared ReadOnly RainGageCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "RainGageCode", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._RainGageCode_OnValueChanged)
+                Private Shared Sub _RainGageCode_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._RainGageCode, sf)
                 End Sub
-                Private Shared Function _PumpStationCode_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _RainGageCode_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
-                    e.PumpStationCode_IsReadOnly(result)
+                    e.RainGageCode_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _PumpStationCode_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.PumpStationCode_Validate(r)
+                Private Shared Sub _RainGageCode_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.RainGageCode_Validate(r)
                 End Sub
-                Private Shared Function _PumpStationCode_GetImplementationValue(d As __PumpStation.DetailsClass) As String
-                    Return d.ImplementationEntity.PumpStationCode
+                Private Shared Function _RainGageCode_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.RainGageCode
                 End Function
-                Private Shared Sub _PumpStationCode_SetImplementationValue(d As __PumpStation.DetailsClass, v As String)
-                    d.ImplementationEntity.PumpStationCode = v
+                Private Shared Sub _RainGageCode_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.RainGageCode = v
                 End Sub
-                Private Shared Sub _PumpStationCode_OnValueChanged(e As __PumpStation)
-                    e.PumpStationCode_Changed()
+                Private Shared Sub _RainGageCode_OnValueChanged(e As __RainGage)
+                    e.RainGageCode_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Entry( _
+                Public Shared ReadOnly NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short)).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short)).Entry( _
                         "NumberCode", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberCode_OnValueChanged)
-                Private Shared Sub _NumberCode_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Data), d As __PumpStation.DetailsClass, sf As Object)
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._NumberCode_OnValueChanged)
+                Private Shared Sub _NumberCode_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short)).Data), d As __RainGage.DetailsClass, sf As Object)
                     c(d, d._NumberCode, sf)
                 End Sub
-                Private Shared Function _NumberCode_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _NumberCode_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
                     e.NumberCode_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _NumberCode_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                Private Shared Sub _NumberCode_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
                     e.NumberCode_Validate(r)
                 End Sub
-                Private Shared Function _NumberCode_GetImplementationValue(d As __PumpStation.DetailsClass) As Global.System.Nullable(Of Short)
+                Private Shared Function _NumberCode_GetImplementationValue(d As __RainGage.DetailsClass) As Global.System.Nullable(Of Short)
                     Return d.ImplementationEntity.NumberCode
                 End Function
-                Private Shared Sub _NumberCode_SetImplementationValue(d As __PumpStation.DetailsClass, v As Global.System.Nullable(Of Short))
+                Private Shared Sub _NumberCode_SetImplementationValue(d As __RainGage.DetailsClass, v As Global.System.Nullable(Of Short))
                     d.ImplementationEntity.NumberCode = v
                 End Sub
-                Private Shared Sub _NumberCode_OnValueChanged(e As __PumpStation)
+                Private Shared Sub _NumberCode_OnValueChanged(e As __RainGage)
                     e.NumberCode_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly PumpStationType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Entry( _
-                        "PumpStationType", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._PumpStationType_OnValueChanged)
-                Private Shared Sub _PumpStationType_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._PumpStationType, sf)
+                Public Shared ReadOnly Address As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "Address", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Address_OnValueChanged)
+                Private Shared Sub _Address_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._Address, sf)
                 End Sub
-                Private Shared Function _PumpStationType_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _Address_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
-                    e.PumpStationType_IsReadOnly(result)
+                    e.Address_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _PumpStationType_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.PumpStationType_Validate(r)
+                Private Shared Sub _Address_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Address_Validate(r)
                 End Sub
-                Private Shared Function _PumpStationType_GetImplementationValue(d As __PumpStation.DetailsClass) As String
-                    Return d.ImplementationEntity.PumpStationType
+                Private Shared Function _Address_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.Address
                 End Function
-                Private Shared Sub _PumpStationType_SetImplementationValue(d As __PumpStation.DetailsClass, v As String)
-                    d.ImplementationEntity.PumpStationType = v
+                Private Shared Sub _Address_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.Address = v
                 End Sub
-                Private Shared Sub _PumpStationType_OnValueChanged(e As __PumpStation)
-                    e.PumpStationType_Changed()
+                Private Shared Sub _Address_OnValueChanged(e As __RainGage)
+                    e.Address_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly NumberOfPumps As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Entry( _
-                        "NumberOfPumps", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._NumberOfPumps_OnValueChanged)
-                Private Shared Sub _NumberOfPumps_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._NumberOfPumps, sf)
+                Public Shared ReadOnly LocationDetails As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "LocationDetails", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._LocationDetails_OnValueChanged)
+                Private Shared Sub _LocationDetails_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._LocationDetails, sf)
                 End Sub
-                Private Shared Function _NumberOfPumps_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _LocationDetails_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
-                    e.NumberOfPumps_IsReadOnly(result)
+                    e.LocationDetails_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _NumberOfPumps_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.NumberOfPumps_Validate(r)
+                Private Shared Sub _LocationDetails_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.LocationDetails_Validate(r)
                 End Sub
-                Private Shared Function _NumberOfPumps_GetImplementationValue(d As __PumpStation.DetailsClass) As Global.System.Nullable(Of Short)
-                    Return d.ImplementationEntity.NumberOfPumps
+                Private Shared Function _LocationDetails_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.LocationDetails
                 End Function
-                Private Shared Sub _NumberOfPumps_SetImplementationValue(d As __PumpStation.DetailsClass, v As Global.System.Nullable(Of Short))
-                    d.ImplementationEntity.NumberOfPumps = v
+                Private Shared Sub _LocationDetails_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.LocationDetails = v
                 End Sub
-                Private Shared Sub _NumberOfPumps_OnValueChanged(e As __PumpStation)
-                    e.NumberOfPumps_Changed()
+                Private Shared Sub _LocationDetails_OnValueChanged(e As __RainGage)
+                    e.LocationDetails_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly as_PumpStation_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation).Entry( _
-                        "as_PumpStation_MonitoringStations", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._as_PumpStation_MonitoringStations_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._as_PumpStation_MonitoringStations_GetReferencedEntities, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._as_PumpStation_MonitoringStations_GetEntityCollection)
-                Private Shared Sub _as_PumpStation_MonitoringStations_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._as_PumpStation_MonitoringStations, sf)
+                Public Shared ReadOnly Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "Notes", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Notes_OnValueChanged)
+                Private Shared Sub _Notes_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._Notes, sf)
                 End Sub
-                Private Shared Function _as_PumpStation_MonitoringStations_GetReferencedEntities(d As __PumpStation.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.as_PumpStation_MonitoringStation)
-                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.as_PumpStation_MonitoringStation, Global.LightSwitchApplication.as_PumpStation_MonitoringStation.DetailsClass)(__PumpStation.DetailsClass.PropertySetProperties.as_PumpStation_MonitoringStations, d._as_PumpStation_MonitoringStations)
+                Private Shared Function _Notes_ComputeIsReadOnly(e As __RainGage) As Boolean
+                    Dim result As Boolean = False
+                    e.Notes_IsReadOnly(result)
+                    Return result
                 End Function
-                Private Shared Function _as_PumpStation_MonitoringStations_GetEntityCollection(d As __PumpStation.DetailsClass) As Global.System.Collections.IEnumerable
-                    Return d.ImplementationEntity.as_PumpStation_MonitoringStations
+                Private Shared Sub _Notes_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Notes_Validate(r)
+                End Sub
+                Private Shared Function _Notes_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.Notes
+                End Function
+                Private Shared Sub _Notes_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.Notes = v
+                End Sub
+                Private Shared Sub _Notes_OnValueChanged(e As __RainGage)
+                    e.Notes_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly IMSSiteName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "IMSSiteName", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._IMSSiteName_OnValueChanged)
+                Private Shared Sub _IMSSiteName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._IMSSiteName, sf)
+                End Sub
+                Private Shared Function _IMSSiteName_ComputeIsReadOnly(e As __RainGage) As Boolean
+                    Dim result As Boolean = False
+                    e.IMSSiteName_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _IMSSiteName_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.IMSSiteName_Validate(r)
+                End Sub
+                Private Shared Function _IMSSiteName_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.IMSSiteName
+                End Function
+                Private Shared Sub _IMSSiteName_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.IMSSiteName = v
+                End Sub
+                Private Shared Sub _IMSSiteName_OnValueChanged(e As __RainGage)
+                    e.IMSSiteName_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Owner As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Entry( _
+                        "Owner", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Owner_OnValueChanged)
+                Private Shared Sub _Owner_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._Owner, sf)
+                End Sub
+                Private Shared Function _Owner_ComputeIsReadOnly(e As __RainGage) As Boolean
+                    Dim result As Boolean = False
+                    e.Owner_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Owner_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Owner_Validate(r)
+                End Sub
+                Private Shared Function _Owner_GetImplementationValue(d As __RainGage.DetailsClass) As String
+                    Return d.ImplementationEntity.Owner
+                End Function
+                Private Shared Sub _Owner_SetImplementationValue(d As __RainGage.DetailsClass, v As String)
+                    d.ImplementationEntity.Owner = v
+                End Sub
+                Private Shared Sub _Owner_OnValueChanged(e As __RainGage)
+                    e.Owner_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly as_RainGage_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation).Entry( _
+                        "as_RainGage_MonitoringStations", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._as_RainGage_MonitoringStations_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._as_RainGage_MonitoringStations_GetReferencedEntities, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._as_RainGage_MonitoringStations_GetEntityCollection)
+                Private Shared Sub _as_RainGage_MonitoringStations_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._as_RainGage_MonitoringStations, sf)
+                End Sub
+                Private Shared Function _as_RainGage_MonitoringStations_GetReferencedEntities(d As __RainGage.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.as_RainGage_MonitoringStation)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.as_RainGage_MonitoringStation, Global.LightSwitchApplication.as_RainGage_MonitoringStation.DetailsClass)(__RainGage.DetailsClass.PropertySetProperties.as_RainGage_MonitoringStations, d._as_RainGage_MonitoringStations)
+                End Function
+                Private Shared Function _as_RainGage_MonitoringStations_GetEntityCollection(d As __RainGage.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.as_RainGage_MonitoringStations
                 End Function
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System).Entry( _
-                        "rt_System", _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_Stub, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_ComputeIsReadOnly, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_Validate, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_GetCoreImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_GetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_SetImplementationValue, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_Refresh, _
-                        AddressOf __PumpStation.DetailsClass.PropertySetProperties._rt_System_OnValueChanged)
-                Private Shared Sub _rt_System_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __PumpStation.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System).Data), d As __PumpStation.DetailsClass, sf As Object)
-                    c(d, d._rt_System, sf)
+                Public Shared ReadOnly Person As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person).Entry( _
+                        "Person", _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_Stub, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_ComputeIsReadOnly, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_Validate, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_GetCoreImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_GetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_SetImplementationValue, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_Refresh, _
+                        AddressOf __RainGage.DetailsClass.PropertySetProperties._Person_OnValueChanged)
+                Private Shared Sub _Person_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __RainGage.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person).Data), d As __RainGage.DetailsClass, sf As Object)
+                    c(d, d._Person, sf)
                 End Sub
-                Private Shared Function _rt_System_ComputeIsReadOnly(e As __PumpStation) As Boolean
+                Private Shared Function _Person_ComputeIsReadOnly(e As __RainGage) As Boolean
                     Dim result As Boolean = False
-                    e.rt_System_IsReadOnly(result)
+                    e.Person_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _rt_System_Validate(e As __PumpStation, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.rt_System_Validate(r)
+                Private Shared Sub _Person_Validate(e As __RainGage, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Person_Validate(r)
                 End Sub
-                Private Shared Function _rt_System_GetCoreImplementationValue(d as __PumpStation.DetailsClass) As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
-                    Return d.ImplementationEntity.rt_System
+                Private Shared Function _Person_GetCoreImplementationValue(d as __RainGage.DetailsClass) As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
+                    Return d.ImplementationEntity.Person
                 End Function
-                Private Shared Function _rt_System_GetImplementationValue(d as __PumpStation.DetailsClass) As Global.LightSwitchApplication.rt_System
-                    Return d.GetImplementationValue(Of Global.LightSwitchApplication.rt_System, Global.LightSwitchApplication.rt_System.DetailsClass)(__PumpStation.DetailsClass.PropertySetProperties.rt_System, d._rt_System)
+                Private Shared Function _Person_GetImplementationValue(d as __RainGage.DetailsClass) As Global.LightSwitchApplication.Person
+                    Return d.GetImplementationValue(Of Global.LightSwitchApplication.Person, Global.LightSwitchApplication.Person.DetailsClass)(__RainGage.DetailsClass.PropertySetProperties.Person, d._Person)
                 End Function
-                Private Shared Sub _rt_System_SetImplementationValue(d As __PumpStation.DetailsClass, v As Global.LightSwitchApplication.rt_System)
-                    d.SetImplementationValue(__PumpStation.DetailsClass.PropertySetProperties.rt_System, d._rt_System, Sub(i, ev) i.rt_System = ev, v)
+                Private Shared Sub _Person_SetImplementationValue(d As __RainGage.DetailsClass, v As Global.LightSwitchApplication.Person)
+                    d.SetImplementationValue(__RainGage.DetailsClass.PropertySetProperties.Person, d._Person, Sub(i, ev) i.Person = ev, v)
                 End Sub
-                Private Shared Sub _rt_System_Refresh(d As __PumpStation.DetailsClass)
-                    d.RefreshNavigationProperty(__PumpStation.DetailsClass.PropertySetProperties.rt_System, d._rt_System)
+                Private Shared Sub _Person_Refresh(d As __RainGage.DetailsClass)
+                    d.RefreshNavigationProperty(__RainGage.DetailsClass.PropertySetProperties.Person, d._Person)
                 End Sub
-                Private Shared Sub _rt_System_OnValueChanged(e As __PumpStation)
-                    e.rt_System_Changed()
+                Private Shared Sub _Person_OnValueChanged(e As __RainGage)
+                    e.Person_Changed()
                 End Sub
     
             End Class
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _ID_PS As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Integer).Data
+            Private _ID_RG As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Integer).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _PumpStationCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Data
+            Private _RainGageCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Data
+            Private _NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, Global.System.Nullable(Of Short)).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _PumpStationType As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, String).Data
+            Private _Address As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _NumberOfPumps As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.System.Nullable(Of Short)).Data
+            Private _LocationDetails As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _as_PumpStation_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.as_PumpStation_MonitoringStation).Data
+            Private _Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __PumpStation, __PumpStation.DetailsClass, Global.LightSwitchApplication.rt_System).Data
+            Private _IMSSiteName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Owner As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __RainGage, __RainGage.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _as_RainGage_MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.as_RainGage_MonitoringStation).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Person As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __RainGage, __RainGage.DetailsClass, Global.LightSwitchApplication.Person).Data
             
         End Class
     

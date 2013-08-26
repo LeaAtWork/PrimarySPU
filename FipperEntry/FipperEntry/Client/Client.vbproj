@@ -217,6 +217,7 @@
     <Folder Include="DataLogic\" />
     <Folder Include="DataSources\" />
     <Folder Include="Screens\" />
+    <Folder Include="UserCode\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

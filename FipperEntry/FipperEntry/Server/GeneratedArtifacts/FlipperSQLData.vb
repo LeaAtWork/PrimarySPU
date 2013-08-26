@@ -18,7 +18,7 @@ Imports System.Runtime.Serialization
 Imports System.Xml.Serialization
 
 
-<Assembly: EdmSchemaAttribute("53c275d7-887b-4a8f-8981-ca0ba9622f59")>
+<Assembly: EdmSchemaAttribute("c19c1c14-354c-43bf-909a-3bf11735b6e8")>
 #Region "EDM Relationship Metadata"
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_as_CSF_MonitoringStation_CSFacility", "CSFacility", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.CSFacility), "as_CSF_MonitoringStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.as_CSF_MonitoringStation), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_as_CSF_MonitoringStation_MonitoringStation", "MonitoringStation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.MonitoringStation), "as_CSF_MonitoringStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.as_CSF_MonitoringStation), True)>
@@ -44,6 +44,7 @@ Imports System.Xml.Serialization
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_Outfall_rt_System", "rt_System", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.rt_System), "Outfall", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.Outfall), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_ProjectAndProgram_People", "People", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.Person), "ProjectAndProgram", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.ProjectAndProgram), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_ProjectAndProgram_People1", "People", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.Person), "ProjectAndProgram", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.ProjectAndProgram), True)>
+<Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_ProjectAndProgram_rt_ProgType", "rt_ProgType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.rt_ProgType), "ProjectAndProgram", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.ProjectAndProgram), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_ProjectAndProgram_WorkGroup", "WorkGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.WorkGroup), "ProjectAndProgram", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.ProjectAndProgram), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_PumpStation_rt_System", "rt_System", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.rt_System), "PumpStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.PumpStation), True)>
 <Assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_RainGage_People", "People", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(FlipperSQLData.Implementation.Person), "RainGage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(FlipperSQLData.Implementation.RainGage), True)>
@@ -311,6 +312,20 @@ Namespace FlipperSQLData.Implementation
         ''' <summary>
         ''' No Metadata Documentation available.
         ''' </summary>
+        Public ReadOnly Property rt_ProgTypes() As ObjectSet(Of rt_ProgType)
+            Get
+                If (_rt_ProgTypes Is Nothing) Then
+                    _rt_ProgTypes = MyBase.CreateObjectSet(Of rt_ProgType)("rt_ProgTypes")
+                End If
+                Return _rt_ProgTypes
+            End Get
+        End Property
+    
+        Private _rt_ProgTypes As ObjectSet(Of rt_ProgType)
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
         Public ReadOnly Property rt_Purposes() As ObjectSet(Of rt_Purpose)
             Get
                 If (_rt_Purposes Is Nothing) Then
@@ -499,6 +514,13 @@ Namespace FlipperSQLData.Implementation
         ''' </summary>
         Public Sub AddTort_Permanences(ByVal rt_Permanence As rt_Permanence)
             MyBase.AddObject("rt_Permanences", rt_Permanence)
+        End Sub
+    
+        ''' <summary>
+        ''' Deprecated Method for adding a new object to the rt_ProgTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+        ''' </summary>
+        Public Sub AddTort_ProgTypes(ByVal rt_ProgType As rt_ProgType)
+            MyBase.AddObject("rt_ProgTypes", rt_ProgType)
         End Sub
     
         ''' <summary>
@@ -3601,31 +3623,6 @@ Namespace FlipperSQLData.Implementation
         ''' </summary>
         <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
         <DataMemberAttribute()>
-        Public Property ProgTypeID() As Nullable(Of Global.System.Int32)
-            Get
-                Return _ProgTypeID
-            End Get
-            Set
-                OnProgTypeIDChanging(value)
-                ReportPropertyChanging("ProgTypeID")
-                _ProgTypeID = value
-                ReportPropertyChanged("ProgTypeID")
-                OnProgTypeIDChanged()
-            End Set
-        End Property
-    
-        Private _ProgTypeID As Nullable(Of Global.System.Int32)
-        Private Partial Sub OnProgTypeIDChanging(value As Nullable(Of Global.System.Int32))
-        End Sub
-    
-        Private Partial Sub OnProgTypeIDChanged()
-        End Sub
-    
-        ''' <summary>
-        ''' No Metadata Documentation available.
-        ''' </summary>
-        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
-        <DataMemberAttribute()>
         Public Property PrimaryContactID() As Nullable(Of Global.System.Int32)
             Get
                 Return _PrimaryContactID
@@ -3669,6 +3666,31 @@ Namespace FlipperSQLData.Implementation
         End Sub
     
         Private Partial Sub OnSecondaryContactIDChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+        <DataMemberAttribute()>
+        Public Property ProgTypeID() As Nullable(Of Global.System.Int32)
+            Get
+                Return _ProgTypeID
+            End Get
+            Set
+                OnProgTypeIDChanging(value)
+                ReportPropertyChanging("ProgTypeID")
+                _ProgTypeID = value
+                ReportPropertyChanged("ProgTypeID")
+                OnProgTypeIDChanged()
+            End Set
+        End Property
+    
+        Private _ProgTypeID As Nullable(Of Global.System.Int32)
+        Private Partial Sub OnProgTypeIDChanging(value As Nullable(Of Global.System.Int32))
+        End Sub
+    
+        Private Partial Sub OnProgTypeIDChanged()
         End Sub
     
         ''' <summary>
@@ -3776,6 +3798,37 @@ Namespace FlipperSQLData.Implementation
             Set
                 If (Not value Is Nothing)
                     CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of Person)("LightSwitchApplication.FK_ProjectAndProgram_People1", "People", value)
+                End If
+            End Set
+        End Property
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <XmlIgnoreAttribute()>
+        <SoapIgnoreAttribute()>
+        <DataMemberAttribute()>
+        <EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_ProjectAndProgram_rt_ProgType", "rt_ProgType")>
+        Public Property rt_ProgType() As rt_ProgType
+            Get
+                Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of rt_ProgType)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "rt_ProgType").Value
+            End Get
+            Set
+                CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of rt_ProgType)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "rt_ProgType").Value = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <BrowsableAttribute(False)>
+        <DataMemberAttribute()>
+        Public Property rt_ProgTypeReference() As EntityReference(Of rt_ProgType)
+            Get
+                Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of rt_ProgType)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "rt_ProgType")
+            End Get
+            Set
+                If (Not value Is Nothing)
+                    CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of rt_ProgType)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "rt_ProgType", value)
                 End If
             End Set
         End Property
@@ -4369,68 +4422,16 @@ Namespace FlipperSQLData.Implementation
         ''' <summary>
         ''' Create a new ReceivingWaterBody object.
         ''' </summary>
-        ''' <param name="iD_ReceivingWater">Initial value of the ID_ReceivingWater property.</param>
-        Public Shared Function CreateReceivingWaterBody(iD_ReceivingWater As Global.System.Int32) As ReceivingWaterBody
+        ''' <param name="id">Initial value of the ID property.</param>
+        Public Shared Function CreateReceivingWaterBody(id As Global.System.Int32) As ReceivingWaterBody
             Dim receivingWaterBody as ReceivingWaterBody = New ReceivingWaterBody
-            receivingWaterBody.ID_ReceivingWater = iD_ReceivingWater
+            receivingWaterBody.ID = id
             Return receivingWaterBody
         End Function
 
         #End Region
 
         #Region "Primitive Properties"
-    
-        ''' <summary>
-        ''' No Metadata Documentation available.
-        ''' </summary>
-        <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
-        <DataMemberAttribute()>
-        Public Property ID_ReceivingWater() As Global.System.Int32
-            Get
-                Return _ID_ReceivingWater
-            End Get
-            Set
-                If (_ID_ReceivingWater <> Value) Then
-                    OnID_ReceivingWaterChanging(value)
-                    ReportPropertyChanging("ID_ReceivingWater")
-                    _ID_ReceivingWater = value
-                    ReportPropertyChanged("ID_ReceivingWater")
-                    OnID_ReceivingWaterChanged()
-                End If
-            End Set
-        End Property
-    
-        Private _ID_ReceivingWater As Global.System.Int32
-        Private Partial Sub OnID_ReceivingWaterChanging(value As Global.System.Int32)
-        End Sub
-    
-        Private Partial Sub OnID_ReceivingWaterChanged()
-        End Sub
-    
-        ''' <summary>
-        ''' No Metadata Documentation available.
-        ''' </summary>
-        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
-        <DataMemberAttribute()>
-        Public Property ReceivingWaterBody1() As Global.System.String
-            Get
-                Return _ReceivingWaterBody1
-            End Get
-            Set
-                OnReceivingWaterBody1Changing(value)
-                ReportPropertyChanging("ReceivingWaterBody1")
-                _ReceivingWaterBody1 = value
-                ReportPropertyChanged("ReceivingWaterBody1")
-                OnReceivingWaterBody1Changed()
-            End Set
-        End Property
-    
-        Private _ReceivingWaterBody1 As Global.System.String
-        Private Partial Sub OnReceivingWaterBody1Changing(value As Global.System.String)
-        End Sub
-    
-        Private Partial Sub OnReceivingWaterBody1Changed()
-        End Sub
     
         ''' <summary>
         ''' No Metadata Documentation available.
@@ -4480,6 +4481,58 @@ Namespace FlipperSQLData.Implementation
         End Sub
     
         Private Partial Sub OnNotesChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
+        <DataMemberAttribute()>
+        Public Property ID() As Global.System.Int32
+            Get
+                Return _ID
+            End Get
+            Set
+                If (_ID <> Value) Then
+                    OnIDChanging(value)
+                    ReportPropertyChanging("ID")
+                    _ID = value
+                    ReportPropertyChanged("ID")
+                    OnIDChanged()
+                End If
+            End Set
+        End Property
+    
+        Private _ID As Global.System.Int32
+        Private Partial Sub OnIDChanging(value As Global.System.Int32)
+        End Sub
+    
+        Private Partial Sub OnIDChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+        <DataMemberAttribute()>
+        Public Property ReceivingWaterName() As Global.System.String
+            Get
+                Return _ReceivingWaterName
+            End Get
+            Set
+                OnReceivingWaterNameChanging(value)
+                ReportPropertyChanging("ReceivingWaterName")
+                _ReceivingWaterName = value
+                ReportPropertyChanged("ReceivingWaterName")
+                OnReceivingWaterNameChanged()
+            End Set
+        End Property
+    
+        Private _ReceivingWaterName As Global.System.String
+        Private Partial Sub OnReceivingWaterNameChanging(value As Global.System.String)
+        End Sub
+    
+        Private Partial Sub OnReceivingWaterNameChanged()
         End Sub
 
         #End Region
@@ -4887,6 +4940,135 @@ Namespace FlipperSQLData.Implementation
             Set
                 If (Not value Is Nothing)
                     CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of MonitoringStation)("LightSwitchApplication.FK_MonitoringStation_rt_Permanence", "MonitoringStation", value)
+                End If
+            End Set
+        End Property
+
+        #End Region
+
+    End Class
+    
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmEntityTypeAttribute(NamespaceName:="LightSwitchApplication", Name:="rt_ProgType")>
+    <Serializable()>
+    <DataContractAttribute(IsReference:=True)>
+    Public Partial Class rt_ProgType
+        Inherits EntityObject
+        #Region "Factory Method"
+    
+        ''' <summary>
+        ''' Create a new rt_ProgType object.
+        ''' </summary>
+        ''' <param name="id">Initial value of the id property.</param>
+        ''' <param name="progType">Initial value of the ProgType property.</param>
+        Public Shared Function Creatert_ProgType(id As Global.System.Int32, progType As Global.System.String) As rt_ProgType
+            Dim rt_ProgType as rt_ProgType = New rt_ProgType
+            rt_ProgType.id = id
+            rt_ProgType.ProgType = progType
+            Return rt_ProgType
+        End Function
+
+        #End Region
+
+        #Region "Primitive Properties"
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
+        <DataMemberAttribute()>
+        Public Property id() As Global.System.Int32
+            Get
+                Return _id
+            End Get
+            Set
+                If (_id <> Value) Then
+                    OnidChanging(value)
+                    ReportPropertyChanging("id")
+                    _id = value
+                    ReportPropertyChanged("id")
+                    OnidChanged()
+                End If
+            End Set
+        End Property
+    
+        Private _id As Global.System.Int32
+        Private Partial Sub OnidChanging(value As Global.System.Int32)
+        End Sub
+    
+        Private Partial Sub OnidChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+        <DataMemberAttribute()>
+        Public Property ProgType() As Global.System.String
+            Get
+                Return _ProgType
+            End Get
+            Set
+                OnProgTypeChanging(value)
+                ReportPropertyChanging("ProgType")
+                _ProgType = value
+                ReportPropertyChanged("ProgType")
+                OnProgTypeChanged()
+            End Set
+        End Property
+    
+        Private _ProgType As Global.System.String
+        Private Partial Sub OnProgTypeChanging(value As Global.System.String)
+        End Sub
+    
+        Private Partial Sub OnProgTypeChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
+        <DataMemberAttribute()>
+        Public Property Description() As Global.System.String
+            Get
+                Return _Description
+            End Get
+            Set
+                OnDescriptionChanging(value)
+                ReportPropertyChanging("Description")
+                _Description = value
+                ReportPropertyChanged("Description")
+                OnDescriptionChanged()
+            End Set
+        End Property
+    
+        Private _Description As Global.System.String
+        Private Partial Sub OnDescriptionChanging(value As Global.System.String)
+        End Sub
+    
+        Private Partial Sub OnDescriptionChanged()
+        End Sub
+
+        #End Region
+
+        #Region "Navigation Properties"
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <XmlIgnoreAttribute()>
+        <SoapIgnoreAttribute()>
+        <DataMemberAttribute()>
+        <EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_ProjectAndProgram_rt_ProgType", "ProjectAndProgram")>
+         Public Property ProjectAndPrograms() As EntityCollection(Of ProjectAndProgram)
+            Get
+                Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of ProjectAndProgram)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "ProjectAndProgram")
+            End Get
+            Set
+                If (Not value Is Nothing)
+                    CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of ProjectAndProgram)("LightSwitchApplication.FK_ProjectAndProgram_rt_ProgType", "ProjectAndProgram", value)
                 End If
             End Set
         End Property
@@ -5722,43 +5904,16 @@ Namespace FlipperSQLData.Implementation
         ''' <summary>
         ''' Create a new WorkGroup object.
         ''' </summary>
-        ''' <param name="id_workgroup">Initial value of the id_workgroup property.</param>
-        Public Shared Function CreateWorkGroup(id_workgroup As Global.System.Int32) As WorkGroup
+        ''' <param name="id">Initial value of the id property.</param>
+        Public Shared Function CreateWorkGroup(id As Global.System.Int32) As WorkGroup
             Dim workGroup as WorkGroup = New WorkGroup
-            workGroup.id_workgroup = id_workgroup
+            workGroup.id = id
             Return workGroup
         End Function
 
         #End Region
 
         #Region "Primitive Properties"
-    
-        ''' <summary>
-        ''' No Metadata Documentation available.
-        ''' </summary>
-        <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
-        <DataMemberAttribute()>
-        Public Property id_workgroup() As Global.System.Int32
-            Get
-                Return _id_workgroup
-            End Get
-            Set
-                If (_id_workgroup <> Value) Then
-                    Onid_workgroupChanging(value)
-                    ReportPropertyChanging("id_workgroup")
-                    _id_workgroup = value
-                    ReportPropertyChanged("id_workgroup")
-                    Onid_workgroupChanged()
-                End If
-            End Set
-        End Property
-    
-        Private _id_workgroup As Global.System.Int32
-        Private Partial Sub Onid_workgroupChanging(value As Global.System.Int32)
-        End Sub
-    
-        Private Partial Sub Onid_workgroupChanged()
-        End Sub
     
         ''' <summary>
         ''' No Metadata Documentation available.
@@ -5883,6 +6038,33 @@ Namespace FlipperSQLData.Implementation
         End Sub
     
         Private Partial Sub OnNotesChanged()
+        End Sub
+    
+        ''' <summary>
+        ''' No Metadata Documentation available.
+        ''' </summary>
+        <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
+        <DataMemberAttribute()>
+        Public Property id() As Global.System.Int32
+            Get
+                Return _id
+            End Get
+            Set
+                If (_id <> Value) Then
+                    OnidChanging(value)
+                    ReportPropertyChanging("id")
+                    _id = value
+                    ReportPropertyChanged("id")
+                    OnidChanged()
+                End If
+            End Set
+        End Property
+    
+        Private _id As Global.System.Int32
+        Private Partial Sub OnidChanging(value As Global.System.Int32)
+        End Sub
+    
+        Private Partial Sub OnidChanged()
         End Sub
 
         #End Region

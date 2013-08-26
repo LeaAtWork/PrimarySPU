@@ -13,7 +13,7 @@ Option Explicit On
 
 
 'Original file name:
-'Generation date: 8/26/2013 11:49:34 AM
+'Generation date: 8/26/2013 2:52:16 PM
 Namespace LightSwitchApplication.Implementation
     '''<summary>
     '''There are no comments for FlipperSQLDataObjectContext in the schema.
@@ -269,6 +269,20 @@ Namespace LightSwitchApplication.Implementation
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
         Private _rt_Permanences As Global.System.Data.Services.Client.DataServiceQuery(Of rt_Permanence)
         '''<summary>
+        '''There are no comments for rt_ProgTypes in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public ReadOnly Property rt_ProgTypes() As Global.System.Data.Services.Client.DataServiceQuery(Of rt_ProgType)
+            Get
+                If (Me._rt_ProgTypes Is Nothing) Then
+                    Me._rt_ProgTypes = MyBase.CreateQuery(Of rt_ProgType)("rt_ProgTypes")
+                End If
+                Return Me._rt_ProgTypes
+            End Get
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _rt_ProgTypes As Global.System.Data.Services.Client.DataServiceQuery(Of rt_ProgType)
+        '''<summary>
         '''There are no comments for rt_Purposes in the schema.
         '''</summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
@@ -456,6 +470,13 @@ Namespace LightSwitchApplication.Implementation
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
         Public Sub AddTort_Permanences(ByVal rt_Permanence As rt_Permanence)
             MyBase.AddObject("rt_Permanences", rt_Permanence)
+        End Sub
+        '''<summary>
+        '''There are no comments for rt_ProgTypes in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Sub AddTort_ProgTypes(ByVal rt_ProgType As rt_ProgType)
+            MyBase.AddObject("rt_ProgTypes", rt_ProgType)
         End Sub
         '''<summary>
         '''There are no comments for rt_Purposes in the schema.
@@ -2830,7 +2851,7 @@ Namespace LightSwitchApplication.Implementation
                 End If
                 If (Not (Me.___Host) Is Nothing) Then
                     If (Not (value) Is Nothing) Then
-                        Me.ReceivingWaterBodyID = value.ID_ReceivingWater
+                        Me.ReceivingWaterBodyID = value.ID
                     Else
                         Me.ReceivingWaterBodyID = CType(Nothing, Global.System.Nullable(Of Integer))
                     End If
@@ -3546,30 +3567,6 @@ Namespace LightSwitchApplication.Implementation
         Partial Private Sub OnADSNameChanged()
         End Sub
         '''<summary>
-        '''There are no comments for Property ProgTypeID in the schema.
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Property ProgTypeID() As Global.System.Nullable(Of Integer)
-            Get
-                Return Me._ProgTypeID
-            End Get
-            Set
-                Me.OnProgTypeIDChanging(value)
-                If Object.Equals(Me.ProgTypeID, value) Then
-                    Return
-                End If
-                Me._ProgTypeID = value
-                Me.OnProgTypeIDChanged
-                Me.OnPropertyChanged("ProgTypeID")
-            End Set
-        End Property
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Private _ProgTypeID As Global.System.Nullable(Of Integer)
-        Partial Private Sub OnProgTypeIDChanging(ByVal value As Global.System.Nullable(Of Integer))
-        End Sub
-        Partial Private Sub OnProgTypeIDChanged()
-        End Sub
-        '''<summary>
         '''There are no comments for Property PrimaryContactID in the schema.
         '''</summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
@@ -3616,6 +3613,30 @@ Namespace LightSwitchApplication.Implementation
         Partial Private Sub OnSecondaryContactIDChanging(ByVal value As Global.System.Nullable(Of Integer))
         End Sub
         Partial Private Sub OnSecondaryContactIDChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property ProgTypeID in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property ProgTypeID() As Global.System.Nullable(Of Integer)
+            Get
+                Return Me._ProgTypeID
+            End Get
+            Set
+                Me.OnProgTypeIDChanging(value)
+                If Object.Equals(Me.ProgTypeID, value) Then
+                    Return
+                End If
+                Me._ProgTypeID = value
+                Me.OnProgTypeIDChanged
+                Me.OnPropertyChanged("ProgTypeID")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _ProgTypeID As Global.System.Nullable(Of Integer)
+        Partial Private Sub OnProgTypeIDChanging(ByVal value As Global.System.Nullable(Of Integer))
+        End Sub
+        Partial Private Sub OnProgTypeIDChanged()
         End Sub
         '''<summary>
         '''There are no comments for Property WorkGroupID in the schema.
@@ -3732,6 +3753,43 @@ Namespace LightSwitchApplication.Implementation
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
         Private _Person1 As Person
         '''<summary>
+        '''There are no comments for rt_ProgType in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property rt_ProgType() As rt_ProgType
+            Get
+                Me.__rt_ProgType.EnsureValueInitialized
+                Return Me._rt_ProgType
+            End Get
+            Set
+                Dim previous As rt_ProgType = Me.rt_ProgType
+                If (previous Is value) Then
+                    Return
+                End If
+                If (Not (previous) Is Nothing) Then
+                    Me._rt_ProgType = Nothing
+                    Me.__rt_ProgType.OnValueSet
+                    previous.ProjectAndPrograms.Remove(Me)
+                End If
+                If (Not (Me.___Host) Is Nothing) Then
+                    If (Not (value) Is Nothing) Then
+                        Me.ProgTypeID = value.id
+                    Else
+                        Me.ProgTypeID = CType(Nothing, Global.System.Nullable(Of Integer))
+                    End If
+                End If
+                Me._rt_ProgType = value
+                Me.__rt_ProgType.OnValueSet
+                If (Not (value) Is Nothing) Then
+                    value.__ProjectAndPrograms.Add(Me)
+                End If
+                Me.___OnPropertyChanged("rt_ProgType")
+                Me.OnPropertyChanged("rt_ProgType")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _rt_ProgType As rt_ProgType
+        '''<summary>
         '''There are no comments for WorkGroup in the schema.
         '''</summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
@@ -3752,7 +3810,7 @@ Namespace LightSwitchApplication.Implementation
                 End If
                 If (Not (Me.___Host) Is Nothing) Then
                     If (Not (value) Is Nothing) Then
-                        Me.WorkGroupID = value.id_workgroup
+                        Me.WorkGroupID = value.id
                     Else
                         Me.WorkGroupID = CType(Nothing, Global.System.Nullable(Of Integer))
                     End If
@@ -4307,71 +4365,23 @@ Namespace LightSwitchApplication.Implementation
     '''There are no comments for LightSwitchApplication.ReceivingWaterBody in the schema.
     '''</summary>
     '''<KeyProperties>
-    '''ID_ReceivingWater
+    '''ID
     '''</KeyProperties>
     <Global.System.Data.Services.Common.EntitySetAttribute("ReceivingWaterBodies"),  _
-     Global.System.Data.Services.Common.DataServiceKeyAttribute("ID_ReceivingWater")>  _
+     Global.System.Data.Services.Common.DataServiceKeyAttribute("ID")>  _
     Partial Public Class ReceivingWaterBody
         Inherits Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase
         Implements Global.System.ComponentModel.INotifyPropertyChanged
         '''<summary>
         '''Create a new ReceivingWaterBody object.
         '''</summary>
-        '''<param name="iD_ReceivingWater">Initial value of ID_ReceivingWater.</param>
+        '''<param name="ID">Initial value of ID.</param>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Shared Function CreateReceivingWaterBody(ByVal iD_ReceivingWater As Integer) As ReceivingWaterBody
+        Public Shared Function CreateReceivingWaterBody(ByVal ID As Integer) As ReceivingWaterBody
             Dim receivingWaterBody As ReceivingWaterBody = New ReceivingWaterBody()
-            receivingWaterBody.ID_ReceivingWater = iD_ReceivingWater
+            receivingWaterBody.ID = ID
             Return receivingWaterBody
         End Function
-        '''<summary>
-        '''There are no comments for Property ID_ReceivingWater in the schema.
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Property ID_ReceivingWater() As Integer
-            Get
-                Return Me._ID_ReceivingWater
-            End Get
-            Set
-                Me.OnID_ReceivingWaterChanging(value)
-                If Object.Equals(Me.ID_ReceivingWater, value) Then
-                    Return
-                End If
-                Me._ID_ReceivingWater = value
-                Me.OnID_ReceivingWaterChanged
-                Me.OnPropertyChanged("ID_ReceivingWater")
-            End Set
-        End Property
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Private _ID_ReceivingWater As Integer
-        Partial Private Sub OnID_ReceivingWaterChanging(ByVal value As Integer)
-        End Sub
-        Partial Private Sub OnID_ReceivingWaterChanged()
-        End Sub
-        '''<summary>
-        '''There are no comments for Property ReceivingWaterBody1 in the schema.
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Property ReceivingWaterBody1() As String
-            Get
-                Return Me._ReceivingWaterBody1
-            End Get
-            Set
-                Me.OnReceivingWaterBody1Changing(value)
-                If Object.Equals(Me.ReceivingWaterBody1, value) Then
-                    Return
-                End If
-                Me._ReceivingWaterBody1 = value
-                Me.OnReceivingWaterBody1Changed
-                Me.OnPropertyChanged("ReceivingWaterBody1")
-            End Set
-        End Property
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Private _ReceivingWaterBody1 As String
-        Partial Private Sub OnReceivingWaterBody1Changing(ByVal value As String)
-        End Sub
-        Partial Private Sub OnReceivingWaterBody1Changed()
-        End Sub
         '''<summary>
         '''There are no comments for Property AlternateName in the schema.
         '''</summary>
@@ -4419,6 +4429,54 @@ Namespace LightSwitchApplication.Implementation
         Partial Private Sub OnNotesChanging(ByVal value As String)
         End Sub
         Partial Private Sub OnNotesChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property ID in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return Me._ID
+            End Get
+            Set
+                Me.OnIDChanging(value)
+                If Object.Equals(Me.ID, value) Then
+                    Return
+                End If
+                Me._ID = value
+                Me.OnIDChanged
+                Me.OnPropertyChanged("ID")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _ID As Integer
+        Partial Private Sub OnIDChanging(ByVal value As Integer)
+        End Sub
+        Partial Private Sub OnIDChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property ReceivingWaterName in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property ReceivingWaterName() As String
+            Get
+                Return Me._ReceivingWaterName
+            End Get
+            Set
+                Me.OnReceivingWaterNameChanging(value)
+                If Object.Equals(Me.ReceivingWaterName, value) Then
+                    Return
+                End If
+                Me._ReceivingWaterName = value
+                Me.OnReceivingWaterNameChanged
+                Me.OnPropertyChanged("ReceivingWaterName")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _ReceivingWaterName As String
+        Partial Private Sub OnReceivingWaterNameChanging(ByVal value As String)
+        End Sub
+        Partial Private Sub OnReceivingWaterNameChanged()
         End Sub
         '''<summary>
         '''There are no comments for Outfalls in the schema.
@@ -4796,6 +4854,126 @@ Namespace LightSwitchApplication.Implementation
         End Property
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
         Private _MonitoringStations As Global.System.Data.Services.Client.DataServiceCollection(Of MonitoringStation) = New Global.System.Data.Services.Client.DataServiceCollection(Of MonitoringStation)(Nothing, Global.System.Data.Services.Client.TrackingMode.None)
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Event PropertyChanged As Global.System.ComponentModel.PropertyChangedEventHandler Implements Global.System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Protected Overridable Sub OnPropertyChanged(ByVal [property] As String)
+            If (Not (Me.PropertyChangedEvent) Is Nothing) Then
+                RaiseEvent PropertyChanged(Me, New Global.System.ComponentModel.PropertyChangedEventArgs([property]))
+            End If
+        End Sub
+    End Class
+    '''<summary>
+    '''There are no comments for LightSwitchApplication.rt_ProgType in the schema.
+    '''</summary>
+    '''<KeyProperties>
+    '''id
+    '''</KeyProperties>
+    <Global.System.Data.Services.Common.EntitySetAttribute("rt_ProgTypes"),  _
+     Global.System.Data.Services.Common.DataServiceKeyAttribute("id")>  _
+    Partial Public Class rt_ProgType
+        Inherits Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase
+        Implements Global.System.ComponentModel.INotifyPropertyChanged
+        '''<summary>
+        '''Create a new rt_ProgType object.
+        '''</summary>
+        '''<param name="ID">Initial value of id.</param>
+        '''<param name="progType">Initial value of ProgType.</param>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Shared Function Creatert_ProgType(ByVal ID As Integer, ByVal progType As String) As rt_ProgType
+            Dim rt_ProgType As rt_ProgType = New rt_ProgType()
+            rt_ProgType.id = ID
+            rt_ProgType.ProgType = progType
+            Return rt_ProgType
+        End Function
+        '''<summary>
+        '''There are no comments for Property id in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return Me._id
+            End Get
+            Set
+                Me.OnidChanging(value)
+                If Object.Equals(Me.id, value) Then
+                    Return
+                End If
+                Me._id = value
+                Me.OnidChanged
+                Me.OnPropertyChanged("id")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _id As Integer
+        Partial Private Sub OnidChanging(ByVal value As Integer)
+        End Sub
+        Partial Private Sub OnidChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property ProgType in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property ProgType() As String
+            Get
+                Return Me._ProgType
+            End Get
+            Set
+                Me.OnProgTypeChanging(value)
+                If Object.Equals(Me.ProgType, value) Then
+                    Return
+                End If
+                Me._ProgType = value
+                Me.OnProgTypeChanged
+                Me.OnPropertyChanged("ProgType")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _ProgType As String
+        Partial Private Sub OnProgTypeChanging(ByVal value As String)
+        End Sub
+        Partial Private Sub OnProgTypeChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property Description in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property Description() As String
+            Get
+                Return Me._Description
+            End Get
+            Set
+                Me.OnDescriptionChanging(value)
+                If Object.Equals(Me.Description, value) Then
+                    Return
+                End If
+                Me._Description = value
+                Me.OnDescriptionChanged
+                Me.OnPropertyChanged("Description")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _Description As String
+        Partial Private Sub OnDescriptionChanging(ByVal value As String)
+        End Sub
+        Partial Private Sub OnDescriptionChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for ProjectAndPrograms in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property ProjectAndPrograms() As Global.System.Data.Services.Client.DataServiceCollection(Of ProjectAndProgram)
+            Get
+                Me.__ProjectAndPrograms.EnsureValueInitialized
+                Return Me._ProjectAndPrograms
+            End Get
+            Set
+                Me._ProjectAndPrograms = value
+                Me.OnPropertyChanged("ProjectAndPrograms")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _ProjectAndPrograms As Global.System.Data.Services.Client.DataServiceCollection(Of ProjectAndProgram) = New Global.System.Data.Services.Client.DataServiceCollection(Of ProjectAndProgram)(Nothing, Global.System.Data.Services.Client.TrackingMode.None)
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
         Public Event PropertyChanged As Global.System.ComponentModel.PropertyChangedEventHandler Implements Global.System.ComponentModel.INotifyPropertyChanged.PropertyChanged
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
@@ -5572,47 +5750,23 @@ Namespace LightSwitchApplication.Implementation
     '''There are no comments for LightSwitchApplication.WorkGroup in the schema.
     '''</summary>
     '''<KeyProperties>
-    '''id_workgroup
+    '''id
     '''</KeyProperties>
     <Global.System.Data.Services.Common.EntitySetAttribute("WorkGroups"),  _
-     Global.System.Data.Services.Common.DataServiceKeyAttribute("id_workgroup")>  _
+     Global.System.Data.Services.Common.DataServiceKeyAttribute("id")>  _
     Partial Public Class WorkGroup
         Inherits Global.Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase
         Implements Global.System.ComponentModel.INotifyPropertyChanged
         '''<summary>
         '''Create a new WorkGroup object.
         '''</summary>
-        '''<param name="id_workgroup">Initial value of id_workgroup.</param>
+        '''<param name="ID">Initial value of id.</param>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Shared Function CreateWorkGroup(ByVal id_workgroup As Integer) As WorkGroup
+        Public Shared Function CreateWorkGroup(ByVal ID As Integer) As WorkGroup
             Dim workGroup As WorkGroup = New WorkGroup()
-            workGroup.id_workgroup = id_workgroup
+            workGroup.id = ID
             Return workGroup
         End Function
-        '''<summary>
-        '''There are no comments for Property id_workgroup in the schema.
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Public Property id_workgroup() As Integer
-            Get
-                Return Me._id_workgroup
-            End Get
-            Set
-                Me.Onid_workgroupChanging(value)
-                If Object.Equals(Me.id_workgroup, value) Then
-                    Return
-                End If
-                Me._id_workgroup = value
-                Me.Onid_workgroupChanged
-                Me.OnPropertyChanged("id_workgroup")
-            End Set
-        End Property
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
-        Private _id_workgroup As Integer
-        Partial Private Sub Onid_workgroupChanging(ByVal value As Integer)
-        End Sub
-        Partial Private Sub Onid_workgroupChanged()
-        End Sub
         '''<summary>
         '''There are no comments for Property WorkGroupCode in the schema.
         '''</summary>
@@ -5732,6 +5886,30 @@ Namespace LightSwitchApplication.Implementation
         Partial Private Sub OnNotesChanging(ByVal value As String)
         End Sub
         Partial Private Sub OnNotesChanged()
+        End Sub
+        '''<summary>
+        '''There are no comments for Property id in the schema.
+        '''</summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return Me._id
+            End Get
+            Set
+                Me.OnidChanging(value)
+                If Object.Equals(Me.id, value) Then
+                    Return
+                End If
+                Me._id = value
+                Me.OnidChanged
+                Me.OnPropertyChanged("id")
+            End Set
+        End Property
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")>  _
+        Private _id As Integer
+        Partial Private Sub OnidChanging(ByVal value As Integer)
+        End Sub
+        Partial Private Sub OnidChanged()
         End Sub
         '''<summary>
         '''There are no comments for ProjectAndPrograms in the schema.

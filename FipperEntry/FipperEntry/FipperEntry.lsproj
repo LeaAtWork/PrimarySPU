@@ -22,12 +22,13 @@
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
     <ApplicationClientType>Desktop</ApplicationClientType>
     <ApplicationServerType>LocalHost</ApplicationServerType>
-    <AuthenticationType>None</AuthenticationType>
+    <AuthenticationType>Windows</AuthenticationType>
     <ApplicationName>FipperEntry</ApplicationName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
+    <AllowAllWindowsUsers>true</AllowAllWindowsUsers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

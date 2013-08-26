@@ -16,6 +16,7 @@
     <EntitySet Name="rt_CSFTypes" EntityType="FlipperSQLDataStore.rt_CSFType" store:Type="Tables" Schema="dbo" Table="rt_CSFType" />
     <EntitySet Name="rt_DataAccquisitionMethods" EntityType="FlipperSQLDataStore.rt_DataAccquisitionMethod" store:Type="Tables" Schema="dbo" Table="rt_DataAccquisitionMethod" />
     <EntitySet Name="rt_Permanences" EntityType="FlipperSQLDataStore.rt_Permanence" store:Type="Tables" Schema="dbo" Table="rt_Permanence" />
+    <EntitySet Name="rt_ProgTypes" EntityType="FlipperSQLDataStore.rt_ProgType" store:Type="Tables" Schema="dbo" Table="rt_ProgType" />
     <EntitySet Name="rt_Purposes" EntityType="FlipperSQLDataStore.rt_Purpose" store:Type="Tables" Schema="dbo" Table="rt_Purpose" />
     <EntitySet Name="rt_Relationships" EntityType="FlipperSQLDataStore.rt_Relationship" store:Type="Tables" Schema="dbo" Table="rt_Relationship" />
     <EntitySet Name="rt_Status" EntityType="FlipperSQLDataStore.rt_Status" store:Type="Tables" Schema="dbo" Table="rt_Status" />
@@ -118,6 +119,10 @@
       <End Role="People" EntitySet="People" />
       <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProjectAndProgram_rt_ProgType" Association="FlipperSQLDataStore.FK_ProjectAndProgram_rt_ProgType">
+      <End Role="rt_ProgType" EntitySet="rt_ProgTypes" />
+      <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
+    </AssociationSet>
     <AssociationSet Name="FK_ProjectAndProgram_WorkGroup" Association="FlipperSQLDataStore.FK_ProjectAndProgram_WorkGroup">
       <End Role="WorkGroup" EntitySet="WorkGroups" />
       <End Role="ProjectAndProgram" EntitySet="ProjectAndPrograms" />
@@ -139,7 +144,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Notes" Type="nvarchar(max)" />
     <Property Name="CSF" Type="int" />
     <Property Name="MonitoringStation" Type="int" />
@@ -149,7 +154,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Notes" Type="nvarchar(max)" />
     <Property Name="BillingCode" Type="nvarchar" MaxLength="50" />
     <Property Name="MonitoringStation" Type="int" Nullable="false" />
@@ -160,7 +165,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="MonitoringStation" Type="int" />
     <Property Name="PumpStation" Type="int" />
     <Property Name="RelationshipID" Type="int" />
@@ -169,7 +174,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="MonitoringStation" Type="int" />
     <Property Name="RainGage" Type="int" />
     <Property Name="RelationshipID" Type="int" />
@@ -191,7 +196,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="MontoringStationCode" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
     <Property Name="AccessPointID" Type="nvarchar" MaxLength="255" />
@@ -216,7 +221,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="OutfallName" Type="nvarchar" MaxLength="255" />
     <Property Name="NumberCode" Type="smallint" />
     <Property Name="ReceivingWaterBodyID" Type="int" />
@@ -226,7 +231,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="LastName" Type="nvarchar" MaxLength="255" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
@@ -250,20 +255,20 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ProjectOrProgram_ID" Type="nvarchar" MaxLength="255" />
     <Property Name="CommonName" Type="nvarchar" MaxLength="255" />
     <Property Name="ADSName" Type="nvarchar" MaxLength="255" />
-    <Property Name="ProgTypeID" Type="int" />
     <Property Name="PrimaryContactID" Type="int" />
     <Property Name="SecondaryContactID" Type="int" />
+    <Property Name="ProgTypeID" Type="int" />
     <Property Name="WorkGroupID" Type="int" />
   </EntityType>
   <EntityType Name="PumpStation">
     <Key>
       <PropertyRef Name="ID_PS" />
     </Key>
-    <Property Name="ID_PS" Type="int" Nullable="false" />
+    <Property Name="ID_PS" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PumpStationCode" Type="nvarchar" MaxLength="255" />
     <Property Name="NumberCode" Type="smallint" />
     <Property Name="PumpStationType" Type="nvarchar" MaxLength="255" />
@@ -274,7 +279,7 @@
     <Key>
       <PropertyRef Name="ID_RG" />
     </Key>
-    <Property Name="ID_RG" Type="int" Nullable="false" />
+    <Property Name="ID_RG" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RainGageCode" Type="nvarchar" MaxLength="255" />
     <Property Name="NumberCode" Type="smallint" />
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
@@ -286,18 +291,18 @@
   </EntityType>
   <EntityType Name="ReceivingWaterBody">
     <Key>
-      <PropertyRef Name="ID_ReceivingWater" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID_ReceivingWater" Type="int" Nullable="false" />
-    <Property Name="ReceivingWaterBody" Type="nvarchar" MaxLength="255" />
     <Property Name="AlternateName" Type="nvarchar" MaxLength="255" />
     <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReceivingWaterName" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="rt_CSFType">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CSFType" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
@@ -305,7 +310,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="DataAccquisitionMethod" Type="nchar" Nullable="false" MaxLength="10" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
@@ -313,15 +318,23 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PermanenceType" Type="nchar" Nullable="false" MaxLength="10" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="rt_ProgType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProgType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="rt_Purpose">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
@@ -329,7 +342,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Relationship" Type="nchar" Nullable="false" MaxLength="10" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
   </EntityType>
@@ -345,7 +358,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="SystemCode" Type="nchar" Nullable="false" MaxLength="10" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
@@ -353,7 +366,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="SensorPointID" Type="nvarchar" MaxLength="255" />
     <Property Name="AssociatedEntityID" Type="nvarchar" MaxLength="255" />
     <Property Name="FeatureKey" Type="nvarchar" MaxLength="255" />
@@ -361,14 +374,14 @@
   </EntityType>
   <EntityType Name="WorkGroup">
     <Key>
-      <PropertyRef Name="id_workgroup" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="id_workgroup" Type="int" Nullable="false" />
     <Property Name="WorkGroupCode" Type="nvarchar" MaxLength="255" />
     <Property Name="WorkGroupName" Type="nvarchar" MaxLength="255" />
     <Property Name="Division" Type="nvarchar" MaxLength="255" />
     <Property Name="LowOrg" Type="nvarchar" MaxLength="255" />
     <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <Association Name="FK_as_CSF_MonitoringStation_CSFacility">
     <End Role="CSFacility" Type="FlipperSQLDataStore.CSFacility" Multiplicity="0..1" />
@@ -615,7 +628,7 @@
     <End Role="Outfall" Type="FlipperSQLDataStore.Outfall" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ReceivingWaterBodies">
-        <PropertyRef Name="ID_ReceivingWater" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Outfall">
         <PropertyRef Name="ReceivingWaterBodyID" />
@@ -658,12 +671,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProjectAndProgram_rt_ProgType">
+    <End Role="rt_ProgType" Type="FlipperSQLDataStore.rt_ProgType" Multiplicity="0..1" />
+    <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rt_ProgType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProjectAndProgram">
+        <PropertyRef Name="ProgTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProjectAndProgram_WorkGroup">
     <End Role="WorkGroup" Type="FlipperSQLDataStore.WorkGroup" Multiplicity="0..1" />
     <End Role="ProjectAndProgram" Type="FlipperSQLDataStore.ProjectAndProgram" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="WorkGroup">
-        <PropertyRef Name="id_workgroup" />
+        <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="ProjectAndProgram">
         <PropertyRef Name="WorkGroupID" />

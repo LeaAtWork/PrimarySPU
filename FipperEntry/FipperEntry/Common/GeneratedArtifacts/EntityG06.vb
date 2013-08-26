@@ -11,7 +11,7 @@
 Option Strict On
 Option Explicit On
 
-Imports __Outfall = LightSwitchApplication.Outfall
+Imports __Person = LightSwitchApplication.Person
 
 Namespace LightSwitchApplication
 
@@ -21,13 +21,13 @@ Namespace LightSwitchApplication
     ''' No Modeled Description Available
     ''' </summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
-    Public NotInheritable Partial Class Outfall
-        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __Outfall, __Outfall.DetailsClass)
+    Public NotInheritable Partial Class Person
+        Inherits Global.Microsoft.LightSwitch.Framework.Base.EntityObject(Of __Person, __Person.DetailsClass)
     
         #Region "Constructors"
     
         ''' <summary>
-        ''' Initializes a new instance of the Outfall entity.
+        ''' Initializes a new instance of the Person entity.
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
@@ -37,17 +37,17 @@ Namespace LightSwitchApplication
     
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __Outfall))
+        Public Sub New(entitySet As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __Person))
             MyBase.New(entitySet)
             
-            __Outfall.DetailsClass.Initialize(Me)
+            __Person.DetailsClass.Initialize(Me)
         End Sub
     
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub Outfall_Created()
+        Private Partial Sub Person_Created()
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub Outfall_AllowSaveWithErrors(ByRef result As Boolean)
+        Private Partial Sub Person_AllowSaveWithErrors(ByRef result As Boolean)
         End Sub
     
         #End Region
@@ -87,10 +87,10 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public Property ID As Integer
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.ID)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.ID)
             End Get
             Set
-                __Outfall.DetailsClass.SetValue(Me, __Outfall.DetailsClass.PropertySetProperties.ID, Value)
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.ID, Value)
             End Set
         End Property
         
@@ -109,23 +109,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property OutfallName As String
+        Public Property FullName As String
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.OutfallName)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.FullName)
             End Get
             Set
-                __Outfall.DetailsClass.SetValue(Me, __Outfall.DetailsClass.PropertySetProperties.OutfallName, Value)
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.FullName, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub OutfallName_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub FullName_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub OutfallName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub FullName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub OutfallName_Changed()
+        Private Partial Sub FullName_Changed()
         End Sub
 
         ''' <summary>
@@ -133,23 +133,23 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property NumberCode As Global.System.Nullable(Of Short)
+        Public Property LastName As String
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.NumberCode)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.LastName)
             End Get
             Set
-                __Outfall.DetailsClass.SetValue(Me, __Outfall.DetailsClass.PropertySetProperties.NumberCode, Value)
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.LastName, Value)
             End Set
         End Property
         
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberCode_IsReadOnly(ByRef result As Boolean)
+        Private Partial Sub LastName_IsReadOnly(ByRef result As Boolean)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberCode_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        Private Partial Sub LastName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
         End Sub
         <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub NumberCode_Changed()
+        Private Partial Sub LastName_Changed()
         End Sub
 
         ''' <summary>
@@ -157,17 +157,401 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.MonitoringStation)
+        Public Property FirstName As String
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.MonitoringStations)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.FirstName)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.FirstName, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FirstName_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FirstName_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FirstName_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Company As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Company)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Company, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Company_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Company_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Company_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property E_mailAddress As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.E_mailAddress)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.E_mailAddress, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub E_mailAddress_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub E_mailAddress_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub E_mailAddress_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property JobTitle As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.JobTitle)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.JobTitle, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub JobTitle_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub JobTitle_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub JobTitle_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property BusinessPhone As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.BusinessPhone)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.BusinessPhone, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub BusinessPhone_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub BusinessPhone_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub BusinessPhone_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property MobilePhone As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.MobilePhone)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.MobilePhone, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub MobilePhone_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub MobilePhone_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub MobilePhone_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Pager As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Pager)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Pager, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Pager_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Pager_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Pager_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property FaxNumber As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.FaxNumber)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.FaxNumber, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FaxNumber_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FaxNumber_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub FaxNumber_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Address1 As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Address1)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Address1, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Address1_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Address1_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Address1_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property City As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.City)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.City, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub City_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub City_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub City_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property State As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.State)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.State, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub State_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub State_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub State_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property ZIP As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.ZIP)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.ZIP, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub ZIP_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub ZIP_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub ZIP_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Notes As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Notes)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Notes, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Notes_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property CubeNumber As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.CubeNumber)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.CubeNumber, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub CubeNumber_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub CubeNumber_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub CubeNumber_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Department As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Department)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Department, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Department_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Department_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Department_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public Property Role As String
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.Role)
+            End Get
+            Set
+                __Person.DetailsClass.SetValue(Me, __Person.DetailsClass.PropertySetProperties.Role, Value)
+            End Set
+        End Property
+        
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Role_IsReadOnly(ByRef result As Boolean)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Role_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+        End Sub
+        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        Private Partial Sub Role_Changed()
+        End Sub
+
+        ''' <summary>
+        ''' No Modeled Description Available
+        ''' </summary>
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.ProjectAndProgram)
+            Get
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.ProjectAndPrograms)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public ReadOnly Property MonitoringStationsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.MonitoringStation)
+        Public ReadOnly Property ProjectAndProgramsQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.ProjectAndProgram)
             Get
-                Return __Outfall.DetailsClass.GetQuery(Me, __Outfall.DetailsClass.PropertySetProperties.MonitoringStations)
+                Return __Person.DetailsClass.GetQuery(Me, __Person.DetailsClass.PropertySetProperties.ProjectAndPrograms)
             End Get
         End Property
 
@@ -176,48 +560,38 @@ Namespace LightSwitchApplication
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property ReceivingWaterBody As Global.LightSwitchApplication.ReceivingWaterBody
+        Public ReadOnly Property ProjectAndPrograms1 As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.ProjectAndProgram)
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.ProjectAndPrograms1)
             End Get
-            Set
-                __Outfall.DetailsClass.SetValue(Me, __Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody, Value)
-            End Set
         End Property
         
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody_IsReadOnly(ByRef result As Boolean)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub ReceivingWaterBody_Changed()
-        End Sub
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property ProjectAndPrograms1Query As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.ProjectAndProgram)
+            Get
+                Return __Person.DetailsClass.GetQuery(Me, __Person.DetailsClass.PropertySetProperties.ProjectAndPrograms1)
+            End Get
+        End Property
 
         ''' <summary>
         ''' No Modeled Description Available
         ''' </summary>
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
-        Public Property rt_System As Global.LightSwitchApplication.rt_System
+        Public ReadOnly Property RainGages As Global.Microsoft.LightSwitch.Framework.EntityCollection(Of Global.LightSwitchApplication.RainGage)
             Get
-                Return __Outfall.DetailsClass.GetValue(Me, __Outfall.DetailsClass.PropertySetProperties.rt_System)
+                Return __Person.DetailsClass.GetValue(Me, __Person.DetailsClass.PropertySetProperties.RainGages)
             End Get
-            Set
-                __Outfall.DetailsClass.SetValue(Me, __Outfall.DetailsClass.PropertySetProperties.rt_System, Value)
-            End Set
         End Property
         
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_IsReadOnly(ByRef result As Boolean)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_Validate(ByVal results As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-        End Sub
-        <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Partial Sub rt_System_Changed()
-        End Sub
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        Public ReadOnly Property RainGagesQuery As Microsoft.LightSwitch.IDataServiceQueryable(Of Global.LightSwitchApplication.RainGage)
+            Get
+                Return __Person.DetailsClass.GetQuery(Me, __Person.DetailsClass.PropertySetProperties.RainGages)
+            End Get
+        End Property
 
         #End Region
     
@@ -229,32 +603,32 @@ Namespace LightSwitchApplication
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
         Public NotInheritable Class DetailsClass
             Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of _
-                __Outfall, _
-                __Outfall.DetailsClass, _
-                __Outfall.DetailsClass.IImplementation, _
-                __Outfall.DetailsClass.PropertySet, _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __Outfall, __Outfall.DetailsClass), _
-                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __Outfall, __Outfall.DetailsClass))
+                __Person, _
+                __Person.DetailsClass, _
+                __Person.DetailsClass.IImplementation, _
+                __Person.DetailsClass.PropertySet, _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __Person, __Person.DetailsClass), _
+                Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __Person, __Person.DetailsClass))
     
             Shared Sub New()
-                Dim initializeEntry = __Outfall.DetailsClass.PropertySetProperties.ID
+                Dim initializeEntry = __Person.DetailsClass.PropertySetProperties.ID
             End Sub
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private Shared ReadOnly __OutfallEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __Outfall, __Outfall.DetailsClass).Entry = _
-                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __Outfall, __Outfall.DetailsClass).Entry( _
-                    AddressOf __Outfall.DetailsClass.__Outfall_CreateNew, _
-                    AddressOf __Outfall.DetailsClass.__Outfall_Created, _
-                    AddressOf __Outfall.DetailsClass.__Outfall_AllowSaveWithErrors)
-            Private Shared Function __Outfall_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __Outfall)) As __Outfall
-                Return New __Outfall(es)
+            Private Shared ReadOnly __PersonEntry As Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __Person, __Person.DetailsClass).Entry = _
+                New Global.Microsoft.LightSwitch.Details.Framework.Base.EntityDetails(Of __Person, __Person.DetailsClass).Entry( _
+                    AddressOf __Person.DetailsClass.__Person_CreateNew, _
+                    AddressOf __Person.DetailsClass.__Person_Created, _
+                    AddressOf __Person.DetailsClass.__Person_AllowSaveWithErrors)
+            Private Shared Function __Person_CreateNew(es As Global.Microsoft.LightSwitch.Framework.EntitySet(Of __Person)) As __Person
+                Return New __Person(es)
             End Function
-            Private Shared Sub __Outfall_Created(e As __Outfall)
-                e.Outfall_Created()
+            Private Shared Sub __Person_Created(e As __Person)
+                e.Person_Created()
             End Sub
-            Private Shared Function __Outfall_AllowSaveWithErrors(e As __Outfall) As Boolean
+            Private Shared Function __Person_AllowSaveWithErrors(e As __Person) As Boolean
                 Dim result As Boolean = False
-                e.Outfall_AllowSaveWithErrors(result)
+                e.Person_AllowSaveWithErrors(result)
                 Return result
             End Function
     
@@ -262,19 +636,19 @@ Namespace LightSwitchApplication
                 MyBase.New()
             End Sub
     
-            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __Outfall, __Outfall.DetailsClass)
+            Public ReadOnly Shadows Property Commands As Global.Microsoft.LightSwitch.Details.Framework.EntityCommandSet(Of __Person, __Person.DetailsClass)
                 Get
                     Return MyBase.Commands
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __Outfall, __Outfall.DetailsClass)
+            Public ReadOnly Shadows Property Methods As Global.Microsoft.LightSwitch.Details.Framework.EntityMethodSet(Of __Person, __Person.DetailsClass)
                 Get
                     Return MyBase.Methods
                 End Get
             End Property
     
-            Public ReadOnly Shadows Property Properties As __Outfall.DetailsClass.PropertySet
+            Public ReadOnly Shadows Property Properties As __Person.DetailsClass.PropertySet
                 Get
                     Return MyBase.Properties
                 End Get
@@ -285,57 +659,185 @@ Namespace LightSwitchApplication
             <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")> _
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
             Public NotInheritable Class PropertySet
-                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __Outfall, __Outfall.DetailsClass)
+                Inherits Global.Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet(Of __Person, __Person.DetailsClass)
     
                 Public Sub New()
                     MyBase.New()
                 End Sub
     
-                Public ReadOnly Property ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer)
+                Public ReadOnly Property ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.ID),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.ID),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer))
                     End Get
                 End Property
                 
-                Public ReadOnly Property OutfallName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String)
+                Public ReadOnly Property FullName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.OutfallName),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.FullName),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short))
+                Public ReadOnly Property LastName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.NumberCode),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short)))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.LastName),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation)
+                Public ReadOnly Property FirstName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.MonitoringStations),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.FirstName),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property ReceivingWaterBody As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody)
+                Public ReadOnly Property Company As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Company),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
                     End Get
                 End Property
                 
-                Public ReadOnly Property rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System)
+                Public ReadOnly Property E_mailAddress As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
                     Get
                         Return TryCast(
-                            MyBase.GetItem(__Outfall.DetailsClass.PropertySetProperties.rt_System),
-                            Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System))
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.E_mailAddress),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property JobTitle As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.JobTitle),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property BusinessPhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.BusinessPhone),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property MobilePhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.MobilePhone),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Pager As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Pager),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property FaxNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.FaxNumber),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Address1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Address1),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property City As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.City),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property State As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.State),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property ZIP As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.ZIP),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Notes),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property CubeNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.CubeNumber),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Department As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Department),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property Role As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.Role),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.ProjectAndPrograms),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property ProjectAndPrograms1 As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.ProjectAndPrograms1),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram))
+                    End Get
+                End Property
+                
+                Public ReadOnly Property RainGages As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage)
+                    Get
+                        Return TryCast(
+                            MyBase.GetItem(__Person.DetailsClass.PropertySetProperties.RainGages),
+                            Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage))
                     End Get
                 End Property
                 
@@ -346,11 +848,27 @@ Namespace LightSwitchApplication
                 Inherits Global.Microsoft.LightSwitch.Internal.IEntityImplementation
     
                 Shadows Property ID As Integer
-                Shadows Property OutfallName As String
-                Shadows Property NumberCode As Global.System.Nullable(Of Short)
-                Shadows ReadOnly Property MonitoringStations As Global.System.Collections.IEnumerable
-                Shadows Property ReceivingWaterBody As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
-                Shadows Property rt_System As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
+                Shadows Property FullName As String
+                Shadows Property LastName As String
+                Shadows Property FirstName As String
+                Shadows Property Company As String
+                Shadows Property E_mailAddress As String
+                Shadows Property JobTitle As String
+                Shadows Property BusinessPhone As String
+                Shadows Property MobilePhone As String
+                Shadows Property Pager As String
+                Shadows Property FaxNumber As String
+                Shadows Property Address1 As String
+                Shadows Property City As String
+                Shadows Property State As String
+                Shadows Property ZIP As String
+                Shadows Property Notes As String
+                Shadows Property CubeNumber As String
+                Shadows Property Department As String
+                Shadows Property Role As String
+                Shadows ReadOnly Property ProjectAndPrograms As Global.System.Collections.IEnumerable
+                Shadows ReadOnly Property ProjectAndPrograms1 As Global.System.Collections.IEnumerable
+                Shadows ReadOnly Property RainGages As Global.System.Collections.IEnumerable
     
             End Interface
     
@@ -360,212 +878,712 @@ Namespace LightSwitchApplication
             Friend Class PropertySetProperties
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer).Entry( _
+                Public Shared ReadOnly ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer).Entry( _
                         "ID", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_Validate, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_GetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_SetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ID_OnValueChanged)
-                Private Shared Sub _ID_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer).Data), d As __Outfall.DetailsClass, sf As Object)
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ID_OnValueChanged)
+                Private Shared Sub _ID_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer).Data), d As __Person.DetailsClass, sf As Object)
                     c(d, d._ID, sf)
                 End Sub
-                Private Shared Function _ID_ComputeIsReadOnly(e As __Outfall) As Boolean
+                Private Shared Function _ID_ComputeIsReadOnly(e As __Person) As Boolean
                     Dim result As Boolean = False
                     e.ID_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _ID_Validate(e As __Outfall, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                Private Shared Sub _ID_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
                     e.ID_Validate(r)
                 End Sub
-                Private Shared Function _ID_GetImplementationValue(d As __Outfall.DetailsClass) As Integer
+                Private Shared Function _ID_GetImplementationValue(d As __Person.DetailsClass) As Integer
                     Return d.ImplementationEntity.ID
                 End Function
-                Private Shared Sub _ID_SetImplementationValue(d As __Outfall.DetailsClass, v As Integer)
+                Private Shared Sub _ID_SetImplementationValue(d As __Person.DetailsClass, v As Integer)
                     d.ImplementationEntity.ID = v
                 End Sub
-                Private Shared Sub _ID_OnValueChanged(e As __Outfall)
+                Private Shared Sub _ID_OnValueChanged(e As __Person)
                     e.ID_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly OutfallName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String).Entry( _
-                        "OutfallName", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_ComputeIsReadOnly, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_Validate, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_GetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_SetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._OutfallName_OnValueChanged)
-                Private Shared Sub _OutfallName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String).Data), d As __Outfall.DetailsClass, sf As Object)
-                    c(d, d._OutfallName, sf)
+                Public Shared ReadOnly FullName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "FullName", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FullName_OnValueChanged)
+                Private Shared Sub _FullName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._FullName, sf)
                 End Sub
-                Private Shared Function _OutfallName_ComputeIsReadOnly(e As __Outfall) As Boolean
+                Private Shared Function _FullName_ComputeIsReadOnly(e As __Person) As Boolean
                     Dim result As Boolean = False
-                    e.OutfallName_IsReadOnly(result)
+                    e.FullName_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _OutfallName_Validate(e As __Outfall, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.OutfallName_Validate(r)
+                Private Shared Sub _FullName_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.FullName_Validate(r)
                 End Sub
-                Private Shared Function _OutfallName_GetImplementationValue(d As __Outfall.DetailsClass) As String
-                    Return d.ImplementationEntity.OutfallName
+                Private Shared Function _FullName_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.FullName
                 End Function
-                Private Shared Sub _OutfallName_SetImplementationValue(d As __Outfall.DetailsClass, v As String)
-                    d.ImplementationEntity.OutfallName = v
+                Private Shared Sub _FullName_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.FullName = v
                 End Sub
-                Private Shared Sub _OutfallName_OnValueChanged(e As __Outfall)
-                    e.OutfallName_Changed()
+                Private Shared Sub _FullName_OnValueChanged(e As __Person)
+                    e.FullName_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short)).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short)).Entry( _
-                        "NumberCode", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_ComputeIsReadOnly, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_Validate, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_GetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_SetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._NumberCode_OnValueChanged)
-                Private Shared Sub _NumberCode_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short)).Data), d As __Outfall.DetailsClass, sf As Object)
-                    c(d, d._NumberCode, sf)
+                Public Shared ReadOnly LastName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "LastName", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._LastName_OnValueChanged)
+                Private Shared Sub _LastName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._LastName, sf)
                 End Sub
-                Private Shared Function _NumberCode_ComputeIsReadOnly(e As __Outfall) As Boolean
+                Private Shared Function _LastName_ComputeIsReadOnly(e As __Person) As Boolean
                     Dim result As Boolean = False
-                    e.NumberCode_IsReadOnly(result)
+                    e.LastName_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _NumberCode_Validate(e As __Outfall, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.NumberCode_Validate(r)
+                Private Shared Sub _LastName_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.LastName_Validate(r)
                 End Sub
-                Private Shared Function _NumberCode_GetImplementationValue(d As __Outfall.DetailsClass) As Global.System.Nullable(Of Short)
-                    Return d.ImplementationEntity.NumberCode
+                Private Shared Function _LastName_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.LastName
                 End Function
-                Private Shared Sub _NumberCode_SetImplementationValue(d As __Outfall.DetailsClass, v As Global.System.Nullable(Of Short))
-                    d.ImplementationEntity.NumberCode = v
+                Private Shared Sub _LastName_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.LastName = v
                 End Sub
-                Private Shared Sub _NumberCode_OnValueChanged(e As __Outfall)
-                    e.NumberCode_Changed()
+                Private Shared Sub _LastName_OnValueChanged(e As __Person)
+                    e.LastName_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Entry( _
-                        "MonitoringStations", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._MonitoringStations_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._MonitoringStations_GetReferencedEntities, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._MonitoringStations_GetEntityCollection)
-                Private Shared Sub _MonitoringStations_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data), d As __Outfall.DetailsClass, sf As Object)
-                    c(d, d._MonitoringStations, sf)
+                Public Shared ReadOnly FirstName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "FirstName", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FirstName_OnValueChanged)
+                Private Shared Sub _FirstName_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._FirstName, sf)
                 End Sub
-                Private Shared Function _MonitoringStations_GetReferencedEntities(d As __Outfall.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.MonitoringStation)
-                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.MonitoringStation, Global.LightSwitchApplication.MonitoringStation.DetailsClass)(__Outfall.DetailsClass.PropertySetProperties.MonitoringStations, d._MonitoringStations)
-                End Function
-                Private Shared Function _MonitoringStations_GetEntityCollection(d As __Outfall.DetailsClass) As Global.System.Collections.IEnumerable
-                    Return d.ImplementationEntity.MonitoringStations
-                End Function
-    
-                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly ReceivingWaterBody As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody).Entry( _
-                        "ReceivingWaterBody", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_ComputeIsReadOnly, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_Validate, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_GetCoreImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_GetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_SetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_Refresh, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._ReceivingWaterBody_OnValueChanged)
-                Private Shared Sub _ReceivingWaterBody_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody).Data), d As __Outfall.DetailsClass, sf As Object)
-                    c(d, d._ReceivingWaterBody, sf)
-                End Sub
-                Private Shared Function _ReceivingWaterBody_ComputeIsReadOnly(e As __Outfall) As Boolean
+                Private Shared Function _FirstName_ComputeIsReadOnly(e As __Person) As Boolean
                     Dim result As Boolean = False
-                    e.ReceivingWaterBody_IsReadOnly(result)
+                    e.FirstName_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _ReceivingWaterBody_Validate(e As __Outfall, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.ReceivingWaterBody_Validate(r)
+                Private Shared Sub _FirstName_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.FirstName_Validate(r)
                 End Sub
-                Private Shared Function _ReceivingWaterBody_GetCoreImplementationValue(d as __Outfall.DetailsClass) As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
-                    Return d.ImplementationEntity.ReceivingWaterBody
+                Private Shared Function _FirstName_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.FirstName
                 End Function
-                Private Shared Function _ReceivingWaterBody_GetImplementationValue(d as __Outfall.DetailsClass) As Global.LightSwitchApplication.ReceivingWaterBody
-                    Return d.GetImplementationValue(Of Global.LightSwitchApplication.ReceivingWaterBody, Global.LightSwitchApplication.ReceivingWaterBody.DetailsClass)(__Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody, d._ReceivingWaterBody)
-                End Function
-                Private Shared Sub _ReceivingWaterBody_SetImplementationValue(d As __Outfall.DetailsClass, v As Global.LightSwitchApplication.ReceivingWaterBody)
-                    d.SetImplementationValue(__Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody, d._ReceivingWaterBody, Sub(i, ev) i.ReceivingWaterBody = ev, v)
+                Private Shared Sub _FirstName_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.FirstName = v
                 End Sub
-                Private Shared Sub _ReceivingWaterBody_Refresh(d As __Outfall.DetailsClass)
-                    d.RefreshNavigationProperty(__Outfall.DetailsClass.PropertySetProperties.ReceivingWaterBody, d._ReceivingWaterBody)
-                End Sub
-                Private Shared Sub _ReceivingWaterBody_OnValueChanged(e As __Outfall)
-                    e.ReceivingWaterBody_Changed()
+                Private Shared Sub _FirstName_OnValueChanged(e As __Person)
+                    e.FirstName_Changed()
                 End Sub
     
                 <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-                Public Shared ReadOnly rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System).Entry = _
-                    New Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System).Entry( _
-                        "rt_System", _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_Stub, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_ComputeIsReadOnly, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_Validate, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_GetCoreImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_GetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_SetImplementationValue, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_Refresh, _
-                        AddressOf __Outfall.DetailsClass.PropertySetProperties._rt_System_OnValueChanged)
-                Private Shared Sub _rt_System_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Outfall.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System).Data), d As __Outfall.DetailsClass, sf As Object)
-                    c(d, d._rt_System, sf)
+                Public Shared ReadOnly Company As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Company", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Company_OnValueChanged)
+                Private Shared Sub _Company_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Company, sf)
                 End Sub
-                Private Shared Function _rt_System_ComputeIsReadOnly(e As __Outfall) As Boolean
+                Private Shared Function _Company_ComputeIsReadOnly(e As __Person) As Boolean
                     Dim result As Boolean = False
-                    e.rt_System_IsReadOnly(result)
+                    e.Company_IsReadOnly(result)
                     Return result
                 End Function
-                Private Shared Sub _rt_System_Validate(e As __Outfall, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
-                    e.rt_System_Validate(r)
+                Private Shared Sub _Company_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Company_Validate(r)
                 End Sub
-                Private Shared Function _rt_System_GetCoreImplementationValue(d as __Outfall.DetailsClass) As Global.Microsoft.LightSwitch.Internal.IEntityImplementation
-                    Return d.ImplementationEntity.rt_System
+                Private Shared Function _Company_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Company
                 End Function
-                Private Shared Function _rt_System_GetImplementationValue(d as __Outfall.DetailsClass) As Global.LightSwitchApplication.rt_System
-                    Return d.GetImplementationValue(Of Global.LightSwitchApplication.rt_System, Global.LightSwitchApplication.rt_System.DetailsClass)(__Outfall.DetailsClass.PropertySetProperties.rt_System, d._rt_System)
+                Private Shared Sub _Company_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Company = v
+                End Sub
+                Private Shared Sub _Company_OnValueChanged(e As __Person)
+                    e.Company_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly E_mailAddress As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "E_mailAddress", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._E_mailAddress_OnValueChanged)
+                Private Shared Sub _E_mailAddress_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._E_mailAddress, sf)
+                End Sub
+                Private Shared Function _E_mailAddress_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.E_mailAddress_IsReadOnly(result)
+                    Return result
                 End Function
-                Private Shared Sub _rt_System_SetImplementationValue(d As __Outfall.DetailsClass, v As Global.LightSwitchApplication.rt_System)
-                    d.SetImplementationValue(__Outfall.DetailsClass.PropertySetProperties.rt_System, d._rt_System, Sub(i, ev) i.rt_System = ev, v)
+                Private Shared Sub _E_mailAddress_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.E_mailAddress_Validate(r)
                 End Sub
-                Private Shared Sub _rt_System_Refresh(d As __Outfall.DetailsClass)
-                    d.RefreshNavigationProperty(__Outfall.DetailsClass.PropertySetProperties.rt_System, d._rt_System)
+                Private Shared Function _E_mailAddress_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.E_mailAddress
+                End Function
+                Private Shared Sub _E_mailAddress_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.E_mailAddress = v
                 End Sub
-                Private Shared Sub _rt_System_OnValueChanged(e As __Outfall)
-                    e.rt_System_Changed()
+                Private Shared Sub _E_mailAddress_OnValueChanged(e As __Person)
+                    e.E_mailAddress_Changed()
                 End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly JobTitle As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "JobTitle", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._JobTitle_OnValueChanged)
+                Private Shared Sub _JobTitle_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._JobTitle, sf)
+                End Sub
+                Private Shared Function _JobTitle_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.JobTitle_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _JobTitle_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.JobTitle_Validate(r)
+                End Sub
+                Private Shared Function _JobTitle_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.JobTitle
+                End Function
+                Private Shared Sub _JobTitle_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.JobTitle = v
+                End Sub
+                Private Shared Sub _JobTitle_OnValueChanged(e As __Person)
+                    e.JobTitle_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly BusinessPhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "BusinessPhone", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._BusinessPhone_OnValueChanged)
+                Private Shared Sub _BusinessPhone_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._BusinessPhone, sf)
+                End Sub
+                Private Shared Function _BusinessPhone_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.BusinessPhone_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _BusinessPhone_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.BusinessPhone_Validate(r)
+                End Sub
+                Private Shared Function _BusinessPhone_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.BusinessPhone
+                End Function
+                Private Shared Sub _BusinessPhone_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.BusinessPhone = v
+                End Sub
+                Private Shared Sub _BusinessPhone_OnValueChanged(e As __Person)
+                    e.BusinessPhone_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly MobilePhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "MobilePhone", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._MobilePhone_OnValueChanged)
+                Private Shared Sub _MobilePhone_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._MobilePhone, sf)
+                End Sub
+                Private Shared Function _MobilePhone_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.MobilePhone_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _MobilePhone_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.MobilePhone_Validate(r)
+                End Sub
+                Private Shared Function _MobilePhone_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.MobilePhone
+                End Function
+                Private Shared Sub _MobilePhone_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.MobilePhone = v
+                End Sub
+                Private Shared Sub _MobilePhone_OnValueChanged(e As __Person)
+                    e.MobilePhone_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Pager As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Pager", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Pager_OnValueChanged)
+                Private Shared Sub _Pager_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Pager, sf)
+                End Sub
+                Private Shared Function _Pager_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.Pager_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Pager_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Pager_Validate(r)
+                End Sub
+                Private Shared Function _Pager_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Pager
+                End Function
+                Private Shared Sub _Pager_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Pager = v
+                End Sub
+                Private Shared Sub _Pager_OnValueChanged(e As __Person)
+                    e.Pager_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly FaxNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "FaxNumber", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._FaxNumber_OnValueChanged)
+                Private Shared Sub _FaxNumber_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._FaxNumber, sf)
+                End Sub
+                Private Shared Function _FaxNumber_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.FaxNumber_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _FaxNumber_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.FaxNumber_Validate(r)
+                End Sub
+                Private Shared Function _FaxNumber_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.FaxNumber
+                End Function
+                Private Shared Sub _FaxNumber_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.FaxNumber = v
+                End Sub
+                Private Shared Sub _FaxNumber_OnValueChanged(e As __Person)
+                    e.FaxNumber_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Address1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Address1", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Address1_OnValueChanged)
+                Private Shared Sub _Address1_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Address1, sf)
+                End Sub
+                Private Shared Function _Address1_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.Address1_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Address1_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Address1_Validate(r)
+                End Sub
+                Private Shared Function _Address1_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Address1
+                End Function
+                Private Shared Sub _Address1_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Address1 = v
+                End Sub
+                Private Shared Sub _Address1_OnValueChanged(e As __Person)
+                    e.Address1_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly City As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "City", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._City_OnValueChanged)
+                Private Shared Sub _City_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._City, sf)
+                End Sub
+                Private Shared Function _City_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.City_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _City_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.City_Validate(r)
+                End Sub
+                Private Shared Function _City_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.City
+                End Function
+                Private Shared Sub _City_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.City = v
+                End Sub
+                Private Shared Sub _City_OnValueChanged(e As __Person)
+                    e.City_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly State As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "State", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._State_OnValueChanged)
+                Private Shared Sub _State_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._State, sf)
+                End Sub
+                Private Shared Function _State_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.State_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _State_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.State_Validate(r)
+                End Sub
+                Private Shared Function _State_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.State
+                End Function
+                Private Shared Sub _State_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.State = v
+                End Sub
+                Private Shared Sub _State_OnValueChanged(e As __Person)
+                    e.State_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly ZIP As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "ZIP", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ZIP_OnValueChanged)
+                Private Shared Sub _ZIP_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._ZIP, sf)
+                End Sub
+                Private Shared Function _ZIP_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.ZIP_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _ZIP_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.ZIP_Validate(r)
+                End Sub
+                Private Shared Function _ZIP_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.ZIP
+                End Function
+                Private Shared Sub _ZIP_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.ZIP = v
+                End Sub
+                Private Shared Sub _ZIP_OnValueChanged(e As __Person)
+                    e.ZIP_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Notes", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Notes_OnValueChanged)
+                Private Shared Sub _Notes_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Notes, sf)
+                End Sub
+                Private Shared Function _Notes_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.Notes_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Notes_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Notes_Validate(r)
+                End Sub
+                Private Shared Function _Notes_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Notes
+                End Function
+                Private Shared Sub _Notes_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Notes = v
+                End Sub
+                Private Shared Sub _Notes_OnValueChanged(e As __Person)
+                    e.Notes_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly CubeNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "CubeNumber", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._CubeNumber_OnValueChanged)
+                Private Shared Sub _CubeNumber_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._CubeNumber, sf)
+                End Sub
+                Private Shared Function _CubeNumber_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.CubeNumber_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _CubeNumber_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.CubeNumber_Validate(r)
+                End Sub
+                Private Shared Function _CubeNumber_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.CubeNumber
+                End Function
+                Private Shared Sub _CubeNumber_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.CubeNumber = v
+                End Sub
+                Private Shared Sub _CubeNumber_OnValueChanged(e As __Person)
+                    e.CubeNumber_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Department As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Department", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Department_OnValueChanged)
+                Private Shared Sub _Department_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Department, sf)
+                End Sub
+                Private Shared Function _Department_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.Department_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Department_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Department_Validate(r)
+                End Sub
+                Private Shared Function _Department_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Department
+                End Function
+                Private Shared Sub _Department_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Department = v
+                End Sub
+                Private Shared Sub _Department_OnValueChanged(e As __Person)
+                    e.Department_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly Role As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Entry( _
+                        "Role", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_ComputeIsReadOnly, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_Validate, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_GetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_SetImplementationValue, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._Role_OnValueChanged)
+                Private Shared Sub _Role_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._Role, sf)
+                End Sub
+                Private Shared Function _Role_ComputeIsReadOnly(e As __Person) As Boolean
+                    Dim result As Boolean = False
+                    e.Role_IsReadOnly(result)
+                    Return result
+                End Function
+                Private Shared Sub _Role_Validate(e As __Person, r As Global.Microsoft.LightSwitch.EntityValidationResultsBuilder)
+                    e.Role_Validate(r)
+                End Sub
+                Private Shared Function _Role_GetImplementationValue(d As __Person.DetailsClass) As String
+                    Return d.ImplementationEntity.Role
+                End Function
+                Private Shared Sub _Role_SetImplementationValue(d As __Person.DetailsClass, v As String)
+                    d.ImplementationEntity.Role = v
+                End Sub
+                Private Shared Sub _Role_OnValueChanged(e As __Person)
+                    e.Role_Changed()
+                End Sub
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry( _
+                        "ProjectAndPrograms", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms_GetReferencedEntities, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms_GetEntityCollection)
+                Private Shared Sub _ProjectAndPrograms_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._ProjectAndPrograms, sf)
+                End Sub
+                Private Shared Function _ProjectAndPrograms_GetReferencedEntities(d As __Person.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.ProjectAndProgram)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.ProjectAndProgram, Global.LightSwitchApplication.ProjectAndProgram.DetailsClass)(__Person.DetailsClass.PropertySetProperties.ProjectAndPrograms, d._ProjectAndPrograms)
+                End Function
+                Private Shared Function _ProjectAndPrograms_GetEntityCollection(d As __Person.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.ProjectAndPrograms
+                End Function
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly ProjectAndPrograms1 As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Entry( _
+                        "ProjectAndPrograms1", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms1_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms1_GetReferencedEntities, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._ProjectAndPrograms1_GetEntityCollection)
+                Private Shared Sub _ProjectAndPrograms1_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._ProjectAndPrograms1, sf)
+                End Sub
+                Private Shared Function _ProjectAndPrograms1_GetReferencedEntities(d As __Person.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.ProjectAndProgram)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.ProjectAndProgram, Global.LightSwitchApplication.ProjectAndProgram.DetailsClass)(__Person.DetailsClass.PropertySetProperties.ProjectAndPrograms1, d._ProjectAndPrograms1)
+                End Function
+                Private Shared Function _ProjectAndPrograms1_GetEntityCollection(d As __Person.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.ProjectAndPrograms1
+                End Function
+    
+                <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+                Public Shared ReadOnly RainGages As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage).Entry = _
+                    New Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage).Entry( _
+                        "RainGages", _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._RainGages_Stub, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._RainGages_GetReferencedEntities, _
+                        AddressOf __Person.DetailsClass.PropertySetProperties._RainGages_GetEntityCollection)
+                Private Shared Sub _RainGages_Stub(c As Global.Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback(Of __Person.DetailsClass, Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage).Data), d As __Person.DetailsClass, sf As Object)
+                    c(d, d._RainGages, sf)
+                End Sub
+                Private Shared Function _RainGages_GetReferencedEntities(d As __Person.DetailsClass) As Global.System.Collections.Generic.IEnumerable(Of Global.LightSwitchApplication.RainGage)
+                    Return d.GetReferencedEntities(Of Global.LightSwitchApplication.RainGage, Global.LightSwitchApplication.RainGage.DetailsClass)(__Person.DetailsClass.PropertySetProperties.RainGages, d._RainGages)
+                End Function
+                Private Shared Function _RainGages_GetEntityCollection(d As __Person.DetailsClass) As Global.System.Collections.IEnumerable
+                    Return d.ImplementationEntity.RainGages
+                End Function
     
             End Class
     
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Integer).Data
+            Private _ID As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, Integer).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _OutfallName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, String).Data
+            Private _FullName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _NumberCode As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Outfall, __Outfall.DetailsClass, Global.System.Nullable(Of Short)).Data
+            Private _LastName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _MonitoringStations As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.MonitoringStation).Data
+            Private _FirstName As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _ReceivingWaterBody As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.ReceivingWaterBody).Data
+            Private _Company As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
             
             <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
-            Private _rt_System As Global.Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty(Of __Outfall, __Outfall.DetailsClass, Global.LightSwitchApplication.rt_System).Data
+            Private _E_mailAddress As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _JobTitle As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _BusinessPhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _MobilePhone As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Pager As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _FaxNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Address1 As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _City As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _State As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _ZIP As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Notes As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _CubeNumber As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Department As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _Role As Global.Microsoft.LightSwitch.Details.Framework.EntityStorageProperty(Of __Person, __Person.DetailsClass, String).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _ProjectAndPrograms As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _ProjectAndPrograms1 As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.ProjectAndProgram).Data
+            
+            <Global.System.Diagnostics.DebuggerBrowsable(Global.System.Diagnostics.DebuggerBrowsableState.Never)> _
+            Private _RainGages As Global.Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty(Of __Person, __Person.DetailsClass, Global.LightSwitchApplication.RainGage).Data
             
         End Class
     
